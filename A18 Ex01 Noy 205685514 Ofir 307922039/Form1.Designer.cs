@@ -37,11 +37,14 @@
 			this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.m_FriensListLabel = new System.Windows.Forms.Label();
+			this.m_UserInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.m_UserInfoListBox = new System.Windows.Forms.ListBox();
 			((System.ComponentModel.ISupportInitialize)(this.m_UserProfilePictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.m_FriendsDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.m_BindingSourceFriendsGrid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.friendListBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.m_UserInfoBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// m_LoginButton
@@ -172,11 +175,26 @@
 			this.m_FriensListLabel.TabIndex = 4;
 			this.m_FriensListLabel.Text = "Your friends:";
 			// 
+			// m_UserInfoBindingSource
+			// 
+			this.m_UserInfoBindingSource.DataSource = this.userBindingSource;
+			// 
+			// m_UserInfoListBox
+			// 
+			this.m_UserInfoListBox.DataSource = this.m_UserInfoBindingSource;
+			this.m_UserInfoListBox.FormattingEnabled = true;
+			this.m_UserInfoListBox.ItemHeight = 20;
+			this.m_UserInfoListBox.Location = new System.Drawing.Point(291, 18);
+			this.m_UserInfoListBox.Name = "m_UserInfoListBox";
+			this.m_UserInfoListBox.Size = new System.Drawing.Size(464, 264);
+			this.m_UserInfoListBox.TabIndex = 6;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(884, 868);
+			this.Controls.Add(this.m_UserInfoListBox);
 			this.Controls.Add(this.m_FriensListLabel);
 			this.Controls.Add(this.m_FriendsDataGridView);
 			this.Controls.Add(this.m_FindARideButton);
@@ -190,6 +208,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.m_BindingSourceFriendsGrid)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.friendListBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.m_UserInfoBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -212,6 +231,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
 		private System.Windows.Forms.Label m_FriensListLabel;
+		private System.Windows.Forms.BindingSource m_UserInfoBindingSource;
+		private System.Windows.Forms.ListBox m_UserInfoListBox;
 	}
 }
 

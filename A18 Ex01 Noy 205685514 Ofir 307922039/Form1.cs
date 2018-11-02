@@ -86,11 +86,12 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 			try
 			{
 				m_BindingSourceFriendsGrid.DataSource = m_LoggedInUser.Friends;
+
 			}
 			catch(Exception)
 			{
 			}
-			//m_FriendsDataGridView.Invoke()
+			//m_FriendsDataGridView.Invoke()		
 		}
 
 		private void m_FindARideButton_Click(object sender, EventArgs e)

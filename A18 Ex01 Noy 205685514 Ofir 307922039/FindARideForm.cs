@@ -12,6 +12,8 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 {
 	public partial class FindARideForm : Form
 	{
+		private string m_FromLocation;
+
 		public FindARideForm()
 		{
 			InitializeComponent();
@@ -29,7 +31,7 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 
 		private void m_EventButton_Click(object sender, EventArgs e)
 		{
-
+			m_EventsComboBox.Enabled = true;
 		}
 
 		internal void CreateLocationsList(User i_LoggedInUser)
@@ -39,12 +41,32 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 			ISet<string> locationsSet = new SortedSet<string>();
 			foreach (User currentFriend in i_LoggedInUser.Friends)
 			{
-				locationsSet.Add(currentFriend.Location.Name);
+				if (currentFriend.Location != null)
+				{
+					locationsSet.Add(currentFriend.Location.Name);
+				}
 			}
 			foreach (string currentLocation in locationsSet)
 			{
 				m_LocationsListBox.Items.Add(currentLocation);
 			}
+
+			if (i_LoggedInUser.WorkExperiences != null)
+			{
+				m_WorkPlaceLabel.Text = i_LoggedInUser.WorkExperiences[0].Location.Name;
+			}
+			else
+			{
+				m_WorkButton.Enabled = false;
+			}
+			m_AcademicInstitutionLabel.Text = i_LoggedInUser.Educations[0].School.Name;
+		}
+
+		private void m_LocationsListBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			m_AcademicInstitutionButton.Enabled = true;
+			m_EventButton.Enabled = true;
+			m_WorkButton.Enabled = true;			
 		}
 	}
 }
