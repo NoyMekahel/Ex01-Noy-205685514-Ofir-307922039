@@ -96,9 +96,50 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 
 		private void m_FindARideButton_Click(object sender, EventArgs e)
 		{
-			FindARideForm findARideForm = new FindARideForm();
-			findARideForm.CreateLocationsList(m_LoggedInUser);
-			findARideForm.ShowDialog();
+			m_TabControl.SelectTab(1);
+			//FindARideForm findARideForm = new FindARideForm();
+			createLocationsList(m_LoggedInUser);
+			//findARideForm.ShowDialog();
+		}
+
+		private void m_EventButton_Click(object sender, EventArgs e)
+		{
+			m_EventsComboBox.Enabled = true;
+		}
+
+		private void createLocationsList(User i_LoggedInUser)
+		{
+			//m_LocationsListBox
+			//HashSet<String> locationsSet = new HashSet<String>();
+			ISet<string> locationsSet = new SortedSet<string>();
+			foreach (User currentFriend in i_LoggedInUser.Friends)
+			{
+				if (currentFriend.Location != null)
+				{
+					locationsSet.Add(currentFriend.Location.Name);
+				}
+			}
+			foreach (string currentLocation in locationsSet)
+			{
+				m_LocationsListBox.Items.Add(currentLocation);
+			}
+
+			if (i_LoggedInUser.WorkExperiences != null)
+			{
+				m_WorkPlaceLabel.Text = i_LoggedInUser.WorkExperiences[0].Location.Name;
+			}
+			else
+			{
+				m_WorkButton.Enabled = false;
+			}
+			m_AcademicInstitutionLabel.Text = i_LoggedInUser.Educations[0].School.Name;
+		}
+
+		private void m_LocationsListBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			m_AcademicInstitutionButton.Enabled = true;
+			m_EventButton.Enabled = true;
+			m_WorkButton.Enabled = true;
 		}
 	}
 }
