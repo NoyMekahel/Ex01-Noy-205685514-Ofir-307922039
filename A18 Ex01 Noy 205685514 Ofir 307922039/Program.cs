@@ -7,6 +7,7 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 {
 	static class Program
 	{
+		[STAThread]
 		static void Main()
 		{
 			Application.EnableVisualStyles();

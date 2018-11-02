@@ -15,3 +15,10 @@ C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.pdb
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.exe
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.pdb
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.exe
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.pdb
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.csprojResolveAssemblyReference.cache
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18_Ex01_Noy_205685514_Ofir_307922039.FindARideForm.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18_Ex01_Noy_205685514_Ofir_307922039.Form1.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18_Ex01_Noy_205685514_Ofir_307922039.Properties.Resources.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.csproj.GenerateResource.Cache
