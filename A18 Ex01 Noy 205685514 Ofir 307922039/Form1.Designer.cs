@@ -26,20 +26,22 @@
 			this.m_UserProfilePictureBox = new System.Windows.Forms.PictureBox();
 			this.m_FindARideButton = new System.Windows.Forms.Button();
 			this.m_FriendsDataGridView = new System.Windows.Forms.DataGridView();
-			this.friendListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.m_BindingSourceFriendsGrid = new System.Windows.Forms.BindingSource(this.components);
-			this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.friendListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ImageSmall = new System.Windows.Forms.DataGridViewImageColumn();
 			this.aboutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.pictureSmallURLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.m_FriensListLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.m_UserProfilePictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.m_FriendsDataGridView)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.friendListBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.m_BindingSourceFriendsGrid)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.friendListBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// m_LoginButton
@@ -47,7 +49,7 @@
 			this.m_LoginButton.Location = new System.Drawing.Point(18, 18);
 			this.m_LoginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_LoginButton.Name = "m_LoginButton";
-			this.m_LoginButton.Size = new System.Drawing.Size(112, 35);
+			this.m_LoginButton.Size = new System.Drawing.Size(117, 35);
 			this.m_LoginButton.TabIndex = 0;
 			this.m_LoginButton.Text = "Login";
 			this.m_LoginButton.UseVisualStyleBackColor = true;
@@ -55,7 +57,7 @@
 			// 
 			// m_UserProfilePictureBox
 			// 
-			this.m_UserProfilePictureBox.Location = new System.Drawing.Point(446, 18);
+			this.m_UserProfilePictureBox.Location = new System.Drawing.Point(13, 75);
 			this.m_UserProfilePictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_UserProfilePictureBox.Name = "m_UserProfilePictureBox";
 			this.m_UserProfilePictureBox.Size = new System.Drawing.Size(122, 135);
@@ -64,7 +66,7 @@
 			// 
 			// m_FindARideButton
 			// 
-			this.m_FindARideButton.Location = new System.Drawing.Point(18, 205);
+			this.m_FindARideButton.Location = new System.Drawing.Point(701, 392);
 			this.m_FindARideButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_FindARideButton.Name = "m_FindARideButton";
 			this.m_FindARideButton.Size = new System.Drawing.Size(112, 35);
@@ -76,46 +78,68 @@
 			// 
 			// m_FriendsDataGridView
 			// 
+			this.m_FriendsDataGridView.AllowUserToAddRows = false;
+			this.m_FriendsDataGridView.AllowUserToDeleteRows = false;
+			this.m_FriendsDataGridView.AllowUserToResizeRows = false;
 			this.m_FriendsDataGridView.AutoGenerateColumns = false;
+			this.m_FriendsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+			this.m_FriendsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.m_FriendsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.m_FriendsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userNameDataGridViewTextBoxColumn,
+            this.FirstName,
+            this.LastName,
+            this.ImageSmall,
             this.aboutDataGridViewTextBoxColumn,
             this.birthdayDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
             this.locationDataGridViewTextBoxColumn,
-            this.pictureSmallURLDataGridViewTextBoxColumn});
+            this.emailDataGridViewTextBoxColumn});
 			this.m_FriendsDataGridView.DataSource = this.m_BindingSourceFriendsGrid;
-			this.m_FriendsDataGridView.Location = new System.Drawing.Point(12, 260);
+			this.m_FriendsDataGridView.Location = new System.Drawing.Point(12, 539);
 			this.m_FriendsDataGridView.Name = "m_FriendsDataGridView";
+			this.m_FriendsDataGridView.ReadOnly = true;
 			this.m_FriendsDataGridView.RowTemplate.Height = 28;
-			this.m_FriendsDataGridView.Size = new System.Drawing.Size(579, 317);
+			this.m_FriendsDataGridView.Size = new System.Drawing.Size(860, 317);
 			this.m_FriendsDataGridView.TabIndex = 3;
-			// 
-			// friendListBindingSource
-			// 
-			this.friendListBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.FriendList);
-			// 
-			// userBindingSource
-			// 
-			this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
 			// 
 			// m_BindingSourceFriendsGrid
 			// 
 			this.m_BindingSourceFriendsGrid.DataSource = this.userBindingSource;
 			// 
-			// userNameDataGridViewTextBoxColumn
+			// userBindingSource
 			// 
-			this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-			this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
-			this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-			this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
+			// 
+			// friendListBindingSource
+			// 
+			this.friendListBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.FriendList);
+			// 
+			// FirstName
+			// 
+			this.FirstName.DataPropertyName = "FirstName";
+			this.FirstName.HeaderText = "FirstName";
+			this.FirstName.Name = "FirstName";
+			this.FirstName.ReadOnly = true;
+			// 
+			// LastName
+			// 
+			this.LastName.DataPropertyName = "LastName";
+			this.LastName.HeaderText = "LastName";
+			this.LastName.Name = "LastName";
+			this.LastName.ReadOnly = true;
+			// 
+			// ImageSmall
+			// 
+			this.ImageSmall.DataPropertyName = "ImageSmall";
+			this.ImageSmall.HeaderText = "ImageSmall";
+			this.ImageSmall.Name = "ImageSmall";
+			this.ImageSmall.ReadOnly = true;
 			// 
 			// aboutDataGridViewTextBoxColumn
 			// 
 			this.aboutDataGridViewTextBoxColumn.DataPropertyName = "About";
 			this.aboutDataGridViewTextBoxColumn.HeaderText = "About";
 			this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
+			this.aboutDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// birthdayDataGridViewTextBoxColumn
 			// 
@@ -124,13 +148,6 @@
 			this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
 			this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
-			// emailDataGridViewTextBoxColumn
-			// 
-			this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-			this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-			this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
 			// locationDataGridViewTextBoxColumn
 			// 
 			this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
@@ -138,18 +155,29 @@
 			this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
 			this.locationDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
-			// pictureSmallURLDataGridViewTextBoxColumn
+			// emailDataGridViewTextBoxColumn
 			// 
-			this.pictureSmallURLDataGridViewTextBoxColumn.DataPropertyName = "PictureSmallURL";
-			this.pictureSmallURLDataGridViewTextBoxColumn.HeaderText = "PictureSmallURL";
-			this.pictureSmallURLDataGridViewTextBoxColumn.Name = "pictureSmallURLDataGridViewTextBoxColumn";
-			this.pictureSmallURLDataGridViewTextBoxColumn.ReadOnly = true;
+			this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+			this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+			this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// m_FriensListLabel
+			// 
+			this.m_FriensListLabel.AutoSize = true;
+			this.m_FriensListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.m_FriensListLabel.Location = new System.Drawing.Point(12, 495);
+			this.m_FriensListLabel.Name = "m_FriensListLabel";
+			this.m_FriensListLabel.Size = new System.Drawing.Size(176, 32);
+			this.m_FriensListLabel.TabIndex = 4;
+			this.m_FriensListLabel.Text = "Your friends:";
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(603, 589);
+			this.ClientSize = new System.Drawing.Size(884, 868);
+			this.Controls.Add(this.m_FriensListLabel);
 			this.Controls.Add(this.m_FriendsDataGridView);
 			this.Controls.Add(this.m_FindARideButton);
 			this.Controls.Add(this.m_UserProfilePictureBox);
@@ -159,10 +187,11 @@
 			this.Text = "Form1";
 			((System.ComponentModel.ISupportInitialize)(this.m_UserProfilePictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.m_FriendsDataGridView)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.friendListBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.m_BindingSourceFriendsGrid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.friendListBindingSource)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -175,12 +204,14 @@
 		private System.Windows.Forms.BindingSource friendListBindingSource;
 		private System.Windows.Forms.BindingSource userBindingSource;
 		private System.Windows.Forms.BindingSource m_BindingSourceFriendsGrid;
-		private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+		private System.Windows.Forms.DataGridViewImageColumn ImageSmall;
 		private System.Windows.Forms.DataGridViewTextBoxColumn aboutDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn pictureSmallURLDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+		private System.Windows.Forms.Label m_FriensListLabel;
 	}
 }
 
