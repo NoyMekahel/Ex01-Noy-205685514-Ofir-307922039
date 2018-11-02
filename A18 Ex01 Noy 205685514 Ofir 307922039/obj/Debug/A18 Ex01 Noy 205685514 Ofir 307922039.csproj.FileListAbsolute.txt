@@ -13,3 +13,5 @@ C:\Users\noy mekahel\Desktop\year 3\Design Patterns\A18 Ex01 Noy 205685514 Ofir 
 C:\Users\noy mekahel\Desktop\year 3\Design Patterns\A18 Ex01 Noy 205685514 Ofir 307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.pdb
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.exe
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.pdb
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.exe
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.pdb

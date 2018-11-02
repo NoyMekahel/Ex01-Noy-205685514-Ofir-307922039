@@ -29,7 +29,7 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 		{
 
 			LoginResult result = FacebookService.Login("264186474290093",
-				"public_profile", "user_birthday", "user_events", "user_posts", "user_location", "user_friends"      /*,"user_education_history", "user_work_history", "user_about_me"*/
+				"public_profile", "user_birthday", "user_events", "user_posts", "user_location", "user_friends"/*,"user_education_history", "user_work_history", "user_about_me"*/
 				/*		"user_education_history",
 						"user_birthday",
 						"user_actions.video",
