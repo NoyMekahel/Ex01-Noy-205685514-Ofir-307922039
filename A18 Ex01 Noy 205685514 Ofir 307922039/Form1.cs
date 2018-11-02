@@ -14,6 +14,7 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 	public partial class Form1 : Form
 	{
 		private User m_LoggedInUser;
+		private string m_RideFromLocationName;
 
 		public Form1()
 		{
@@ -98,21 +99,23 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 		{
 			m_TabControl.SelectTab(1);
 			//FindARideForm findARideForm = new FindARideForm();
-			createLocationsList(m_LoggedInUser);
+			createLocationsList();
 			//findARideForm.ShowDialog();
 		}
 
 		private void m_EventButton_Click(object sender, EventArgs e)
 		{
 			m_EventsComboBox.Enabled = true;
+			foreach(Event currEvent in m_LoggedInUser.Events)
+			{
+				m_EventsComboBox.Items.Add(currEvent.Name);
+			}
 		}
 
-		private void createLocationsList(User i_LoggedInUser)
+		private void createLocationsList()
 		{
-			//m_LocationsListBox
-			//HashSet<String> locationsSet = new HashSet<String>();
 			ISet<string> locationsSet = new SortedSet<string>();
-			foreach (User currentFriend in i_LoggedInUser.Friends)
+			foreach (User currentFriend in m_LoggedInUser.Friends)
 			{
 				if (currentFriend.Location != null)
 				{
@@ -124,22 +127,51 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 				m_LocationsListBox.Items.Add(currentLocation);
 			}
 
-			if (i_LoggedInUser.WorkExperiences != null)
+			if (m_LoggedInUser.WorkExperiences != null)
 			{
-				m_WorkPlaceLabel.Text = i_LoggedInUser.WorkExperiences[0].Location.Name;
+				m_WorkPlaceLabel.Text = m_LoggedInUser.WorkExperiences[0].Location.Name;
 			}
-			else
+
+			if (m_LoggedInUser.Educations != null)
 			{
-				m_WorkButton.Enabled = false;
+				m_AcademicInstitutionLabel.Text = m_LoggedInUser.Educations[0].School.Name;
 			}
-			m_AcademicInstitutionLabel.Text = i_LoggedInUser.Educations[0].School.Name;
 		}
 
 		private void m_LocationsListBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			m_AcademicInstitutionButton.Enabled = true;
-			m_EventButton.Enabled = true;
-			m_WorkButton.Enabled = true;
+			m_RideFromLocationName = sender as string;
+
+			try
+			{
+				if (m_LoggedInUser.Educations != null)
+				{
+					m_AcademicInstitutionButton.Enabled = true;
+				}
+
+				if (m_LoggedInUser.Events != null && m_LoggedInUser.Events.Count > 0)
+				{
+					m_EventButton.Enabled = true;
+				}
+
+				if (m_LoggedInUser.WorkExperiences != null)
+				{
+					m_WorkButton.Enabled = true;
+				}
+			}
+			catch(Exception)
+			{
+			}						
+		}
+
+		private void showFacebookError()
+		{
+			MessageBox.Show("Can't receive the requested information from facebook");
+		}
+
+		private void m_EventsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

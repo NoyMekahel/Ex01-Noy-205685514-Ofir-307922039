@@ -63,9 +63,10 @@
 			// 
 			// m_LoginButton
 			// 
-			this.m_LoginButton.Location = new System.Drawing.Point(31, 18);
+			this.m_LoginButton.Location = new System.Drawing.Point(46, 28);
+			this.m_LoginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_LoginButton.Name = "m_LoginButton";
-			this.m_LoginButton.Size = new System.Drawing.Size(78, 23);
+			this.m_LoginButton.Size = new System.Drawing.Size(117, 35);
 			this.m_LoginButton.TabIndex = 0;
 			this.m_LoginButton.Text = "Login";
 			this.m_LoginButton.UseVisualStyleBackColor = true;
@@ -73,17 +74,19 @@
 			// 
 			// m_UserProfilePictureBox
 			// 
-			this.m_UserProfilePictureBox.Location = new System.Drawing.Point(28, 51);
+			this.m_UserProfilePictureBox.Location = new System.Drawing.Point(42, 78);
+			this.m_UserProfilePictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_UserProfilePictureBox.Name = "m_UserProfilePictureBox";
-			this.m_UserProfilePictureBox.Size = new System.Drawing.Size(81, 88);
+			this.m_UserProfilePictureBox.Size = new System.Drawing.Size(122, 135);
 			this.m_UserProfilePictureBox.TabIndex = 1;
 			this.m_UserProfilePictureBox.TabStop = false;
 			// 
 			// m_FindARideButton
 			// 
-			this.m_FindARideButton.Location = new System.Drawing.Point(490, 185);
+			this.m_FindARideButton.Location = new System.Drawing.Point(735, 285);
+			this.m_FindARideButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_FindARideButton.Name = "m_FindARideButton";
-			this.m_FindARideButton.Size = new System.Drawing.Size(75, 23);
+			this.m_FindARideButton.Size = new System.Drawing.Size(112, 35);
 			this.m_FindARideButton.TabIndex = 2;
 			this.m_FindARideButton.Text = "Find A Ride";
 			this.m_FindARideButton.UseVisualStyleBackColor = true;
@@ -108,12 +111,11 @@
             this.locationDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn});
 			this.m_FriendsDataGridView.DataSource = this.m_BindingSourceFriendsGrid;
-			this.m_FriendsDataGridView.Location = new System.Drawing.Point(7, 324);
-			this.m_FriendsDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.m_FriendsDataGridView.Location = new System.Drawing.Point(10, 498);
 			this.m_FriendsDataGridView.Name = "m_FriendsDataGridView";
 			this.m_FriendsDataGridView.ReadOnly = true;
 			this.m_FriendsDataGridView.RowTemplate.Height = 28;
-			this.m_FriendsDataGridView.Size = new System.Drawing.Size(573, 206);
+			this.m_FriendsDataGridView.Size = new System.Drawing.Size(860, 317);
 			this.m_FriendsDataGridView.TabIndex = 3;
 			// 
 			// FirstName
@@ -181,10 +183,9 @@
 			// 
 			this.m_FriensListLabel.AutoSize = true;
 			this.m_FriensListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.m_FriensListLabel.Location = new System.Drawing.Point(24, 298);
-			this.m_FriensListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.m_FriensListLabel.Location = new System.Drawing.Point(36, 458);
 			this.m_FriensListLabel.Name = "m_FriensListLabel";
-			this.m_FriensListLabel.Size = new System.Drawing.Size(116, 24);
+			this.m_FriensListLabel.Size = new System.Drawing.Size(176, 32);
 			this.m_FriensListLabel.TabIndex = 4;
 			this.m_FriensListLabel.Text = "Your friends:";
 			// 
@@ -196,20 +197,21 @@
 			// 
 			this.m_UserInfoListBox.DataSource = this.m_UserInfoBindingSource;
 			this.m_UserInfoListBox.FormattingEnabled = true;
-			this.m_UserInfoListBox.Location = new System.Drawing.Point(268, 18);
-			this.m_UserInfoListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.m_UserInfoListBox.ItemHeight = 20;
+			this.m_UserInfoListBox.Location = new System.Drawing.Point(402, 28);
 			this.m_UserInfoListBox.Name = "m_UserInfoListBox";
-			this.m_UserInfoListBox.Size = new System.Drawing.Size(297, 121);
+			this.m_UserInfoListBox.Size = new System.Drawing.Size(444, 184);
 			this.m_UserInfoListBox.TabIndex = 6;
 			// 
 			// m_TabControl
 			// 
 			this.m_TabControl.Controls.Add(this.tabPage1);
 			this.m_TabControl.Controls.Add(this.tabPage2);
-			this.m_TabControl.Location = new System.Drawing.Point(1, 2);
+			this.m_TabControl.Location = new System.Drawing.Point(2, 3);
+			this.m_TabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_TabControl.Name = "m_TabControl";
 			this.m_TabControl.SelectedIndex = 0;
-			this.m_TabControl.Size = new System.Drawing.Size(590, 561);
+			this.m_TabControl.Size = new System.Drawing.Size(885, 863);
 			this.m_TabControl.TabIndex = 2;
 			// 
 			// tabPage1
@@ -220,10 +222,11 @@
 			this.tabPage1.Controls.Add(this.m_FriendsDataGridView);
 			this.tabPage1.Controls.Add(this.m_UserProfilePictureBox);
 			this.tabPage1.Controls.Add(this.m_FindARideButton);
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			this.tabPage1.Location = new System.Drawing.Point(4, 29);
+			this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(582, 535);
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.tabPage1.Size = new System.Drawing.Size(877, 830);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -238,10 +241,11 @@
 			this.tabPage2.Controls.Add(this.m_EventButton);
 			this.tabPage2.Controls.Add(this.m_WorkButton);
 			this.tabPage2.Controls.Add(this.m_AcademicInstitutionButton);
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Location = new System.Drawing.Point(4, 29);
+			this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(582, 535);
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.tabPage2.Size = new System.Drawing.Size(877, 830);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -250,10 +254,9 @@
 			// 
 			this.m_FromLocationLabel.AutoSize = true;
 			this.m_FromLocationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.m_FromLocationLabel.Location = new System.Drawing.Point(21, 34);
-			this.m_FromLocationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.m_FromLocationLabel.Location = new System.Drawing.Point(32, 52);
 			this.m_FromLocationLabel.Name = "m_FromLocationLabel";
-			this.m_FromLocationLabel.Size = new System.Drawing.Size(45, 20);
+			this.m_FromLocationLabel.Size = new System.Drawing.Size(67, 29);
 			this.m_FromLocationLabel.TabIndex = 20;
 			this.m_FromLocationLabel.Text = "from:";
 			// 
@@ -261,53 +264,63 @@
 			// 
 			this.m_EventsComboBox.Enabled = false;
 			this.m_EventsComboBox.FormattingEnabled = true;
-			this.m_EventsComboBox.Location = new System.Drawing.Point(35, 392);
+			this.m_EventsComboBox.Location = new System.Drawing.Point(52, 603);
+			this.m_EventsComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_EventsComboBox.Name = "m_EventsComboBox";
-			this.m_EventsComboBox.Size = new System.Drawing.Size(181, 21);
+			this.m_EventsComboBox.Size = new System.Drawing.Size(270, 28);
 			this.m_EventsComboBox.TabIndex = 19;
+			this.m_EventsComboBox.SelectedIndexChanged += new System.EventHandler(this.m_EventsComboBox_SelectedIndexChanged);
 			// 
 			// m_WorkPlaceLabel
 			// 
 			this.m_WorkPlaceLabel.AutoSize = true;
-			this.m_WorkPlaceLabel.Location = new System.Drawing.Point(230, 339);
+			this.m_WorkPlaceLabel.Location = new System.Drawing.Point(345, 522);
+			this.m_WorkPlaceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.m_WorkPlaceLabel.Name = "m_WorkPlaceLabel";
-			this.m_WorkPlaceLabel.Size = new System.Drawing.Size(16, 13);
+			this.m_WorkPlaceLabel.Size = new System.Drawing.Size(21, 20);
 			this.m_WorkPlaceLabel.TabIndex = 18;
 			this.m_WorkPlaceLabel.Text = "...";
 			// 
 			// m_AcademicInstitutionLabel
 			// 
 			this.m_AcademicInstitutionLabel.AutoSize = true;
-			this.m_AcademicInstitutionLabel.Location = new System.Drawing.Point(230, 310);
+			this.m_AcademicInstitutionLabel.Location = new System.Drawing.Point(345, 477);
+			this.m_AcademicInstitutionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.m_AcademicInstitutionLabel.Name = "m_AcademicInstitutionLabel";
-			this.m_AcademicInstitutionLabel.Size = new System.Drawing.Size(16, 13);
+			this.m_AcademicInstitutionLabel.Size = new System.Drawing.Size(21, 20);
 			this.m_AcademicInstitutionLabel.TabIndex = 17;
 			this.m_AcademicInstitutionLabel.Text = "...";
 			// 
 			// m_LocationsListBox
 			// 
 			this.m_LocationsListBox.FormattingEnabled = true;
-			this.m_LocationsListBox.Location = new System.Drawing.Point(35, 58);
+			this.m_LocationsListBox.ItemHeight = 20;
+			this.m_LocationsListBox.Location = new System.Drawing.Point(52, 89);
+			this.m_LocationsListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_LocationsListBox.Name = "m_LocationsListBox";
-			this.m_LocationsListBox.Size = new System.Drawing.Size(181, 225);
+			this.m_LocationsListBox.Size = new System.Drawing.Size(270, 344);
 			this.m_LocationsListBox.TabIndex = 16;
+			this.m_LocationsListBox.SelectedIndexChanged += new System.EventHandler(this.m_LocationsListBox_SelectedIndexChanged);
 			// 
 			// m_EventButton
 			// 
 			this.m_EventButton.Enabled = false;
-			this.m_EventButton.Location = new System.Drawing.Point(35, 363);
+			this.m_EventButton.Location = new System.Drawing.Point(52, 558);
+			this.m_EventButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_EventButton.Name = "m_EventButton";
-			this.m_EventButton.Size = new System.Drawing.Size(167, 23);
+			this.m_EventButton.Size = new System.Drawing.Size(250, 35);
 			this.m_EventButton.TabIndex = 15;
 			this.m_EventButton.Text = "Ride To An Event";
 			this.m_EventButton.UseVisualStyleBackColor = true;
+			this.m_EventButton.Click += new System.EventHandler(this.m_EventButton_Click);
 			// 
 			// m_WorkButton
 			// 
 			this.m_WorkButton.Enabled = false;
-			this.m_WorkButton.Location = new System.Drawing.Point(35, 334);
+			this.m_WorkButton.Location = new System.Drawing.Point(52, 514);
+			this.m_WorkButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_WorkButton.Name = "m_WorkButton";
-			this.m_WorkButton.Size = new System.Drawing.Size(167, 23);
+			this.m_WorkButton.Size = new System.Drawing.Size(250, 35);
 			this.m_WorkButton.TabIndex = 14;
 			this.m_WorkButton.Text = "Ride To Work";
 			this.m_WorkButton.UseVisualStyleBackColor = true;
@@ -315,19 +328,21 @@
 			// m_AcademicInstitutionButton
 			// 
 			this.m_AcademicInstitutionButton.Enabled = false;
-			this.m_AcademicInstitutionButton.Location = new System.Drawing.Point(35, 305);
+			this.m_AcademicInstitutionButton.Location = new System.Drawing.Point(52, 469);
+			this.m_AcademicInstitutionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.m_AcademicInstitutionButton.Name = "m_AcademicInstitutionButton";
-			this.m_AcademicInstitutionButton.Size = new System.Drawing.Size(167, 23);
+			this.m_AcademicInstitutionButton.Size = new System.Drawing.Size(250, 35);
 			this.m_AcademicInstitutionButton.TabIndex = 13;
 			this.m_AcademicInstitutionButton.Text = "Ride To Academic Institution";
 			this.m_AcademicInstitutionButton.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(589, 561);
+			this.ClientSize = new System.Drawing.Size(884, 863);
 			this.Controls.Add(this.m_TabControl);
+			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			((System.ComponentModel.ISupportInitialize)(this.m_UserProfilePictureBox)).EndInit();
