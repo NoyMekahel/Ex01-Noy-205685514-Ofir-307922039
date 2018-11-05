@@ -105,10 +105,10 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 
 		private void m_EventButton_Click(object sender, EventArgs e)
 		{
-			m_EventsComboBox.Enabled = true;
+			eventsComboBox.Enabled = true;
 			foreach(Event currEvent in m_LoggedInUser.Events)
 			{
-				m_EventsComboBox.Items.Add(currEvent.Name);
+				eventsComboBox.Items.Add(currEvent.Name);
 			}
 		}
 
@@ -124,17 +124,17 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 			}
 			foreach (string currentLocation in locationsSet)
 			{
-				m_LocationsListBox.Items.Add(currentLocation);
+				locationsListBox.Items.Add(currentLocation);
 			}
 
 			if (m_LoggedInUser.WorkExperiences != null)
 			{
-				m_WorkPlaceLabel.Text = m_LoggedInUser.WorkExperiences[0].Location.Name;
+				workPlaceLabel.Text = m_LoggedInUser.WorkExperiences[0].Location.Name;
 			}
 
 			if (m_LoggedInUser.Educations != null)
 			{
-				m_AcademicInstitutionLabel.Text = m_LoggedInUser.Educations[0].School.Name;
+				academicInstitutionLabel.Text = m_LoggedInUser.Educations[0].School.Name;
 			}
 		}
 
@@ -146,17 +146,17 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 			{
 				if (m_LoggedInUser.Educations != null)
 				{
-					m_AcademicInstitutionButton.Enabled = true;
+					academicInstitutionButton.Enabled = true;
 				}
 
 				if (m_LoggedInUser.Events != null && m_LoggedInUser.Events.Count > 0)
 				{
-					m_EventButton.Enabled = true;
+					eventButton.Enabled = true;
 				}
 
 				if (m_LoggedInUser.WorkExperiences != null)
 				{
-					m_WorkButton.Enabled = true;
+					workButton.Enabled = true;
 				}
 			}
 			catch(Exception)
