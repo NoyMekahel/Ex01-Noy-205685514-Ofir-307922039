@@ -49,10 +49,15 @@ namespace UI
 
 		public static void showFacebookError()
 		{
-			MessageBox.Show("An error has occured. Couldn't retrieve the requested information from facebook");
+			showFacebookError("An error has occured. Couldn't retrieve the requested information from facebook");
 		}
 
 		private HomePanel homePanel;
 		private FindARidePanel findARidePanel;
+
+		internal static void showFacebookError(string i_ErrorMessage)
+		{
+			MessageBox.Show(i_ErrorMessage);
+		}
 	}
 }

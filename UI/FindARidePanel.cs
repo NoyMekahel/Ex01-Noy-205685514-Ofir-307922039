@@ -22,10 +22,10 @@ namespace UI
 
 		public FindARidePanel()
 		{
-			initializeComponent();
+			InitializeComponent();
 		}
 
-		private void initializeComponent()
+		private void InitializeComponent()
 		{
 			this.backButton = new System.Windows.Forms.Button();
 			this.fromLocationLabel = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@ namespace UI
 			this.fromLocationLabel.Name = "fromLocationLabel";
 			this.fromLocationLabel.Size = new System.Drawing.Size(45, 20);
 			this.fromLocationLabel.TabIndex = 20;
-			this.fromLocationLabel.Text = "from:";
+			this.fromLocationLabel.Text = "Choose Starting Point:";
 			// 
 			// eventsComboBox
 			// 
@@ -174,26 +174,47 @@ namespace UI
 		{
 			m_RideFromLocationName = sender as string;
 
+			bool isFacebookError = false;
+			string errorMessage = "Couldn't fetch the following data: " + Environment.NewLine;
 			try
 			{
 				if (DataManagerWrapper.DataManager.GetEducations() != null)
 				{
 					academicInstitutionButton.Enabled = true;
 				}
+				else
+				{
+					isFacebookError = true;
+					errorMessage+= "Educations" + Environment.NewLine;
+				}
 
-				if (DataManagerWrapper.DataManager.GetEvents() != null && DataManagerWrapper.DataManager.GetEvents().Count > 0)
+				if (DataManagerWrapper.DataManager.GetEvents().Count > 0)
 				{
 					eventButton.Enabled = true;
+				}
+				else
+				{
+					eventsComboBox.Text = "No Upcoming Events!";
 				}
 
 				if (DataManagerWrapper.DataManager.GetWorkExperiences() != null)
 				{
 					workButton.Enabled = true;
 				}
+				else
+				{
+					errorMessage += "Work" + Environment.NewLine;
+					isFacebookError = true;
+				}
+
+				if (isFacebookError)
+				{
+					FacebookApp.showFacebookError(errorMessage);
+				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				FacebookApp.showFacebookError();
+				FacebookApp.showFacebookError(ex.Message);
 			}
 		}
 
