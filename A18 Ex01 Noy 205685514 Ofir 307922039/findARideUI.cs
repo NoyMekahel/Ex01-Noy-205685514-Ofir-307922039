@@ -40,5 +40,30 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 		{
 
 		}
+
+		private void academicComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void workComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void genderCheckBox_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void ageCheckBox_CheckedChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void FilterButton_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

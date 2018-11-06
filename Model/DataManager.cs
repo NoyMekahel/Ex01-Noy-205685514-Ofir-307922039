@@ -11,12 +11,12 @@ namespace Model
 	public class DataManager
 	{
 		private User m_LoggedInUser;
+		public Ride Ride { get; }
 
 		public DataManager(User i_LoggedInUser)
 		{
 			m_LoggedInUser = i_LoggedInUser;
 		}
-
 
 		public string GetPictureNormalURL()
 		{
@@ -43,7 +43,7 @@ namespace Model
 			return m_LoggedInUser.WorkExperiences;
 		}
 
-		public ISet<string> GetSortedFriendsLocation()
+		public ICollection<string> GetSortedFriendsLocation()
 		{
 			ISet<string> locationsSet = new SortedSet<string>();
 
@@ -58,9 +58,9 @@ namespace Model
 			return locationsSet;
 		}
 
-		public List<string> GetEventsNames()
+		public ICollection<string> GetEventsNames()
 		{
-			 List<string> allEventsNames = new List<string>(m_LoggedInUser.Events.Count);
+			List<string> allEventsNames = new List<string>(m_LoggedInUser.Events.Count);
 			
 			foreach (Event currEvent in m_LoggedInUser.Events)
 			{
@@ -132,6 +132,20 @@ namespace Model
 			}
 
 			return new DateTime(year, month, day);
+		}
+
+		public void InitializeRide(string i_RideFromLocationName)
+		{
+			List<User> friendsFromStartPoint = new List<User>();
+			foreach(User user in m_LoggedInUser.Friends)
+			{
+				if(user.Location.Name.Equals(i_RideFromLocationName))
+				{
+					friendsFromStartPoint.Add(user);
+				}
+			}
+
+			Ride.FriendsFromStartPoint = friendsFromStartPoint;
 		}
 	}
 }
