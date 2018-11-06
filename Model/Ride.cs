@@ -8,7 +8,9 @@ namespace Model
 {
 	public class Ride
 	{
-		public ICollection<User> FriendsFromStartPoint { get; set; }
+		public ICollection<User> FriendsFromStartPoint { get; internal set; }
+		public ICollection<User> FriendsFromStartPointToEndPoint { get; private set; }
+		private List<IFilter> m_FilterList;
 
 		public ICollection<User> getFriendsFromWork(string i_WorkName)
 		{
@@ -25,6 +27,7 @@ namespace Model
 				}
 			}
 
+			FriendsFromStartPointToEndPoint = friendsFromWork;
 			return friendsFromWork;
 		}
 
@@ -43,6 +46,7 @@ namespace Model
 				}
 			}
 
+			FriendsFromStartPointToEndPoint = friendsFromAcademicInstitution;
 			return friendsFromAcademicInstitution;
 		}
 
@@ -61,7 +65,32 @@ namespace Model
 				}
 			}
 
+			FriendsFromStartPointToEndPoint = friendsFromChosenEvent;
 			return friendsFromChosenEvent;
+		}
+
+		public void AddFilter(IFilter genderFilter)
+		{
+			if(m_FilterList == null)
+			{
+				m_FilterList = new List<IFilter>();
+			}
+
+			m_FilterList.Add(genderFilter);
+		}
+
+		public ICollection<User> Filter()
+		{
+			ICollection<User> friendsBeforeFilter = FriendsFromStartPointToEndPoint;
+			ICollection<User> friendsAfterFilter = friendsBeforeFilter;
+
+			foreach (IFilter filter in m_FilterList)
+			{
+				friendsAfterFilter = filter.filter(friendsBeforeFilter);
+				friendsBeforeFilter = friendsAfterFilter;
+			}
+
+			return friendsAfterFilter;
 		}
 	}
 }

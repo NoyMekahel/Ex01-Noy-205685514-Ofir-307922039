@@ -317,8 +317,6 @@ namespace UI
 			this.Controls.Add(this.friendsDataGridView);
 			this.Controls.Add(this.userProfilePictureBox);
 			this.Controls.Add(this.findARideButton);
-			this.Name = "HomeUI";
-			this.Text = "HomeUI";
 			((System.ComponentModel.ISupportInitialize)(this.friendsDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.userProfilePictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceFriendsGrid)).EndInit();

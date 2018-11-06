@@ -1,4 +1,5 @@
 ﻿using FacebookWrapper.ObjectModel;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,14 @@ namespace UI
 		private BindingSource bindingSourceRideFriendsGrid;
 		private DataGridViewImageColumn imageSmallDataGridViewImageColumn;
 		private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-		private DataGridViewTextBoxColumn PhoneColunm;
+		private DataGridViewTextBoxColumn AgeColunm;
 		private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn relationshipStatusDataGridViewTextBoxColumn;
 		private DataGridViewTextBoxColumn religionDataGridViewTextBoxColumn;
 		private GroupBox filterGroupBox;
 		private Button FilterButton;
 		private CheckBox ageCheckBox;
-		private GroupBox groupBox1;
+		private GroupBox ageGroupBox;
 		private RadioButton age1RadioButton;
 		private RadioButton age2RadioButton;
 		private RadioButton age3RadioButton;
@@ -45,6 +46,16 @@ namespace UI
 		public FindARidePanel()
 		{
 			InitializeComponent();
+			createLocationsList();
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
 		}
 
 		private void InitializeComponent()
@@ -61,16 +72,10 @@ namespace UI
 			this.workComboBox = new System.Windows.Forms.ComboBox();
 			this.friendsResultDataGrid = new System.Windows.Forms.DataGridView();
 			this.bindingSourceRideFriendsGrid = new System.Windows.Forms.BindingSource(this.components);
-			this.imageSmallDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PhoneColunm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.relationshipStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.religionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.filterGroupBox = new System.Windows.Forms.GroupBox();
 			this.FilterButton = new System.Windows.Forms.Button();
 			this.ageCheckBox = new System.Windows.Forms.CheckBox();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.ageGroupBox = new System.Windows.Forms.GroupBox();
 			this.age1RadioButton = new System.Windows.Forms.RadioButton();
 			this.age2RadioButton = new System.Windows.Forms.RadioButton();
 			this.age3RadioButton = new System.Windows.Forms.RadioButton();
@@ -79,10 +84,16 @@ namespace UI
 			this.GenderGroupBox = new System.Windows.Forms.GroupBox();
 			this.famaleRadioButton = new System.Windows.Forms.RadioButton();
 			this.maleRadioButton = new System.Windows.Forms.RadioButton();
+			this.imageSmallDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AgeColunm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.relationshipStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.religionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.friendsResultDataGrid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceRideFriendsGrid)).BeginInit();
 			this.filterGroupBox.SuspendLayout();
-			this.groupBox1.SuspendLayout();
+			this.ageGroupBox.SuspendLayout();
 			this.GenderGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -186,7 +197,7 @@ namespace UI
 			this.workComboBox.TabIndex = 32;
 			this.workComboBox.SelectedIndexChanged += new System.EventHandler(this.workComboBox_SelectedIndexChanged);
 			// 
-			// dataGridView1
+			// friendsResultDataGrid
 			// 
 			this.friendsResultDataGrid.AllowUserToAddRows = false;
 			this.friendsResultDataGrid.AllowUserToDeleteRows = false;
@@ -197,13 +208,13 @@ namespace UI
 			this.friendsResultDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 			this.imageSmallDataGridViewImageColumn,
 			this.nameDataGridViewTextBoxColumn,
-			this.PhoneColunm,
 			this.genderDataGridViewTextBoxColumn,
+			this.AgeColunm,
 			this.relationshipStatusDataGridViewTextBoxColumn,
 			this.religionDataGridViewTextBoxColumn});
 			this.friendsResultDataGrid.DataSource = this.bindingSourceRideFriendsGrid;
 			this.friendsResultDataGrid.Location = new System.Drawing.Point(279, 43);
-			this.friendsResultDataGrid.Name = "dataGridView1";
+			this.friendsResultDataGrid.Name = "friendsResultDataGrid";
 			this.friendsResultDataGrid.RowTemplate.Height = 28;
 			this.friendsResultDataGrid.Size = new System.Drawing.Size(437, 377);
 			this.friendsResultDataGrid.TabIndex = 33;
@@ -213,51 +224,11 @@ namespace UI
 			// 
 			this.bindingSourceRideFriendsGrid.DataSource = typeof(FacebookWrapper.ObjectModel.User);
 			// 
-			// imageSmallDataGridViewImageColumn
-			// 
-			this.imageSmallDataGridViewImageColumn.DataPropertyName = "ImageSmall";
-			this.imageSmallDataGridViewImageColumn.HeaderText = "Image";
-			this.imageSmallDataGridViewImageColumn.Name = "imageSmallDataGridViewImageColumn";
-			this.imageSmallDataGridViewImageColumn.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// PhoneColunm
-			// 
-			this.PhoneColunm.HeaderText = "Phone";
-			this.PhoneColunm.Name = "PhoneColunm";
-			// 
-			// genderDataGridViewTextBoxColumn
-			// 
-			this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-			this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-			this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-			this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// relationshipStatusDataGridViewTextBoxColumn
-			// 
-			this.relationshipStatusDataGridViewTextBoxColumn.DataPropertyName = "RelationshipStatus";
-			this.relationshipStatusDataGridViewTextBoxColumn.HeaderText = "RelationshipStatus";
-			this.relationshipStatusDataGridViewTextBoxColumn.Name = "relationshipStatusDataGridViewTextBoxColumn";
-			this.relationshipStatusDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// religionDataGridViewTextBoxColumn
-			// 
-			this.religionDataGridViewTextBoxColumn.DataPropertyName = "Religion";
-			this.religionDataGridViewTextBoxColumn.HeaderText = "Religion";
-			this.religionDataGridViewTextBoxColumn.Name = "religionDataGridViewTextBoxColumn";
-			this.religionDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
 			// filterGroupBox
 			// 
 			this.filterGroupBox.Controls.Add(this.FilterButton);
 			this.filterGroupBox.Controls.Add(this.ageCheckBox);
-			this.filterGroupBox.Controls.Add(this.groupBox1);
+			this.filterGroupBox.Controls.Add(this.ageGroupBox);
 			this.filterGroupBox.Controls.Add(this.genderCheckBox);
 			this.filterGroupBox.Controls.Add(this.GenderGroupBox);
 			this.filterGroupBox.Location = new System.Drawing.Point(279, 426);
@@ -287,18 +258,18 @@ namespace UI
 			this.ageCheckBox.Text = "Age";
 			this.ageCheckBox.UseVisualStyleBackColor = true;
 			// 
-			// groupBox1
+			// ageGroupBox
 			// 
-			this.groupBox1.Controls.Add(this.age1RadioButton);
-			this.groupBox1.Controls.Add(this.age2RadioButton);
-			this.groupBox1.Controls.Add(this.age3RadioButton);
-			this.groupBox1.Controls.Add(this.age4RadioButton);
-			this.groupBox1.Location = new System.Drawing.Point(99, 53);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(333, 41);
-			this.groupBox1.TabIndex = 49;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Visible = false;
+			this.ageGroupBox.Controls.Add(this.age1RadioButton);
+			this.ageGroupBox.Controls.Add(this.age2RadioButton);
+			this.ageGroupBox.Controls.Add(this.age3RadioButton);
+			this.ageGroupBox.Controls.Add(this.age4RadioButton);
+			this.ageGroupBox.Location = new System.Drawing.Point(99, 53);
+			this.ageGroupBox.Name = "ageGroupBox";
+			this.ageGroupBox.Size = new System.Drawing.Size(333, 41);
+			this.ageGroupBox.TabIndex = 49;
+			this.ageGroupBox.TabStop = false;
+			this.ageGroupBox.Visible = false;
 			// 
 			// age1RadioButton
 			// 
@@ -385,9 +356,49 @@ namespace UI
 			this.maleRadioButton.Text = "Male";
 			this.maleRadioButton.UseVisualStyleBackColor = true;
 			// 
+			// imageSmallDataGridViewImageColumn
+			// 
+			this.imageSmallDataGridViewImageColumn.DataPropertyName = "ImageSmall";
+			this.imageSmallDataGridViewImageColumn.HeaderText = "Image";
+			this.imageSmallDataGridViewImageColumn.Name = "imageSmallDataGridViewImageColumn";
+			this.imageSmallDataGridViewImageColumn.ReadOnly = true;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// genderDataGridViewTextBoxColumn
+			// 
+			this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+			this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+			this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+			this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// AgeColunm
+			// 
+			this.AgeColunm.HeaderText = "Age";
+			this.AgeColunm.Name = "AgeColunm";
+			// 
+			// relationshipStatusDataGridViewTextBoxColumn
+			// 
+			this.relationshipStatusDataGridViewTextBoxColumn.DataPropertyName = "RelationshipStatus";
+			this.relationshipStatusDataGridViewTextBoxColumn.HeaderText = "RelationshipStatus";
+			this.relationshipStatusDataGridViewTextBoxColumn.Name = "relationshipStatusDataGridViewTextBoxColumn";
+			this.relationshipStatusDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// religionDataGridViewTextBoxColumn
+			// 
+			this.religionDataGridViewTextBoxColumn.DataPropertyName = "Religion";
+			this.religionDataGridViewTextBoxColumn.HeaderText = "Religion";
+			this.religionDataGridViewTextBoxColumn.Name = "religionDataGridViewTextBoxColumn";
+			this.religionDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
 			// findARideUI
 			// 
-			this.ClientSize = new System.Drawing.Size(729, 794);
+			this.ClientSize = new System.Drawing.Size(728, 793);
 			this.Controls.Add(this.filterGroupBox);
 			this.Controls.Add(this.friendsResultDataGrid);
 			this.Controls.Add(this.workComboBox);
@@ -399,12 +410,13 @@ namespace UI
 			this.Controls.Add(this.eventButton);
 			this.Controls.Add(this.workButton);
 			this.Controls.Add(this.academicInstitutionButton);
+			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			((System.ComponentModel.ISupportInitialize)(this.friendsResultDataGrid)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceRideFriendsGrid)).EndInit();
 			this.filterGroupBox.ResumeLayout(false);
 			this.filterGroupBox.PerformLayout();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
+			this.ageGroupBox.ResumeLayout(false);
+			this.ageGroupBox.PerformLayout();
 			this.GenderGroupBox.ResumeLayout(false);
 			this.GenderGroupBox.PerformLayout();
 			this.ResumeLayout(false);
@@ -412,21 +424,25 @@ namespace UI
 
 		}
 
-		public void eventsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		private void eventButton_Click(object sender, EventArgs e)
 		{
-			friendsResultDataGrid.Enabled = true;
-			filterGroupBox.Enabled = true;
+			eventsComboBox.Enabled = true;
+			ICollection<string> allEventsNames = DataManagerWrapper.DataManager.GetEventsNames();
+
+			foreach (string currEventName in allEventsNames)
+			{
+				eventsComboBox.Items.Add(currEventName);
+			}
+		}
+
+		private void eventsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			visibleTableAndFilter();
+
 			try
 			{
-				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.FriendsFromStartPoint;
-				bindingSourceRideFriendsGrid.DataSource = allFriendsFromStartPoint;
-				/*int counter = 0;
-				foreach (User currentUser in allFriendsFromStartPoint)
-				{
-					DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
-					cell.Value = currentUser.;
-					friendsResultDataGrid.Rows[counter++].Cells[PhoneColunm.Index] = cell;
-				}*/
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromChosenEvent((sender as ComboBox).SelectedItem.ToString());
+				fillFriendsResultDataTable(allFriendsFromStartPoint);
 			}
 			catch (Exception)
 			{
@@ -434,15 +450,108 @@ namespace UI
 			}
 		}
 
-		public void eventButton_Click(object sender, EventArgs e)
+		private void workButton_Click(object sender, EventArgs e)
 		{
-			eventsComboBox.Enabled = true;
-			ICollection<string> allEventsNames =  DataManagerWrapper.DataManager.GetEventsNames();
+			workComboBox.Enabled = true;
+			ICollection<string> allWorkPlacesNames = DataManagerWrapper.DataManager.GetWorkPlacesNames();
 
-			foreach (string currEventName in allEventsNames)
+			foreach (string currWorkPlaceName in allWorkPlacesNames)
 			{
-				eventsComboBox.Items.Add(currEventName);
+				workComboBox.Items.Add(currWorkPlaceName);
 			}
+		}
+
+		private void workComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			visibleTableAndFilter();
+
+			try
+			{
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromWork((sender as ComboBox).SelectedItem.ToString());
+				fillFriendsResultDataTable(allFriendsFromStartPoint);
+			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError();
+			}
+		}
+
+		private void academicInstitutionButton_Click(object sender, EventArgs e)
+		{
+			academicComboBox.Enabled = true;
+			ICollection<string> allAcademicInstitutionsNames = DataManagerWrapper.DataManager.GetAcademicInstitutionsNames();
+
+			foreach (string currAcademicInstitution in allAcademicInstitutionsNames)
+			{
+				academicComboBox.Items.Add(currAcademicInstitution);
+			}
+		}
+
+		private void academicComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			visibleTableAndFilter();
+
+			try
+			{
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromAcademicInstitution((sender as ComboBox).SelectedItem.ToString());
+				fillFriendsResultDataTable(allFriendsFromStartPoint);
+			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError();
+			}
+		}
+
+		private void genderCheckBox_CheckedChanged(object sender, EventArgs e)
+		{
+			if(genderCheckBox.Checked)
+			{
+				GenderGroupBox.Visible = true;
+				FilterButton.Enabled = true;
+			}
+			else
+			{
+				GenderGroupBox.Visible = false;
+				if(ageCheckBox.Checked == false)
+				{
+					FilterButton.Enabled = false;
+				}
+			}
+		}
+
+		private void ageCheckBox_CheckedChanged(object sender, EventArgs e)
+		{
+			if (ageCheckBox.Checked)
+			{
+				ageGroupBox.Visible = true;
+				FilterButton.Enabled = true;
+			}
+			else
+			{
+				ageGroupBox.Visible = false;
+				if (genderCheckBox.Checked == false)
+				{
+					FilterButton.Enabled = false;
+				}
+			}
+		}
+
+		private void FilterButton_Click(object sender, EventArgs e)
+		{
+			if(genderCheckBox.Checked)
+			{
+				RadioButton genderPreferenceRadioButton = GenderGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+				DataManagerWrapper.DataManager.Ride.AddFilter(new GenderFilter(genderPreferenceRadioButton.Text));
+			}
+
+			if(ageCheckBox.Checked)
+			{
+				RadioButton agePreferenceRadioButton = ageGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+				DataManagerWrapper.DataManager.Ride.AddFilter(new AgeFilter(agePreferenceRadioButton.Text));
+			}
+
+			ICollection<User> friendsAfterFilter = DataManagerWrapper.DataManager.Ride.Filter();
+			bindingSourceRideFriendsGrid.DataSource = friendsAfterFilter;
 		}
 
 		public void backButton_AddListener(EventHandler i_EventHandler)
@@ -452,16 +561,31 @@ namespace UI
 
 		private void locationsListBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			m_RideFromLocationName = sender as string;
+			if ((sender as ListBox).SelectedItem != null)
+			{
+				m_RideFromLocationName = (sender as ListBox).SelectedItem.ToString();
 
-			try
-			{
-				handlePageAfterStartPointSelected();
-				DataManagerWrapper.DataManager.InitializeRide(m_RideFromLocationName);
+				try
+				{
+					handlePageAfterStartPointSelected();
+					DataManagerWrapper.DataManager.InitializeRide(m_RideFromLocationName);
+				}
+				catch (Exception ex)
+				{
+					FacebookApp.showFacebookError(ex.Message);
+				}
 			}
-			catch (Exception ex)
+		}
+
+		private void fillFriendsResultDataTable(ICollection<User> i_AllFriendsFromStartPoint)
+		{
+			bindingSourceRideFriendsGrid.DataSource = i_AllFriendsFromStartPoint;
+			int counter = 0;
+			foreach (User currentUser in i_AllFriendsFromStartPoint)
 			{
-				FacebookApp.showFacebookError(ex.Message);
+				DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
+				cell.Value = AgeFilter.GetAgeFromUserBirthday(currentUser.Birthday);
+				friendsResultDataGrid.Rows[counter++].Cells[AgeColunm.Index] = cell;
 			}
 		}
 
@@ -505,7 +629,7 @@ namespace UI
 			}
 		}
 
-		public void CreateLocationsList()
+		private void createLocationsList()
 		{
 			ICollection<string> locationsCollection = DataManagerWrapper.DataManager.GetSortedFriendsLocation();
 
@@ -524,39 +648,10 @@ namespace UI
 			}
 		}
 
-		private void workButton_Click(object sender, EventArgs e)
+		private void visibleTableAndFilter()
 		{
-			
-		}
-
-		private void academicInstitutionButton_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void academicComboBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void workComboBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void genderCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void ageCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void FilterButton_Click(object sender, EventArgs e)
-		{
-
+			friendsResultDataGrid.Visible = true;
+			filterGroupBox.Visible = true;
 		}
 	}
 }

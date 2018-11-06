@@ -29,12 +29,8 @@ namespace UI
 
 		private void findARideButton_Click(object sender, EventArgs e)
 		{
-			if (findARidePanel == null)
-			{
-				findARidePanel = new FindARidePanel();
-				this.findARidePanel.backButton_AddListener(new EventHandler(backButton_Click));
-				findARidePanel.CreateLocationsList();
-			}
+			findARidePanel = new FindARidePanel();
+			findARidePanel.backButton_AddListener(new EventHandler(backButton_Click));
 			mainPanel.Controls.Clear();
 			mainPanel.Controls.Add(findARidePanel);
 		}

@@ -40,16 +40,10 @@
 			this.workComboBox = new System.Windows.Forms.ComboBox();
 			this.friendsResultDataGrid = new System.Windows.Forms.DataGridView();
 			this.bindingSourceRideFriendsGrid = new System.Windows.Forms.BindingSource(this.components);
-			this.imageSmallDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.PhoneColunm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.relationshipStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.religionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.filterGroupBox = new System.Windows.Forms.GroupBox();
 			this.FilterButton = new System.Windows.Forms.Button();
 			this.ageCheckBox = new System.Windows.Forms.CheckBox();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.ageGroupBox = new System.Windows.Forms.GroupBox();
 			this.age1RadioButton = new System.Windows.Forms.RadioButton();
 			this.age2RadioButton = new System.Windows.Forms.RadioButton();
 			this.age3RadioButton = new System.Windows.Forms.RadioButton();
@@ -58,10 +52,16 @@
 			this.GenderGroupBox = new System.Windows.Forms.GroupBox();
 			this.famaleRadioButton = new System.Windows.Forms.RadioButton();
 			this.maleRadioButton = new System.Windows.Forms.RadioButton();
+			this.imageSmallDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AgeColunm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.relationshipStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.religionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.friendsResultDataGrid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceRideFriendsGrid)).BeginInit();
 			this.filterGroupBox.SuspendLayout();
-			this.groupBox1.SuspendLayout();
+			this.ageGroupBox.SuspendLayout();
 			this.GenderGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -176,8 +176,8 @@
 			this.friendsResultDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imageSmallDataGridViewImageColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.PhoneColunm,
             this.genderDataGridViewTextBoxColumn,
+            this.AgeColunm,
             this.relationshipStatusDataGridViewTextBoxColumn,
             this.religionDataGridViewTextBoxColumn});
 			this.friendsResultDataGrid.DataSource = this.bindingSourceRideFriendsGrid;
@@ -192,51 +192,11 @@
 			// 
 			this.bindingSourceRideFriendsGrid.DataSource = typeof(FacebookWrapper.ObjectModel.User);
 			// 
-			// imageSmallDataGridViewImageColumn
-			// 
-			this.imageSmallDataGridViewImageColumn.DataPropertyName = "ImageSmall";
-			this.imageSmallDataGridViewImageColumn.HeaderText = "Image";
-			this.imageSmallDataGridViewImageColumn.Name = "imageSmallDataGridViewImageColumn";
-			this.imageSmallDataGridViewImageColumn.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// PhoneColunm
-			// 
-			this.PhoneColunm.HeaderText = "Phone";
-			this.PhoneColunm.Name = "PhoneColunm";
-			// 
-			// genderDataGridViewTextBoxColumn
-			// 
-			this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-			this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-			this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-			this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// relationshipStatusDataGridViewTextBoxColumn
-			// 
-			this.relationshipStatusDataGridViewTextBoxColumn.DataPropertyName = "RelationshipStatus";
-			this.relationshipStatusDataGridViewTextBoxColumn.HeaderText = "RelationshipStatus";
-			this.relationshipStatusDataGridViewTextBoxColumn.Name = "relationshipStatusDataGridViewTextBoxColumn";
-			this.relationshipStatusDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// religionDataGridViewTextBoxColumn
-			// 
-			this.religionDataGridViewTextBoxColumn.DataPropertyName = "Religion";
-			this.religionDataGridViewTextBoxColumn.HeaderText = "Religion";
-			this.religionDataGridViewTextBoxColumn.Name = "religionDataGridViewTextBoxColumn";
-			this.religionDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
 			// filterGroupBox
 			// 
 			this.filterGroupBox.Controls.Add(this.FilterButton);
 			this.filterGroupBox.Controls.Add(this.ageCheckBox);
-			this.filterGroupBox.Controls.Add(this.groupBox1);
+			this.filterGroupBox.Controls.Add(this.ageGroupBox);
 			this.filterGroupBox.Controls.Add(this.genderCheckBox);
 			this.filterGroupBox.Controls.Add(this.GenderGroupBox);
 			this.filterGroupBox.Location = new System.Drawing.Point(279, 426);
@@ -266,18 +226,18 @@
 			this.ageCheckBox.Text = "Age";
 			this.ageCheckBox.UseVisualStyleBackColor = true;
 			// 
-			// groupBox1
+			// ageGroupBox
 			// 
-			this.groupBox1.Controls.Add(this.age1RadioButton);
-			this.groupBox1.Controls.Add(this.age2RadioButton);
-			this.groupBox1.Controls.Add(this.age3RadioButton);
-			this.groupBox1.Controls.Add(this.age4RadioButton);
-			this.groupBox1.Location = new System.Drawing.Point(99, 53);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(333, 41);
-			this.groupBox1.TabIndex = 49;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Visible = false;
+			this.ageGroupBox.Controls.Add(this.age1RadioButton);
+			this.ageGroupBox.Controls.Add(this.age2RadioButton);
+			this.ageGroupBox.Controls.Add(this.age3RadioButton);
+			this.ageGroupBox.Controls.Add(this.age4RadioButton);
+			this.ageGroupBox.Location = new System.Drawing.Point(99, 53);
+			this.ageGroupBox.Name = "ageGroupBox";
+			this.ageGroupBox.Size = new System.Drawing.Size(333, 41);
+			this.ageGroupBox.TabIndex = 49;
+			this.ageGroupBox.TabStop = false;
+			this.ageGroupBox.Visible = false;
 			// 
 			// age1RadioButton
 			// 
@@ -364,11 +324,51 @@
 			this.maleRadioButton.Text = "Male";
 			this.maleRadioButton.UseVisualStyleBackColor = true;
 			// 
+			// imageSmallDataGridViewImageColumn
+			// 
+			this.imageSmallDataGridViewImageColumn.DataPropertyName = "ImageSmall";
+			this.imageSmallDataGridViewImageColumn.HeaderText = "Image";
+			this.imageSmallDataGridViewImageColumn.Name = "imageSmallDataGridViewImageColumn";
+			this.imageSmallDataGridViewImageColumn.ReadOnly = true;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// genderDataGridViewTextBoxColumn
+			// 
+			this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+			this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+			this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+			this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// AgeColunm
+			// 
+			this.AgeColunm.HeaderText = "Age";
+			this.AgeColunm.Name = "AgeColunm";
+			// 
+			// relationshipStatusDataGridViewTextBoxColumn
+			// 
+			this.relationshipStatusDataGridViewTextBoxColumn.DataPropertyName = "RelationshipStatus";
+			this.relationshipStatusDataGridViewTextBoxColumn.HeaderText = "RelationshipStatus";
+			this.relationshipStatusDataGridViewTextBoxColumn.Name = "relationshipStatusDataGridViewTextBoxColumn";
+			this.relationshipStatusDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// religionDataGridViewTextBoxColumn
+			// 
+			this.religionDataGridViewTextBoxColumn.DataPropertyName = "Religion";
+			this.religionDataGridViewTextBoxColumn.HeaderText = "Religion";
+			this.religionDataGridViewTextBoxColumn.Name = "religionDataGridViewTextBoxColumn";
+			this.religionDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
 			// findARideUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(912, 980);
+			this.ClientSize = new System.Drawing.Size(728, 793);
 			this.Controls.Add(this.filterGroupBox);
 			this.Controls.Add(this.friendsResultDataGrid);
 			this.Controls.Add(this.workComboBox);
@@ -387,8 +387,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceRideFriendsGrid)).EndInit();
 			this.filterGroupBox.ResumeLayout(false);
 			this.filterGroupBox.PerformLayout();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
+			this.ageGroupBox.ResumeLayout(false);
+			this.ageGroupBox.PerformLayout();
 			this.GenderGroupBox.ResumeLayout(false);
 			this.GenderGroupBox.PerformLayout();
 			this.ResumeLayout(false);
@@ -409,16 +409,10 @@
 		private System.Windows.Forms.ComboBox workComboBox;
 		private System.Windows.Forms.DataGridView friendsResultDataGrid;
 		private System.Windows.Forms.BindingSource bindingSourceRideFriendsGrid;
-		private System.Windows.Forms.DataGridViewImageColumn imageSmallDataGridViewImageColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn PhoneColunm;
-		private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn relationshipStatusDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn religionDataGridViewTextBoxColumn;
 		private System.Windows.Forms.GroupBox filterGroupBox;
 		private System.Windows.Forms.Button FilterButton;
 		private System.Windows.Forms.CheckBox ageCheckBox;
-		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox ageGroupBox;
 		private System.Windows.Forms.RadioButton age1RadioButton;
 		private System.Windows.Forms.RadioButton age2RadioButton;
 		private System.Windows.Forms.RadioButton age3RadioButton;
@@ -427,5 +421,11 @@
 		private System.Windows.Forms.GroupBox GenderGroupBox;
 		private System.Windows.Forms.RadioButton famaleRadioButton;
 		private System.Windows.Forms.RadioButton maleRadioButton;
+		private System.Windows.Forms.DataGridViewImageColumn imageSmallDataGridViewImageColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn AgeColunm;
+		private System.Windows.Forms.DataGridViewTextBoxColumn relationshipStatusDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn religionDataGridViewTextBoxColumn;
 	}
 }

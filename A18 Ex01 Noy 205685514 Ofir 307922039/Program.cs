@@ -12,7 +12,7 @@ namespace A18_Ex01_Noy_205685514_Ofir_307922039
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new findARideUI());
 		}
 	}
 }

@@ -9,6 +9,5 @@ C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\De
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\Model.pdb
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\Facebook.dll
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\FbGraphApiWrapper.dll
-C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\obj\Debug\Model.dll
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\obj\Debug\Model.pdb

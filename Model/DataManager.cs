@@ -70,6 +70,30 @@ namespace Model
 			return allEventsNames;
 		}
 
+		public ICollection<string> GetWorkPlacesNames()
+		{
+			List<string> allWorkPlacesNames = new List<string>(m_LoggedInUser.WorkExperiences.Length);
+
+			foreach (WorkExperience currWorkPlace in m_LoggedInUser.WorkExperiences)
+			{
+				allWorkPlacesNames.Add(currWorkPlace.Name);
+			}
+
+			return allWorkPlacesNames;
+		}
+
+		public ICollection<string> GetAcademicInstitutionsNames()
+		{
+			List<string> allAcademicInstitutionsNames = new List<string>(m_LoggedInUser.Educations.Length);
+
+			foreach (Education currAcademicInstitution in m_LoggedInUser.Educations)
+			{
+				allAcademicInstitutionsNames.Add(currAcademicInstitution.School.Name);
+			}
+
+			return allAcademicInstitutionsNames;
+		}
+
 		public string GetFirstName()
 		{
 			return m_LoggedInUser.FirstName;
