@@ -28,30 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.logoutButton = new System.Windows.Forms.Button();
 			this.mainPanel = new System.Windows.Forms.Panel();
 			this.loginButton = new System.Windows.Forms.Button();
-			this.logoutButton = new System.Windows.Forms.Button();
 			this.mainPanel.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// mainPanel
-			// 
-			this.mainPanel.Controls.Add(this.loginButton);
-			this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.mainPanel.Location = new System.Drawing.Point(0, 0);
-			this.mainPanel.Name = "mainPanel";
-			this.mainPanel.Size = new System.Drawing.Size(600, 630);
-			this.mainPanel.TabIndex = 0;
-			// 
-			// loginButton
-			// 
-			this.loginButton.Location = new System.Drawing.Point(261, 304);
-			this.loginButton.Name = "loginButton";
-			this.loginButton.Size = new System.Drawing.Size(78, 23);
-			this.loginButton.TabIndex = 8;
-			this.loginButton.Text = "Login";
-			this.loginButton.UseVisualStyleBackColor = true;
-			this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
 			// 
 			// logoutButton
 			// 
@@ -62,7 +43,27 @@
 			this.logoutButton.Text = "Logout";
 			this.logoutButton.UseVisualStyleBackColor = true;
 			this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-
+			// 
+			// mainPanel
+			// 
+			this.mainPanel.BackgroundImage = global::UI.Properties.Resources.faccebook_background;
+			this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.mainPanel.Controls.Add(this.loginButton);
+			this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.mainPanel.Location = new System.Drawing.Point(0, 0);
+			this.mainPanel.Name = "mainPanel";
+			this.mainPanel.Size = new System.Drawing.Size(600, 630);
+			this.mainPanel.TabIndex = 0;
+			// 
+			// loginButton
+			// 
+			this.loginButton.Location = new System.Drawing.Point(253, 384);
+			this.loginButton.Name = "loginButton";
+			this.loginButton.Size = new System.Drawing.Size(104, 45);
+			this.loginButton.TabIndex = 8;
+			this.loginButton.Text = "Login";
+			this.loginButton.UseVisualStyleBackColor = true;
+			this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
 			// 
 			// FacebookApp
 			// 
