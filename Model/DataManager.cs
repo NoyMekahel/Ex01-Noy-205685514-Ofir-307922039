@@ -11,6 +11,7 @@ namespace Model
 	public class DataManager
 	{
 		private User m_LoggedInUser;
+
 		public Ride Ride { get; }
 
 		public DataManager(User i_LoggedInUser)
@@ -129,7 +130,6 @@ namespace Model
 			{
 				birthday = birthday.AddYears(1);
 			}
-
 
 			return (birthday - todayDate).Days;
 

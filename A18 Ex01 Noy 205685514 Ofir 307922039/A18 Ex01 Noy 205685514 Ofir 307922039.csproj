@@ -51,12 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FindARidePanel.cs" />
     <Compile Include="findARideUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="findARideUI.Designer.cs">
       <DependentUpon>findARideUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomePanel.cs" />
     <Compile Include="HomeUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FindARidePanel.resx">
+      <DependentUpon>FindARidePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="findARideUI.resx">
       <DependentUpon>findARideUI.cs</DependentUpon>
     </EmbeddedResource>

@@ -42,13 +42,31 @@
     <Compile Include="FacebookApp.Designer.cs">
       <DependentUpon>FacebookApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FindARidePanel.cs">
-      <SubType>Component</SubType>
+    <Compile Include="HomePageControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomePanel.cs">
-      <SubType>Component</SubType>
+    <Compile Include="HomePageControl.Designer.cs">
+      <DependentUpon>HomePageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ILogoutable.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RidePageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RidePageControl.Designer.cs">
+      <DependentUpon>RidePageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserDetailsControl.Designer.cs">
+      <DependentUpon>UserDetailsControl.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
@@ -73,9 +91,22 @@
     <EmbeddedResource Include="FacebookApp.resx">
       <DependentUpon>FacebookApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FindARidePanel.resx">
-      <DependentUpon>FindARidePanel.cs</DependentUpon>
+    <EmbeddedResource Include="HomePageControl.resx">
+      <DependentUpon>HomePageControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RidePageControl.resx">
+      <DependentUpon>RidePageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDetailsControl.resx">
+      <DependentUpon>UserDetailsControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facebook-Wallpapers.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

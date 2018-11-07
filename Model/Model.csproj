@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="AgeFilter.cs" />
     <Compile Include="DataManager.cs" />
-    <Compile Include="FacebookLogin.cs" />
+    <Compile Include="FacebookConnection.cs" />
     <Compile Include="GenderFilter.cs" />
     <Compile Include="IFilter.cs" />
     <Compile Include="Ride.cs" />

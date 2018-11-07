@@ -6,18 +6,9 @@ using System.Text;
 
 namespace Model
 {
-	// allowing datamanager to be created only when login is preformed
-
-	public class FacebookLogin
+	public class FacebookConnection
 	{
-		public DataManager DataManager { get; private set; }
-
-		public FacebookLogin()
-		{
-			loginToFacebook();
-		}
-
-		private void loginToFacebook()
+		public static DataManager Login()
 		{
 			LoginResult result = FacebookService.Login(
 				"264186474290093",
@@ -68,13 +59,18 @@ namespace Model
 
 			if (!string.IsNullOrEmpty(result.AccessToken))
 			{
-				DataManager = new DataManager(result.LoggedInUser);
+				 return (new DataManager(result.LoggedInUser));
 			}
 
 			else
 			{
 				throw new Exception(result.ErrorMessage);
 			}
+		}
+
+		public static void Logout()
+		{
+			FacebookService.Logout(null);
 		}
 	}
 }

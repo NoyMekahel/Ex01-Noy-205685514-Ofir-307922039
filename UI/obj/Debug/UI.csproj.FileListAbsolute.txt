@@ -21,3 +21,7 @@ C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.exe
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.pdb
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.FindARidePanel.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.RidePageControl.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.UserDetailsControl.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.HomePageControl.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.Properties.Resources.resources

@@ -12,35 +12,46 @@ namespace UI
 {
 	public partial class FacebookApp : Form
 	{
+
+		private HomePageControl homePageControl;
+		private RidePageControl ridePageControl;
+
 		public FacebookApp()
 		{
 			InitializeComponent();
-			showHomePage();
 		}
 
 		private void showHomePage()
 		{
-			homePanel = new HomePanel();
-			this.mainPanel.Controls.Add(this.homePanel);
-			this.homePanel.ResumeLayout(false);
-			this.homePanel.PerformLayout();
-			this.homePanel.findARideButton_AddListener(new EventHandler(findARideButton_Click));
+			mainPanel.Controls.Clear();
+			homePageControl = new HomePageControl();
+			homePageControl.AddLogoutButton(logoutButton);
+			this.mainPanel.Controls.Add(this.homePageControl);
+			this.homePageControl.findARideButton_AddClickedListener(new EventHandler(findARideButton_Click));
+		}
+
+		private void logoutButton_Click(object sender, EventArgs e)
+		{
+			FacebookConnection.Logout();
+			mainPanel.Controls.Clear();
+			mainPanel.Controls.Add(loginButton);
 		}
 
 		private void findARideButton_Click(object sender, EventArgs e)
 		{
-			findARidePanel = new FindARidePanel();
-			findARidePanel.backButton_AddListener(new EventHandler(backButton_Click));
+			ridePageControl = new RidePageControl();
+			ridePageControl.AddLogoutButton(logoutButton);
+			ridePageControl.backButton_AddListener(new EventHandler(backButton_Click));
 			mainPanel.Controls.Clear();
-			mainPanel.Controls.Add(findARidePanel);
+			mainPanel.Controls.Add(ridePageControl);
 		}
 
 		private void backButton_Click(object sender, EventArgs e)
 		{
+			homePageControl.AddLogoutButton(logoutButton);
 			mainPanel.Controls.Clear();
-			mainPanel.Controls.Add(homePanel);
+			mainPanel.Controls.Add(homePageControl);
 		}
-
 
 
 		public static void showFacebookError()
@@ -48,12 +59,23 @@ namespace UI
 			showFacebookError("An error has occured. Couldn't retrieve the requested information from facebook");
 		}
 
-		private HomePanel homePanel;
-		private FindARidePanel findARidePanel;
-
 		internal static void showFacebookError(string i_ErrorMessage)
 		{
 			MessageBox.Show(i_ErrorMessage);
+		}
+
+		private void loginButton_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				DataManager dataManager = FacebookConnection.Login();
+				DataManagerWrapper.setDataManager(this, dataManager);
+				showHomePage();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 }

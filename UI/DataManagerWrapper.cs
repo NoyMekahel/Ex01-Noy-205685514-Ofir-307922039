@@ -12,16 +12,16 @@ namespace UI
 	class DataManagerWrapper
 	{
 		public static DataManager DataManager { get; private set; }
-		private static HomePanel m_OwnerPanel;
+		private static FacebookApp m_OwnerApp;
 
-		internal static void setDataManager(HomePanel i_HomePanel, DataManager i_DataManager)
+		internal static void setDataManager(FacebookApp i_FacebookApp, DataManager i_DataManager)
 		{
 			if(DataManager == null)
 			{
-				m_OwnerPanel = i_HomePanel;
+				m_OwnerApp = i_FacebookApp;
 			}
 
-			if(m_OwnerPanel == i_HomePanel)
+			if(m_OwnerApp == i_FacebookApp)
 			{
 				DataManager = i_DataManager;
 			}

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
+	/*
 	public class FindARidePanel : Panel
 	{
 		private System.ComponentModel.IContainer components = null;
@@ -56,6 +57,25 @@ namespace UI
 				components.Dispose();
 			}
 			base.Dispose(disposing);
+		}
+
+		private void createLocationsList()
+		{
+			ICollection<string> locationsCollection = DataManagerWrapper.DataManager.GetSortedFriendsLocation();
+
+
+			foreach (string currentLocation in locationsCollection)
+			{
+				locationsListBox.Items.Add(currentLocation);
+			}
+
+			if (DataManagerWrapper.DataManager.GetWorkExperiences() != null)
+			{
+			}
+
+			if (DataManagerWrapper.DataManager.GetEducations() != null)
+			{
+			}
 		}
 
 		private void InitializeComponent()
@@ -629,29 +649,11 @@ namespace UI
 			}
 		}
 
-		private void createLocationsList()
-		{
-			ICollection<string> locationsCollection = DataManagerWrapper.DataManager.GetSortedFriendsLocation();
-
-
-			foreach (string currentLocation in locationsCollection)
-			{
-				locationsListBox.Items.Add(currentLocation);
-			}
-
-			if (DataManagerWrapper.DataManager.GetWorkExperiences() != null)
-			{
-			}
-
-			if (DataManagerWrapper.DataManager.GetEducations() != null)
-			{
-			}
-		}
-
 		private void visibleTableAndFilter()
 		{
 			friendsResultDataGrid.Visible = true;
 			filterGroupBox.Visible = true;
 		}
 	}
+	*/
 }

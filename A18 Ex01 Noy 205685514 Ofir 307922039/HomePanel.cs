@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace UI
-{
+{/*
 	public class HomePanel : Panel
 	{
 		private System.Windows.Forms.Button loginButton;
@@ -330,7 +330,7 @@ namespace UI
 			try
 			{
 				FacebookLogin login = new FacebookLogin();
-				DataManagerWrapper.setDataManager(this, login.DataManager);
+				//DataManagerWrapper.setDataManager(this, login.DataManager);
 
 				fetchUserInfo();
 			}
@@ -395,6 +395,6 @@ namespace UI
 		{
 			this.findARideButton.Click += i_EventHandler;
 		}
-
 	}
+	*/
 }
