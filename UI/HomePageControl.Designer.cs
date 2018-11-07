@@ -34,10 +34,10 @@
 			this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ImageSmall = new System.Windows.Forms.DataGridViewImageColumn();
-			this.aboutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.locationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.aboutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bindingSourceFriendsGrid = new System.Windows.Forms.BindingSource(this.components);
 			this.findARideButton = new System.Windows.Forms.Button();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -67,14 +67,15 @@
 			this.friendsDataGridView.AllowUserToResizeRows = false;
 			this.friendsDataGridView.AutoGenerateColumns = false;
 			this.friendsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+			this.friendsDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
 			this.friendsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.friendsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.friendsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstName,
             this.LastName,
             this.ImageSmall,
-            this.aboutDataGridViewTextBoxColumn,
             this.birthdayDataGridViewTextBoxColumn,
+            this.aboutDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.locationColumn});
 			this.friendsDataGridView.DataSource = this.bindingSourceFriendsGrid;
@@ -107,19 +108,25 @@
 			this.ImageSmall.Name = "ImageSmall";
 			this.ImageSmall.ReadOnly = true;
 			// 
-			// aboutDataGridViewTextBoxColumn
-			// 
-			this.aboutDataGridViewTextBoxColumn.DataPropertyName = "About";
-			this.aboutDataGridViewTextBoxColumn.HeaderText = "About";
-			this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
-			this.aboutDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
 			// birthdayDataGridViewTextBoxColumn
 			// 
 			this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
 			this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
 			this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
 			this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// locationColumn
+			// 
+			this.locationColumn.HeaderText = "Location";
+			this.locationColumn.Name = "locationColumn";
+			this.locationColumn.ReadOnly = true;
+			// 
+			// aboutDataGridViewTextBoxColumn
+			// 
+			this.aboutDataGridViewTextBoxColumn.DataPropertyName = "About";
+			this.aboutDataGridViewTextBoxColumn.HeaderText = "About";
+			this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
+			this.aboutDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// emailDataGridViewTextBoxColumn
 			// 
@@ -128,19 +135,13 @@
 			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
 			this.emailDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
-			// locationColumn
-			// 
-			this.locationColumn.HeaderText = "Location";
-			this.locationColumn.Name = "locationColumn";
-			this.locationColumn.ReadOnly = true;
-			// 
 			// bindingSourceFriendsGrid
 			// 
 			this.bindingSourceFriendsGrid.DataSource = typeof(FacebookWrapper.ObjectModel.User);
 			// 
 			// findARideButton
 			// 
-			this.findARideButton.Location = new System.Drawing.Point(15, 275);
+			this.findARideButton.Location = new System.Drawing.Point(43, 298);
 			this.findARideButton.Name = "findARideButton";
 			this.findARideButton.Size = new System.Drawing.Size(75, 23);
 			this.findARideButton.TabIndex = 9;
@@ -150,7 +151,8 @@
 			// 
 			// userDetailsControl
 			// 
-			this.userDetailsControl.Location = new System.Drawing.Point(15, 3);
+			this.userDetailsControl.BackColor = System.Drawing.Color.Transparent;
+			this.userDetailsControl.Location = new System.Drawing.Point(26, 29);
 			this.userDetailsControl.Name = "userDetailsControl";
 			this.userDetailsControl.Size = new System.Drawing.Size(231, 240);
 			this.userDetailsControl.TabIndex = 12;
@@ -158,13 +160,13 @@
 			// 
 			// HomePageControl
 			// 
+			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.userDetailsControl);
 			this.Controls.Add(this.friensListLabel);
 			this.Controls.Add(this.friendsDataGridView);
 			this.Controls.Add(this.findARideButton);
 			this.Name = "HomePageControl";
 			this.Size = new System.Drawing.Size(608, 637);
-			this.Load += new System.EventHandler(this.HomePageControl_Load);
 			((System.ComponentModel.ISupportInitialize)(this.friendsDataGridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceFriendsGrid)).EndInit();
 			this.ResumeLayout(false);
@@ -177,13 +179,6 @@
 		private System.Windows.Forms.DataGridView friendsDataGridView;
 		private System.Windows.Forms.Button findARideButton;
 		private System.Windows.Forms.BindingSource bindingSourceFriendsGrid;
-		private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-		private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-		private System.Windows.Forms.DataGridViewImageColumn ImageSmall;
-		private System.Windows.Forms.DataGridViewTextBoxColumn locationColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn aboutDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
 		#endregion
 
 		private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -191,5 +186,12 @@
 		private System.ComponentModel.BackgroundWorker backgroundWorker3;
 		private System.ComponentModel.BackgroundWorker backgroundWorker4;
 		private UserDetailsControl userDetailsControl;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+		private System.Windows.Forms.DataGridViewImageColumn ImageSmall;
+		private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn locationColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn aboutDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
 	}
 }

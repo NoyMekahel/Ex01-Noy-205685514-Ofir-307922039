@@ -23,15 +23,18 @@ namespace UI
 
 		private void showHomePage()
 		{
+			BackgroundImage = global::UI.Properties.Resources.facebook_widescreen_navy_background_image;
 			mainPanel.Controls.Clear();
 			homePageControl = new HomePageControl();
+			mainPanel.Controls.Add(this.homePageControl);
 			homePageControl.AddLogoutButton(logoutButton);
-			this.mainPanel.Controls.Add(this.homePageControl);
-			this.homePageControl.findARideButton_AddClickedListener(new EventHandler(findARideButton_Click));
+			homePageControl.findARideButton_AddClickedListener(new EventHandler(findARideButton_Click));
+			homePageControl.fetchUserInfo();
 		}
 
 		private void logoutButton_Click(object sender, EventArgs e)
 		{
+			this.BackgroundImage = global::UI.Properties.Resources.faccebook_background;
 			FacebookConnection.Logout();
 			mainPanel.Controls.Clear();
 			mainPanel.Controls.Add(loginButton);

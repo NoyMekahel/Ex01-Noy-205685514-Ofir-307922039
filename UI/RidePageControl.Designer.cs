@@ -367,6 +367,7 @@ namespace UI
 			// 
 			// RidePageControl
 			// 
+			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.filterGroupBox);
 			this.Controls.Add(this.friendsResultDataGrid);
 			this.Controls.Add(this.workComboBox);

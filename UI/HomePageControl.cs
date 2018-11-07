@@ -23,12 +23,6 @@ namespace UI
 			this.findARideButton.Click += i_EventHandler;
 		}
 
-		private void HomePageControl_Load(object sender, EventArgs e)
-		{
-			fetchUserInfo();
-		}
-
-
 		internal void fetchUserInfo()
 		{
 			findARideButton.Visible = true;
@@ -41,7 +35,8 @@ namespace UI
 				{
 					DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
 					cell.Value = currentUser.Location.Name;
-					friendsDataGridView.Rows[counter++].Cells[locationColumn.Index] = cell;
+					friendsDataGridView.Rows[counter].Cells[locationColumn.Index] = cell;
+					counter++;
 				}
 
 				userDetailsControl.ShowUserInfo();

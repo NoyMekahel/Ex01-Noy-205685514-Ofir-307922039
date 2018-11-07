@@ -36,7 +36,7 @@
 			// 
 			// logoutButton
 			// 
-			this.logoutButton.Location = new System.Drawing.Point(520, 8);
+			this.logoutButton.Location = new System.Drawing.Point(510, 15);
 			this.logoutButton.Name = "logoutButton";
 			this.logoutButton.Size = new System.Drawing.Size(78, 23);
 			this.logoutButton.TabIndex = 7;
@@ -46,7 +46,7 @@
 			// 
 			// mainPanel
 			// 
-			this.mainPanel.BackgroundImage = global::UI.Properties.Resources.faccebook_background;
+			this.mainPanel.BackColor = System.Drawing.Color.Transparent;
 			this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.mainPanel.Controls.Add(this.loginButton);
 			this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -57,12 +57,15 @@
 			// 
 			// loginButton
 			// 
+			this.loginButton.BackColor = System.Drawing.Color.MediumBlue;
+			this.loginButton.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold);
+			this.loginButton.ForeColor = System.Drawing.Color.White;
 			this.loginButton.Location = new System.Drawing.Point(253, 384);
 			this.loginButton.Name = "loginButton";
 			this.loginButton.Size = new System.Drawing.Size(104, 45);
 			this.loginButton.TabIndex = 8;
 			this.loginButton.Text = "Login";
-			this.loginButton.UseVisualStyleBackColor = true;
+			this.loginButton.UseVisualStyleBackColor = false;
 			this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
 			// 
 			// FacebookApp
@@ -70,6 +73,8 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
+			this.BackgroundImage = global::UI.Properties.Resources.faccebook_background;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(600, 630);
 			this.Controls.Add(this.mainPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
