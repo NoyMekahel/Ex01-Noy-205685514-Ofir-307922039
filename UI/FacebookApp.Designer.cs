@@ -41,7 +41,6 @@
 			this.logoutButton.Size = new System.Drawing.Size(78, 23);
 			this.logoutButton.TabIndex = 7;
 			this.logoutButton.Text = "Logout";
-			this.logoutButton.UseVisualStyleBackColor = true;
 			this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
 			// 
 			// mainPanel

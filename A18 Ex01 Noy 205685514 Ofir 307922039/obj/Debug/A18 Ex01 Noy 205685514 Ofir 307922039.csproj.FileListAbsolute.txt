@@ -38,3 +38,17 @@ C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\Model.dll
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\Model.pdb
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18_Ex01_Noy_205685514_Ofir_307922039.FindARidePanel.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.exe
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.pdb
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\Facebook.dll
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\FbGraphApiWrapper.dll
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\Model.dll
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\bin\Debug\Model.pdb
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.csprojResolveAssemblyReference.cache
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18_Ex01_Noy_205685514_Ofir_307922039.FindARidePanel.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18_Ex01_Noy_205685514_Ofir_307922039.findARideUI.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18_Ex01_Noy_205685514_Ofir_307922039.HomeUI.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18_Ex01_Noy_205685514_Ofir_307922039.Properties.Resources.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.csproj.GenerateResource.Cache
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.exe
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\A18 Ex01 Noy 205685514 Ofir 307922039\obj\Debug\A18 Ex01 Noy 205685514 Ofir 307922039.pdb

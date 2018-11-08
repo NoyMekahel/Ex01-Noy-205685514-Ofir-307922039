@@ -30,7 +30,6 @@ namespace UI
 			try
 			{
                 showUserFriends();
-                showUserAlbums();
                 userDetailsControl.ShowUserInfo();
 				userDetailsControl.Visible = true;
 			}
@@ -57,14 +56,14 @@ namespace UI
             }
         }
 
-        private void addSingleAlbum(Album currentAlbum)
+        private void addSingleAlbum(Album i_Album)
         {
             
             AlbumPictureBox albumToAdd = new AlbumPictureBox();
-            albumToAdd.Album = currentAlbum;
-            albumToAdd.Image = currentAlbum.ImageSmall;
-            albumToAdd.SizeMode = PictureBoxSizeMode.CenterImage;
+            albumToAdd.Album = i_Album;
+            albumToAdd.Image = i_Album.ImageSmall;
             albumToAdd.Size = new Size(140, 90);
+            albumToAdd.SizeMode = PictureBoxSizeMode.CenterImage;
             userAlbumsFlowLayoutPanel.Controls.Add(albumToAdd);
             albumToAdd.MouseHover += albumPictureBox_MouseHover;
             albumToAdd.MouseLeave += albumPictureBox_MouseLeave;
@@ -73,7 +72,25 @@ namespace UI
 
         private void albumPictureBox_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            albumsButton.Enabled = true;
+            AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
+            albumsNameLabel.Text = albumPictureBox.Album.Name;
+            Controls.Remove(userAlbumsFlowLayoutPanel);
+            Controls.Add(userAlbumsPhotosFlowLayoutPanel);
+            foreach (Photo currentPhoto in albumPictureBox.Album.Photos)
+            {
+                addSinglePhoto(currentPhoto);
+            }
+
+        }
+
+        private void addSinglePhoto(Photo i_Photo)
+        {
+            PictureBox photoToAdd = new PictureBox();
+            photoToAdd.Image = i_Photo.ImageNormal;
+            photoToAdd.Size = new Size(95, 80);
+            photoToAdd.SizeMode = PictureBoxSizeMode.StretchImage;
+            userAlbumsPhotosFlowLayoutPanel.Controls.Add(photoToAdd);
         }
 
         private void albumPictureBox_MouseLeave(object sender, EventArgs e)
@@ -124,5 +141,16 @@ namespace UI
 		{
 			Controls.Add(i_LogoutButton);
 		}
-	}
+
+        private void albumsButton_Click(object sender, EventArgs e)
+        {
+            albumsButton.Enabled = false;
+            albumsNameLabel.Text = string.Empty;
+            userAlbumsPhotosFlowLayoutPanel.Controls.Clear();
+            showUserAlbums();
+            Controls.Remove(userAlbumsPhotosFlowLayoutPanel);
+            Controls.Add(userAlbumsFlowLayoutPanel);
+
+        }
+    }
 }
