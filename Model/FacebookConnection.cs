@@ -16,9 +16,10 @@ namespace Model
 				"user_events",
 				"user_posts",
 				"user_location",
-				"user_friends"
-
-						/*		"user_education_history",
+				"user_friends",
+                "user_photos",
+                "user_likes"
+                        /*		"user_education_history",
 								  "user_birthday",
 								  "user_actions.video",
 								  "user_actions.news",
@@ -50,7 +51,7 @@ namespace Model
 									"publish_actions",
 									"rsvp_event" */
 
-						);
+                        );
 			// These are NOT the complete list of permissions. Other permissions for example:
 			// "user_birthday", "user_education_history", "user_hometown", "user_likes","user_location","user_relationships","user_relationship_details","user_religion_politics", "user_videos", "user_website", "user_work_history", "email","read_insights","rsvp_event","manage_pages"
 			// The documentation regarding facebook login and permissions can be found here: 

@@ -25,3 +25,18 @@ C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.UserDetailsControl.resources
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.HomePageControl.resources
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.exe
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.pdb
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\UI.exe
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\UI.pdb
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\Facebook.dll
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\FbGraphApiWrapper.dll
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\Model.dll
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\Model.pdb
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.FacebookApp.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.HomePageControl.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.RidePageControl.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.UserDetailsControl.resources
+C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.csproj.GenerateResource.Cache

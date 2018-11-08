@@ -249,5 +249,5 @@ namespace UI
 		{
 			Controls.Add(i_LogoutButton);
 		}
-	}
+    }
 }

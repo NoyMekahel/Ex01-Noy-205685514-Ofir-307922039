@@ -34,7 +34,12 @@ namespace Model
 			return m_LoggedInUser.Educations;
 		}
 
-		public FacebookObjectCollection<Event> GetEvents()
+        public FacebookObjectCollection<Album> GetAlbums()
+        {
+            return m_LoggedInUser.Albums;
+        }
+
+        public FacebookObjectCollection<Event> GetEvents()
 		{
 			return m_LoggedInUser.Events;
 		}

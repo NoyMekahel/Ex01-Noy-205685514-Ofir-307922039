@@ -35,6 +35,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AlbumPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataManagerWrapper.cs" />
     <Compile Include="FacebookApp.cs">
       <SubType>Form</SubType>
