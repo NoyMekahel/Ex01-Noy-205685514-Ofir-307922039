@@ -100,6 +100,7 @@ namespace UI
             albumPictureBox.Cursor = Cursors.Default;
             albumPictureBox.Invalidate();
 
+
         }
 
         private void albumPictureBox_MouseEnter(object sender, EventArgs e)
