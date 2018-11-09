@@ -65,7 +65,7 @@ namespace UI
             albumToAdd.Size = new Size(140, 90);
             albumToAdd.SizeMode = PictureBoxSizeMode.CenterImage;
             userAlbumsFlowLayoutPanel.Controls.Add(albumToAdd);
-            albumToAdd.MouseHover += albumPictureBox_MouseHover;
+            albumToAdd.MouseEnter += albumPictureBox_MouseEnter;
             albumToAdd.MouseLeave += albumPictureBox_MouseLeave;
             albumToAdd.Click += albumPictureBox_Click;
         }
@@ -96,20 +96,16 @@ namespace UI
         private void albumPictureBox_MouseLeave(object sender, EventArgs e)
         {
             AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
-            albumPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
+            //albumPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             albumPictureBox.Cursor = Cursors.Default;
-            //  Graphics.Clear(Color.White);
             albumPictureBox.Invalidate();
 
-            using (Graphics G = Graphics.FromImage(albumPictureBox.Image))
-            {
-            }
         }
 
-        private void albumPictureBox_MouseHover(object sender, EventArgs e)
+        private void albumPictureBox_MouseEnter(object sender, EventArgs e)
         {
             AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
-            albumPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            //albumPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             albumPictureBox.Cursor = Cursors.Hand;
             using (Graphics G = Graphics.FromImage(albumPictureBox.Image))
             {
@@ -125,17 +121,24 @@ namespace UI
 
         private void showUserFriends()
         {
-            FacebookObjectCollection<User> allFriends = DataManagerWrapper.DataManager.GetFriends();
-            bindingSourceFriendsGrid.DataSource = allFriends;
-            int counter = 0;
-            foreach (User currentUser in allFriends)
-            {
-                DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
-                cell.Value = currentUser.Location.Name;
-                friendsDataGridView.Rows[counter].Cells[locationColumn.Index] = cell;
-                counter++;
-            }
-        }
+			try
+			{
+				FacebookObjectCollection<User> allFriends = DataManagerWrapper.DataManager.GetFriends();
+				bindingSourceFriendsGrid.DataSource = allFriends;
+				int counter = 0;
+				foreach (User currentUser in allFriends)
+				{
+					DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
+					cell.Value = currentUser.Location.Name;
+					friendsDataGridView.Rows[counter].Cells[locationColumn.Index] = cell;
+					counter++;
+				}
+			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError();
+			}
+		}
 
         public void AddLogoutButton(Button i_LogoutButton)
 		{
@@ -145,12 +148,55 @@ namespace UI
         private void albumsButton_Click(object sender, EventArgs e)
         {
             albumsButton.Enabled = false;
+			userAlbumsFlowLayoutPanel.Visible = true;
             albumsNameLabel.Text = string.Empty;
             userAlbumsPhotosFlowLayoutPanel.Controls.Clear();
             showUserAlbums();
             Controls.Remove(userAlbumsPhotosFlowLayoutPanel);
             Controls.Add(userAlbumsFlowLayoutPanel);
-
         }
-    }
+
+		private void likedPagesButton_Click(object sender, EventArgs e)
+		{
+			albumsButton.Enabled = false;
+			showUserLikedPages();
+			likedPagesListView.Visible = true;
+		}
+
+		private void showUserLikedPages()
+		{
+			try
+			{
+				FacebookObjectCollection<Page> allLikedPages = DataManagerWrapper.DataManager.GetUserLikedPages();
+				ImageList allPagesImage = getAllPagesImage(allLikedPages);
+				likedPagesListView.SmallImageList = allPagesImage;
+
+				foreach (Page currentPage in allLikedPages)
+				{
+					ListViewItem item = new ListViewItem();
+					item.ImageIndex = 0;
+					item.SubItems.Add(currentPage.Name);
+					item.SubItems.Add(currentPage.LikesCount.ToString());
+					likedPagesListView.Items.Add(item);
+				}
+			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError("FaceBook error! Couldn't fetch liked pages data");
+			}
+
+		}
+
+		private ImageList getAllPagesImage(FacebookObjectCollection<Page> i_AllLikedPages)
+		{
+			ImageList allPagesImage = new ImageList();
+
+			foreach (Page currentPage in i_AllLikedPages)
+			{
+				allPagesImage.Images.Add(currentPage.ImageSmall);
+			}
+
+			return allPagesImage;
+		}
+	}
 }

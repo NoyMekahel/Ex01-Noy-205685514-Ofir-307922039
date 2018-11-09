@@ -128,7 +128,7 @@
 			this.firstNameDataLabel.AutoSize = true;
 			this.firstNameDataLabel.Location = new System.Drawing.Point(141, 128);
 			this.firstNameDataLabel.Name = "firstNameDataLabel";
-			this.firstNameDataLabel.Size = new System.Drawing.Size(35, 13);
+			this.firstNameDataLabel.Size = new System.Drawing.Size(41, 13);
 			this.firstNameDataLabel.TabIndex = 23;
 			this.firstNameDataLabel.Text = "label1";
 			// 
