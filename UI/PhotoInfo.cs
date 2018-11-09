@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using FacebookWrapper.ObjectModel;
 
 namespace UI
 {
@@ -23,6 +24,11 @@ namespace UI
 			photoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 			likesPictureBox.Image = global::UI.Properties.Resources.like;
 			likesLabel.Text = string.Format("Your photo liked by {0} people", i_photo.Photo.LikedBy.Count);
+			foreach (Comment comment in i_photo.Photo.Comments)
+			{
+				commentsListBox.Items.Add(comment.Message);
+			}
+			
 		}
 	}
 }

@@ -122,10 +122,7 @@ namespace UI
             AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
 			albumPictureBox.BorderStyle = BorderStyle.None;
 			albumPictureBox.Cursor = Cursors.Default;
-            //  Graphics.Clear(Color.White);
             albumPictureBox.Invalidate();
-
-
         }
 		
 		private void albumPictureBox_MouseHover(object sender, EventArgs e)
@@ -226,6 +223,35 @@ namespace UI
 			}
 
 			return allPagesImage;
+		}
+
+		private void postsButton_Click(object sender, EventArgs e)
+		{
+			showUserPosts();
+		}
+
+		private void showUserPosts()
+		{
+			try
+			{
+				FacebookObjectCollection<Post> allPosts = DataManagerWrapper.DataManager.GetUserPosts();
+		
+				foreach (Post currentPost in allPosts)
+				{
+					ListViewItem item = new ListViewItem();
+					item.SubItems.Add(currentPost.CreatedTime.ToString());
+					item.SubItems.Add(currentPost.Description.ToString());
+					likedPagesListView.Items.Add(item);
+				}
+
+				postsButton.Enabled = false;
+				postsListView.Visible = true;
+			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError("FaceBook error! Couldn't fetch posts data");
+			}
+
 		}
 	}
 }

@@ -63,6 +63,16 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap comments {
+            get {
+                object obj = ResourceManager.GetObject("comments", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap faccebook_background {
             get {
                 object obj = ResourceManager.GetObject("faccebook_background", resourceCulture);
@@ -116,6 +126,36 @@ namespace UI.Properties {
         internal static System.Drawing.Bitmap like {
             get {
                 object obj = ResourceManager.GetObject("like", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap likeGIF {
+            get {
+                object obj = ResourceManager.GetObject("likeGIF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_button {
+            get {
+                object obj = ResourceManager.GetObject("logout_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_button2 {
+            get {
+                object obj = ResourceManager.GetObject("logout_button2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

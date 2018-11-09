@@ -40,7 +40,12 @@
 			this.logoutButton.Name = "logoutButton";
 			this.logoutButton.Size = new System.Drawing.Size(78, 23);
 			this.logoutButton.TabIndex = 7;
-			this.logoutButton.Text = "Logout";
+			this.logoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.logoutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.logoutButton.FlatStyle= System.Windows.Forms.FlatStyle.Flat;
+			this.logoutButton.FlatAppearance.BorderSize = 0;
+			this.logoutButton.BackgroundImage = global::UI.Properties.Resources.logout_button;
+			this.logoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
 			// 
 			// mainPanel
@@ -50,8 +55,9 @@
 			this.mainPanel.Controls.Add(this.loginButton);
 			this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.mainPanel.Location = new System.Drawing.Point(0, 0);
+			this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.mainPanel.Name = "mainPanel";
-			this.mainPanel.Size = new System.Drawing.Size(600, 630);
+			this.mainPanel.Size = new System.Drawing.Size(948, 969);
 			this.mainPanel.TabIndex = 0;
 			// 
 			// loginButton
@@ -59,9 +65,10 @@
 			this.loginButton.BackColor = System.Drawing.Color.MediumBlue;
 			this.loginButton.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold);
 			this.loginButton.ForeColor = System.Drawing.Color.White;
-			this.loginButton.Location = new System.Drawing.Point(253, 384);
+			this.loginButton.Location = new System.Drawing.Point(408, 587);
+			this.loginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.loginButton.Name = "loginButton";
-			this.loginButton.Size = new System.Drawing.Size(104, 45);
+			this.loginButton.Size = new System.Drawing.Size(156, 69);
 			this.loginButton.TabIndex = 8;
 			this.loginButton.Text = "Login";
 			this.loginButton.UseVisualStyleBackColor = false;
@@ -69,14 +76,15 @@
 			// 
 			// FacebookApp
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackgroundImage = global::UI.Properties.Resources.faccebook_background;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(600, 630);
+			this.ClientSize = new System.Drawing.Size(948, 969);
 			this.Controls.Add(this.mainPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "FacebookApp";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FacebookApp";
