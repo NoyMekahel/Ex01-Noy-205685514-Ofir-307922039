@@ -1,4 +1,6 @@
-﻿namespace UI
+﻿using System.Drawing;
+
+namespace UI
 {
 	partial class HomePageControl
 	{
