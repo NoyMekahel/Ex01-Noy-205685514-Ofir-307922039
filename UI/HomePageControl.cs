@@ -127,23 +127,23 @@ namespace UI
 
 
         }
-
-        private void albumPictureBox_MouseHover(object sender, EventArgs e)
-        {
-            AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
+		
+		private void albumPictureBox_MouseHover(object sender, EventArgs e)
+		{
+			AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
 			albumPictureBox.BorderStyle = BorderStyle.Fixed3D;
 			albumPictureBox.Cursor = Cursors.Hand;
-            using (Graphics G = Graphics.FromImage(albumPictureBox.Image))
-            {
-                PointF locationToDraw = new PointF();
-                SizeF textSize = G.MeasureString(albumPictureBox.Album.Name, Font);
-				
-                locationToDraw.X = (albumPictureBox.Width / 2) - (textSize.Width / 2);
-                locationToDraw.Y = (albumPictureBox.Height / 2) - (textSize.Height / 2);
-                G.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-                G.DrawString(albumPictureBox.Album.Name, new Font(Font, FontStyle.Bold), Brushes.White, locationToDraw);
-            }
-        }
+			using (Graphics G = Graphics.FromHwnd(albumPictureBox.Handle))
+			{
+				PointF locationToDraw = new PointF();
+				SizeF textSize = G.MeasureString(albumPictureBox.Album.Name, Font);
+
+				locationToDraw.X = (albumPictureBox.Width / 2) - (textSize.Width / 2);
+				locationToDraw.Y = (albumPictureBox.Height / 2) - (textSize.Height / 2);
+				G.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+				G.DrawString(albumPictureBox.Album.Name, new Font(Font, FontStyle.Bold), Brushes.White, locationToDraw);
+			}
+		}
 
         private void showUserFriends()
         {
