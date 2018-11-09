@@ -56,24 +56,11 @@ namespace UI
             }
         }
 
-        private void addSingleAlbum(Album i_Album)
-        {
-            
-            AlbumPictureBox albumToAdd = new AlbumPictureBox();
-            albumToAdd.Album = i_Album;
-            albumToAdd.Image = i_Album.ImageSmall;
-            albumToAdd.Size = new Size(140, 90);
-            albumToAdd.SizeMode = PictureBoxSizeMode.CenterImage;
-            userAlbumsFlowLayoutPanel.Controls.Add(albumToAdd);
-            albumToAdd.MouseHover += albumPictureBox_MouseHover;
-            albumToAdd.MouseLeave += albumPictureBox_MouseLeave;
-            albumToAdd.Click += albumPictureBox_Click;
-        }
-
         private void albumPictureBox_Click(object sender, EventArgs e)
         {
             albumsButton.Enabled = true;
-            AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
+			albumsButton.Text = "Back to albums";
+			AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
             albumsNameLabel.Text = albumPictureBox.Album.Name;
             Controls.Remove(userAlbumsFlowLayoutPanel);
             Controls.Add(userAlbumsPhotosFlowLayoutPanel);
@@ -81,23 +68,60 @@ namespace UI
             {
                 addSinglePhoto(currentPhoto);
             }
-
         }
 
-        private void addSinglePhoto(Photo i_Photo)
+		private void addSingleAlbum(Album i_Album)
+		{
+			AlbumPictureBox albumToAdd = new AlbumPictureBox();
+			albumToAdd.Album = i_Album;
+			albumToAdd.Image = i_Album.ImageSmall;
+			albumToAdd.Size = new Size(140, 90);
+			albumToAdd.SizeMode = PictureBoxSizeMode.StretchImage;
+			userAlbumsFlowLayoutPanel.Controls.Add(albumToAdd);
+			albumToAdd.MouseHover += albumPictureBox_MouseHover;
+			albumToAdd.MouseLeave += albumPictureBox_MouseLeave;
+			albumToAdd.Click += albumPictureBox_Click;
+		}
+
+		private void addSinglePhoto(Photo i_Photo)
         {
-            PictureBox photoToAdd = new PictureBox();
+            PhotoPictureBox photoToAdd = new PhotoPictureBox();
+			photoToAdd.Photo = i_Photo;
             photoToAdd.Image = i_Photo.ImageNormal;
             photoToAdd.Size = new Size(95, 80);
             photoToAdd.SizeMode = PictureBoxSizeMode.StretchImage;
             userAlbumsPhotosFlowLayoutPanel.Controls.Add(photoToAdd);
-        }
+			photoToAdd.Click += photoPictureBox_Click;
+			photoToAdd.MouseHover += photoPictureBox_MouseHover;
+			photoToAdd.MouseLeave += photoPictureBox_MouseLeave;
+		}
 
-        private void albumPictureBox_MouseLeave(object sender, EventArgs e)
+		private void photoPictureBox_MouseLeave(object sender, EventArgs e)
+		{
+			PhotoPictureBox photoPictureBox = sender as PhotoPictureBox;
+			photoPictureBox.Cursor = Cursors.Default;
+			photoPictureBox.BorderStyle = BorderStyle.None;
+		}
+
+		private void photoPictureBox_MouseHover(object sender, EventArgs e)
+		{
+			PhotoPictureBox photoPictureBox = sender as PhotoPictureBox;
+			photoPictureBox.Cursor = Cursors.Hand;
+			photoPictureBox.BorderStyle = BorderStyle.Fixed3D;
+		}
+
+		private void photoPictureBox_Click(object sender, EventArgs e)
+		{
+			PhotoPictureBox photo = sender as PhotoPictureBox;
+			PhotoInfo photoInfo = new PhotoInfo(photo);
+			photoInfo.ShowDialog();
+		}
+
+		private void albumPictureBox_MouseLeave(object sender, EventArgs e)
         {
             AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
-            albumPictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
-            albumPictureBox.Cursor = Cursors.Default;
+			albumPictureBox.BorderStyle = BorderStyle.None;
+			albumPictureBox.Cursor = Cursors.Default;
             //  Graphics.Clear(Color.White);
             albumPictureBox.Invalidate();
 
@@ -109,13 +133,13 @@ namespace UI
         private void albumPictureBox_MouseHover(object sender, EventArgs e)
         {
             AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
-            albumPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            albumPictureBox.Cursor = Cursors.Hand;
+			albumPictureBox.BorderStyle = BorderStyle.Fixed3D;
+			albumPictureBox.Cursor = Cursors.Hand;
             using (Graphics G = Graphics.FromImage(albumPictureBox.Image))
             {
                 PointF locationToDraw = new PointF();
                 SizeF textSize = G.MeasureString(albumPictureBox.Album.Name, Font);
-            
+				
                 locationToDraw.X = (albumPictureBox.Width / 2) - (textSize.Width / 2);
                 locationToDraw.Y = (albumPictureBox.Height / 2) - (textSize.Height / 2);
                 G.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
@@ -145,6 +169,7 @@ namespace UI
         private void albumsButton_Click(object sender, EventArgs e)
         {
             albumsButton.Enabled = false;
+			albumsButton.Text = "Albums";
             albumsNameLabel.Text = string.Empty;
             userAlbumsPhotosFlowLayoutPanel.Controls.Clear();
             showUserAlbums();

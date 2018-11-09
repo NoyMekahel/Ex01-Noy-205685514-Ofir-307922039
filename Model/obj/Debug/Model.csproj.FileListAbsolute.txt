@@ -17,3 +17,4 @@ C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\F
 C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\obj\Debug\Model.dll
 C:\Users\ofiryk\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\obj\Debug\Model.pdb
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
