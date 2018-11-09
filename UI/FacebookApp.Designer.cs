@@ -78,6 +78,7 @@
 			this.Controls.Add(this.mainPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "FacebookApp";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FacebookApp";
 			this.mainPanel.ResumeLayout(false);
 			this.ResumeLayout(false);

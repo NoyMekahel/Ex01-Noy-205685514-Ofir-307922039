@@ -175,6 +175,7 @@ namespace UI
         {
             albumsButton.Enabled = false;
 			albumsButton.Text = "Albums";
+			userAlbumsFlowLayoutPanel.Controls.Clear();
 			userAlbumsFlowLayoutPanel.Visible = true;
             albumsNameLabel.Text = string.Empty;
             userAlbumsPhotosFlowLayoutPanel.Controls.Clear();
@@ -185,9 +186,7 @@ namespace UI
 
 		private void likedPagesButton_Click(object sender, EventArgs e)
 		{
-			albumsButton.Enabled = false;
 			showUserLikedPages();
-			likedPagesListView.Visible = true;
 		}
 
 		private void showUserLikedPages()
@@ -206,6 +205,9 @@ namespace UI
 					item.SubItems.Add(currentPage.LikesCount.ToString());
 					likedPagesListView.Items.Add(item);
 				}
+
+				likedPagesButton.Enabled = false;
+				likedPagesListView.Visible = true;
 			}
 			catch (Exception)
 			{

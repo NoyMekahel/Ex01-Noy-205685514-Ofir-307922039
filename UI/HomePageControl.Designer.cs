@@ -258,7 +258,7 @@ namespace UI
 			// 
 			// locationColumn
 			// 
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.locationColumn.DefaultCellStyle = dataGridViewCellStyle5;
 			this.locationColumn.HeaderText = "Location";
 			this.locationColumn.Name = "locationColumn";
@@ -267,7 +267,7 @@ namespace UI
 			// aboutDataGridViewTextBoxColumn
 			// 
 			this.aboutDataGridViewTextBoxColumn.DataPropertyName = "About";
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.aboutDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
 			this.aboutDataGridViewTextBoxColumn.HeaderText = "About";
 			this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
@@ -276,7 +276,7 @@ namespace UI
 			// emailDataGridViewTextBoxColumn
 			// 
 			this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Transparent;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 			this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
 			this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
 			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
