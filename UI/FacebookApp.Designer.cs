@@ -1,4 +1,6 @@
-﻿namespace UI
+﻿using System;
+
+namespace UI
 {
 	partial class FacebookApp
 	{
@@ -47,6 +49,8 @@
 			this.logoutButton.BackgroundImage = global::UI.Properties.Resources.logout_button;
 			this.logoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+			this.logoutButton.MouseEnter += new System.EventHandler(this.logoutButton_MouseEnter);
+			this.logoutButton.MouseLeave += new System.EventHandler(this.logoutButton_MouseLeave);
 			// 
 			// mainPanel
 			// 

@@ -25,148 +25,19 @@ namespace UI
 
 		private void createLocationsList()
 		{
-			ICollection<string> locationsCollection = DataManagerWrapper.DataManager.GetSortedFriendsLocation();
-
-
-			foreach (string currentLocation in locationsCollection)
-			{
-				locationsListBox.Items.Add(currentLocation);
-			}
-		}
-
-		private void eventButton_Click(object sender, EventArgs e)
-		{
-			eventsComboBox.Enabled = true;
-			ICollection<string> allEventsNames = DataManagerWrapper.DataManager.GetEventsNames();
-
-			foreach (string currEventName in allEventsNames)
-			{
-				eventsComboBox.Items.Add(currEventName);
-			}
-		}
-
-		private void eventsComboBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			visibleTableAndFilter();
-
 			try
 			{
-				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromChosenEvent((sender as ComboBox).SelectedItem.ToString());
-				fillFriendsResultDataTable(allFriendsFromStartPoint);
-			}
-			catch (Exception)
-			{
-				FacebookApp.showFacebookError();
-			}
-		}
+				ICollection<string> locationsCollection = DataManagerWrapper.DataManager.GetSortedFriendsLocation();
 
-		private void workButton_Click(object sender, EventArgs e)
-		{
-			workComboBox.Enabled = true;
-			ICollection<string> allWorkPlacesNames = DataManagerWrapper.DataManager.GetWorkPlacesNames();
-
-			foreach (string currWorkPlaceName in allWorkPlacesNames)
-			{
-				workComboBox.Items.Add(currWorkPlaceName);
-			}
-		}
-
-		private void workComboBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			visibleTableAndFilter();
-
-			try
-			{
-				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromWork((sender as ComboBox).SelectedItem.ToString());
-				fillFriendsResultDataTable(allFriendsFromStartPoint);
-			}
-			catch (Exception)
-			{
-				FacebookApp.showFacebookError();
-			}
-		}
-
-		private void academicInstitutionButton_Click(object sender, EventArgs e)
-		{
-			academicComboBox.Enabled = true;
-			ICollection<string> allAcademicInstitutionsNames = DataManagerWrapper.DataManager.GetAcademicInstitutionsNames();
-
-			foreach (string currAcademicInstitution in allAcademicInstitutionsNames)
-			{
-				academicComboBox.Items.Add(currAcademicInstitution);
-			}
-		}
-
-		private void academicComboBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			visibleTableAndFilter();
-
-			try
-			{
-				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromAcademicInstitution((sender as ComboBox).SelectedItem.ToString());
-				fillFriendsResultDataTable(allFriendsFromStartPoint);
-			}
-			catch (Exception)
-			{
-				FacebookApp.showFacebookError();
-			}
-		}
-
-		private void genderCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-			if (genderCheckBox.Checked)
-			{
-				GenderGroupBox.Visible = true;
-				FilterButton.Enabled = true;
-			}
-			else
-			{
-				GenderGroupBox.Visible = false;
-				if (ageCheckBox.Checked == false)
+				foreach (string currentLocation in locationsCollection)
 				{
-					FilterButton.Enabled = false;
+					locationsListBox.Items.Add(currentLocation);
 				}
 			}
-		}
-
-		private void ageCheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-			if (ageCheckBox.Checked)
+			catch(Exception)
 			{
-				ageGroupBox.Visible = true;
-				FilterButton.Enabled = true;
+				FacebookApp.showFacebookError("Couldn't fetch your friends location data.");
 			}
-			else
-			{
-				ageGroupBox.Visible = false;
-				if (genderCheckBox.Checked == false)
-				{
-					FilterButton.Enabled = false;
-				}
-			}
-		}
-
-		private void FilterButton_Click(object sender, EventArgs e)
-		{
-			if (genderCheckBox.Checked)
-			{
-				RadioButton genderPreferenceRadioButton = GenderGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-				DataManagerWrapper.DataManager.Ride.AddFilter(new GenderFilter(genderPreferenceRadioButton.Text));
-			}
-
-			if (ageCheckBox.Checked)
-			{
-				RadioButton agePreferenceRadioButton = ageGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-				DataManagerWrapper.DataManager.Ride.AddFilter(new AgeFilter(agePreferenceRadioButton.Text));
-			}
-
-			ICollection<User> friendsAfterFilter = DataManagerWrapper.DataManager.Ride.Filter();
-			bindingSourceRideFriendsGrid.DataSource = friendsAfterFilter;
-		}
-
-		public void backButton_AddListener(EventHandler i_EventHandler)
-		{
-			this.backButton.Click += i_EventHandler;
 		}
 
 		private void locationsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,6 +50,9 @@ namespace UI
 				{
 					handlePageAfterStartPointSelected();
 					DataManagerWrapper.DataManager.InitializeRide(m_RideFromLocationName);
+					MapForm map = new MapForm();
+					map.ShowLocationOnMap(m_RideFromLocationName);
+					map.ShowDialog();
 				}
 				catch (Exception ex)
 				{
@@ -187,62 +61,136 @@ namespace UI
 			}
 		}
 
-		private void fillFriendsResultDataTable(ICollection<User> i_AllFriendsFromStartPoint)
+		private void eventButton_Click(object sender, EventArgs e)
 		{
-			bindingSourceRideFriendsGrid.DataSource = i_AllFriendsFromStartPoint;
-			int counter = 0;
-			foreach (User currentUser in i_AllFriendsFromStartPoint)
+			try
 			{
-				DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
-				cell.Value = AgeFilter.GetAgeFromUserBirthday(currentUser.Birthday);
-				friendsResultDataGrid.Rows[counter++].Cells[AgeColunm.Index] = cell;
+				if (DataManagerWrapper.DataManager.GetEvents().Count > 0)
+				{
+					ICollection<string> allEventsNames = DataManagerWrapper.DataManager.GetEventsNames();
+
+					foreach (string currEventName in allEventsNames)
+					{
+						eventsComboBox.Items.Add(currEventName);
+					}
+					eventsComboBox.Enabled = true;
+				}
+				else
+				{
+					FacebookApp.showFacebookError("There are no events you go to.");
+				}
 			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError("Couldn't fetch your events data.");
+			}
+		}
+
+		private void eventsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+			try
+			{
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromChosenEvent((sender as ComboBox).SelectedItem.ToString());
+				filterControl.FillFriendsResultOnDataTable(allFriendsFromStartPoint);
+				filterControl.Visible = true;
+			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError();
+			}
+		}
+
+		private void workButton_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (DataManagerWrapper.DataManager.GetWorkExperiences() != null)
+				{
+					ICollection<string> allWorkPlacesNames = DataManagerWrapper.DataManager.GetWorkPlacesNames();
+
+					foreach (string currWorkPlaceName in allWorkPlacesNames)
+					{
+						workComboBox.Items.Add(currWorkPlaceName);
+					}
+					workComboBox.Enabled = true;
+				}
+				else
+				{
+					FacebookApp.showFacebookError("There are no places where you work.");
+				}
+			}
+
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError("Couldn't fetch your work experiences data.");
+			}
+		}
+
+		private void workComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromWork((sender as ComboBox).SelectedItem.ToString());
+				filterControl.FillFriendsResultOnDataTable(allFriendsFromStartPoint);
+				filterControl.Visible = true;
+			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError();
+			}
+		}
+
+		private void academicInstitutionButton_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (DataManagerWrapper.DataManager.GetEducations() != null)
+				{
+					ICollection<string> allAcademicInstitutionsNames = DataManagerWrapper.DataManager.GetAcademicInstitutionsNames();
+
+					foreach (string currAcademicInstitution in allAcademicInstitutionsNames)
+					{
+						academicComboBox.Items.Add(currAcademicInstitution);
+					}
+					academicComboBox.Enabled = true;
+				}
+				else
+				{
+					FacebookApp.showFacebookError("There are no academic institutions where you study.");
+				}
+			}
+
+			catch(Exception)
+			{
+				FacebookApp.showFacebookError("Couldn't fetch your academic institutions data.");
+			}
+		}
+
+		private void academicComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromAcademicInstitution((sender as ComboBox).SelectedItem.ToString());
+				filterControl.FillFriendsResultOnDataTable(allFriendsFromStartPoint);
+				filterControl.Visible = true;
+			}
+			catch (Exception)
+			{
+				FacebookApp.showFacebookError();
+			}
+		}
+
+		public void backButton_AddListener(EventHandler i_EventHandler)
+		{
+			this.backButton.Click += i_EventHandler;
 		}
 
 		private void handlePageAfterStartPointSelected()
 		{
-			bool isFacebookError = false;
-			string errorMessage = "Couldn't fetch the following data: " + Environment.NewLine;
-
-			if (DataManagerWrapper.DataManager.GetEducations() != null)
-			{
-				academicInstitutionButton.Enabled = true;
-			}
-			else
-			{
-				isFacebookError = true;
-				errorMessage += "Educations" + Environment.NewLine;
-			}
-
-			if (DataManagerWrapper.DataManager.GetEvents().Count > 0)
-			{
-				eventButton.Enabled = true;
-			}
-			else
-			{
-				eventsComboBox.Text = "No Upcoming Events!";
-			}
-
-			if (DataManagerWrapper.DataManager.GetWorkExperiences() != null)
-			{
-				workButton.Enabled = true;
-			}
-			else
-			{
-				errorMessage += "Work" + Environment.NewLine;
-				isFacebookError = true;
-			}
-
-			if (isFacebookError)
-			{
-				FacebookApp.showFacebookError(errorMessage);
-			}
-		}
-
-		private void visibleTableAndFilter()
-		{
-			friendsResultDataGrid.Visible = true;
-			filterGroupBox.Visible = true;
+			academicInstitutionButton.Enabled = true;
+			eventButton.Enabled = true;
+			workButton.Enabled = true;
 		}
 
 		public void AddLogoutButton(Button i_LogoutButton)

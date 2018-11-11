@@ -40,6 +40,18 @@ namespace UI
 			mainPanel.Controls.Add(loginButton);
 		}
 
+		private void logoutButton_MouseLeave(object sender, EventArgs e)
+		{
+			Button logoutButton = sender as Button;
+			logoutButton.Cursor = Cursors.Default;
+		}
+
+		private void logoutButton_MouseEnter(object sender, EventArgs e)
+		{
+			Button logoutButton = sender as Button;
+			logoutButton.Cursor = Cursors.Hand;
+		}
+
 		private void findARideButton_Click(object sender, EventArgs e)
 		{
 			ridePageControl = new RidePageControl();

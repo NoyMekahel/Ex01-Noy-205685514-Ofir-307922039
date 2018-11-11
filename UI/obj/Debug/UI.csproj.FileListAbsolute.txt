@@ -45,3 +45,5 @@ C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.UserDetailsControl.resources
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.PhotoInfo.resources
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.PhotoInfo.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.MapForm.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.FilterControl.resources

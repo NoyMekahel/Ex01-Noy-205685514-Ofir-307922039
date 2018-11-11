@@ -18,14 +18,21 @@ namespace UI
 
 		internal void ShowUserInfo()
 		{
-			userProfilePictureBox.LoadAsync(DataManagerWrapper.DataManager.GetPictureNormalURL());
-			firstNameDataLabel.Text = DataManagerWrapper.DataManager.GetFirstName();
-			lastNameDataLabel.Text = DataManagerWrapper.DataManager.GetLastName();
-			emailDataLabel.Text = DataManagerWrapper.DataManager.GetEmail();
-			birthdayDataLabel.Text = DataManagerWrapper.DataManager.GetBirthday();
-			string daysTillBirthday = DataManagerWrapper.DataManager.GetDaysTillBirthday().ToString();
+			try
+			{
+				userProfilePictureBox.LoadAsync(DataManagerWrapper.DataManager.GetPictureNormalURL());
+				firstNameDataLabel.Text = DataManagerWrapper.DataManager.GetFirstName();
+				lastNameDataLabel.Text = DataManagerWrapper.DataManager.GetLastName();
+				emailDataLabel.Text = DataManagerWrapper.DataManager.GetEmail();
+				birthdayDataLabel.Text = DataManagerWrapper.DataManager.GetBirthday();
+				string daysTillBirthday = DataManagerWrapper.DataManager.GetDaysTillBirthday().ToString();
 
-			daysTillBirthdayDataLabel.Text = daysTillBirthday.Equals("0") ? "Happy Birthday!" : daysTillBirthday;
+				daysTillBirthdayDataLabel.Text = daysTillBirthday.Equals("0") ? "Happy Birthday!" : daysTillBirthday;
+			}
+			catch(Exception)
+			{
+				FacebookApp.showFacebookError();
+			}
 		}
 	}
 }

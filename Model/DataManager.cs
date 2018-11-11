@@ -12,7 +12,7 @@ namespace Model
 	{
 		private User m_LoggedInUser;
 
-		public Ride Ride { get; }
+		public Ride Ride { get; } = new Ride();
 
 		public DataManager(User i_LoggedInUser)
 		{

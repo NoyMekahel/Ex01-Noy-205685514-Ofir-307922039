@@ -45,6 +45,12 @@
     <Compile Include="FacebookApp.Designer.cs">
       <DependentUpon>FacebookApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FilterControl.Designer.cs">
+      <DependentUpon>FilterControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -52,6 +58,12 @@
       <DependentUpon>HomePageControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ILogoutable.cs" />
+    <Compile Include="MapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapForm.Designer.cs">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhotoInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +115,14 @@
     <EmbeddedResource Include="FacebookApp.resx">
       <DependentUpon>FacebookApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FilterControl.resx">
+      <DependentUpon>FilterControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePageControl.resx">
       <DependentUpon>HomePageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapForm.resx">
+      <DependentUpon>MapForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhotoInfo.resx">
       <DependentUpon>PhotoInfo.cs</DependentUpon>
@@ -149,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout-button2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
