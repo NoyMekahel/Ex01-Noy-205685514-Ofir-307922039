@@ -197,5 +197,17 @@ namespace UI
 		{
 			Controls.Add(i_LogoutButton);
 		}
-    }
+
+		private void backButton_MouseLeave(object sender, EventArgs e)
+		{
+			Button logoutButton = sender as Button;
+			logoutButton.Cursor = Cursors.Default;
+		}
+
+		private void backButton_MouseEnter(object sender, EventArgs e)
+		{
+			Button logoutButton = sender as Button;
+			logoutButton.Cursor = Cursors.Hand;
+		}
+	}
 }

@@ -68,7 +68,6 @@ namespace UI
 			mainPanel.Controls.Add(homePageControl);
 		}
 
-
 		public static void showFacebookError()
 		{
 			showFacebookError("An error has occured. Couldn't retrieve the requested information from facebook");
