@@ -36,11 +36,18 @@ namespace UI
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.friensListLabel = new System.Windows.Forms.Label();
 			this.friendsDataGridView = new System.Windows.Forms.DataGridView();
+			this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ImageSmall = new System.Windows.Forms.DataGridViewImageColumn();
+			this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.locationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.aboutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bindingSourceFriendsGrid = new System.Windows.Forms.BindingSource(this.components);
 			this.findARideButton = new System.Windows.Forms.Button();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -53,8 +60,7 @@ namespace UI
 			this.likedPagesButton = new System.Windows.Forms.Button();
 			this.postsButton = new System.Windows.Forms.Button();
 			this.postsListView = new System.Windows.Forms.ListView();
-			this.fromColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.descriptionColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.postDateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.likedPagesListView = new System.Windows.Forms.ListView();
 			this.ImageColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.pageNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,14 +68,8 @@ namespace UI
 			this.userAlbumsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.messagesColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.userDetailsControl = new UI.UserDetailsControl();
-			this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ImageSmall = new System.Windows.Forms.DataGridViewImageColumn();
-			this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.locationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.aboutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.friendsDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceFriendsGrid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -102,9 +102,9 @@ namespace UI
             this.LastName,
             this.ImageSmall,
             this.birthdayDataGridViewTextBoxColumn,
-            this.locationColumn,
             this.aboutDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn});
+            this.emailDataGridViewTextBoxColumn,
+            this.locationColumn});
 			this.friendsDataGridView.DataSource = this.bindingSourceFriendsGrid;
 			this.friendsDataGridView.Location = new System.Drawing.Point(2, 464);
 			this.friendsDataGridView.Margin = new System.Windows.Forms.Padding(2);
@@ -121,6 +121,69 @@ namespace UI
 			this.friendsDataGridView.RowTemplate.Height = 28;
 			this.friendsDataGridView.Size = new System.Drawing.Size(626, 164);
 			this.friendsDataGridView.TabIndex = 10;
+			// 
+			// FirstName
+			// 
+			this.FirstName.DataPropertyName = "FirstName";
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.FirstName.DefaultCellStyle = dataGridViewCellStyle1;
+			this.FirstName.HeaderText = "FirstName";
+			this.FirstName.Name = "FirstName";
+			this.FirstName.ReadOnly = true;
+			// 
+			// LastName
+			// 
+			this.LastName.DataPropertyName = "LastName";
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.LastName.DefaultCellStyle = dataGridViewCellStyle2;
+			this.LastName.HeaderText = "LastName";
+			this.LastName.Name = "LastName";
+			this.LastName.ReadOnly = true;
+			// 
+			// ImageSmall
+			// 
+			this.ImageSmall.DataPropertyName = "ImageSmall";
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.NullValue = null;
+			this.ImageSmall.DefaultCellStyle = dataGridViewCellStyle3;
+			this.ImageSmall.HeaderText = "Image";
+			this.ImageSmall.Name = "ImageSmall";
+			this.ImageSmall.ReadOnly = true;
+			// 
+			// birthdayDataGridViewTextBoxColumn
+			// 
+			this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.birthdayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+			this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
+			this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
+			this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// locationColumn
+			// 
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.locationColumn.DefaultCellStyle = dataGridViewCellStyle7;
+			this.locationColumn.HeaderText = "Location";
+			this.locationColumn.Name = "locationColumn";
+			this.locationColumn.ReadOnly = true;
+			// 
+			// aboutDataGridViewTextBoxColumn
+			// 
+			this.aboutDataGridViewTextBoxColumn.DataPropertyName = "About";
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.aboutDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+			this.aboutDataGridViewTextBoxColumn.HeaderText = "About";
+			this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
+			this.aboutDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// emailDataGridViewTextBoxColumn
+			// 
+			this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+			this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+			this.emailDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// bindingSourceFriendsGrid
 			// 
@@ -188,8 +251,8 @@ namespace UI
 			// 
 			this.postsListView.BackgroundImage = global::UI.Properties.Resources.facebook_widescreen_navy_background_image;
 			this.postsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.fromColumn,
-            this.descriptionColumn});
+            this.postDateColumn,
+            this.messagesColumn});
 			this.postsListView.Location = new System.Drawing.Point(264, 328);
 			this.postsListView.Name = "postsListView";
 			this.postsListView.Size = new System.Drawing.Size(324, 97);
@@ -198,17 +261,11 @@ namespace UI
 			this.postsListView.View = System.Windows.Forms.View.Details;
 			this.postsListView.Visible = false;
 			// 
-			// fromColumn
+			// postDateColumn
 			// 
-			this.fromColumn.DisplayIndex = 1;
-			this.fromColumn.Text = "From";
-			// 
-			// descriptionColumn
-			// 
-			this.descriptionColumn.DisplayIndex = 0;
-			this.descriptionColumn.Text = "Post Description";
-			this.descriptionColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.descriptionColumn.Width = 200;
+			this.postDateColumn.Text = "Date";
+			this.postDateColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.postDateColumn.Width = 106;
 			// 
 			// likedPagesListView
 			// 
@@ -254,6 +311,12 @@ namespace UI
 			this.userAlbumsFlowLayoutPanel.TabIndex = 13;
 			this.userAlbumsFlowLayoutPanel.Visible = false;
 			// 
+			// messagesColumn
+			// 
+			this.messagesColumn.Text = "Message";
+			this.messagesColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.messagesColumn.Width = 211;
+			// 
 			// userDetailsControl
 			// 
 			this.userDetailsControl.BackColor = System.Drawing.Color.Transparent;
@@ -262,69 +325,6 @@ namespace UI
 			this.userDetailsControl.Name = "userDetailsControl";
 			this.userDetailsControl.Size = new System.Drawing.Size(231, 240);
 			this.userDetailsControl.TabIndex = 12;
-			// 
-			// FirstName
-			// 
-			this.FirstName.DataPropertyName = "FirstName";
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.FirstName.DefaultCellStyle = dataGridViewCellStyle1;
-			this.FirstName.HeaderText = "FirstName";
-			this.FirstName.Name = "FirstName";
-			this.FirstName.ReadOnly = true;
-			// 
-			// LastName
-			// 
-			this.LastName.DataPropertyName = "LastName";
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.LastName.DefaultCellStyle = dataGridViewCellStyle2;
-			this.LastName.HeaderText = "LastName";
-			this.LastName.Name = "LastName";
-			this.LastName.ReadOnly = true;
-			// 
-			// ImageSmall
-			// 
-			this.ImageSmall.DataPropertyName = "ImageSmall";
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.NullValue = null;
-			this.ImageSmall.DefaultCellStyle = dataGridViewCellStyle3;
-			this.ImageSmall.HeaderText = "Image";
-			this.ImageSmall.Name = "ImageSmall";
-			this.ImageSmall.ReadOnly = true;
-			// 
-			// birthdayDataGridViewTextBoxColumn
-			// 
-			this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.birthdayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-			this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
-			this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
-			this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// locationColumn
-			// 
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.locationColumn.DefaultCellStyle = dataGridViewCellStyle5;
-			this.locationColumn.HeaderText = "Location";
-			this.locationColumn.Name = "locationColumn";
-			this.locationColumn.ReadOnly = true;
-			// 
-			// aboutDataGridViewTextBoxColumn
-			// 
-			this.aboutDataGridViewTextBoxColumn.DataPropertyName = "About";
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.aboutDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-			this.aboutDataGridViewTextBoxColumn.HeaderText = "About";
-			this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
-			this.aboutDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// emailDataGridViewTextBoxColumn
-			// 
-			this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-			this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-			this.emailDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// HomePageControl
 			// 
@@ -374,10 +374,9 @@ namespace UI
 		private System.Windows.Forms.ColumnHeader ImageColumnHeader;
 		private System.Windows.Forms.ListView likedPagesListView;
 		private System.Windows.Forms.ListView postsListView;
-		private System.Windows.Forms.ColumnHeader descriptionColumn;
+		private System.Windows.Forms.ColumnHeader postDateColumn;
 		private System.Windows.Forms.Button postsButton;
 		private System.Windows.Forms.BindingSource postsBindingSource;
-		private System.Windows.Forms.ColumnHeader fromColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
 		private System.Windows.Forms.DataGridViewImageColumn ImageSmall;
@@ -385,5 +384,6 @@ namespace UI
 		private System.Windows.Forms.DataGridViewTextBoxColumn locationColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn aboutDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+		private System.Windows.Forms.ColumnHeader messagesColumn;
 	}
 }

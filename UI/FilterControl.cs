@@ -71,7 +71,7 @@ namespace UI
 		}
 
 		internal void FillFriendsResultOnDataTable(ICollection<User> i_AllFriendsFromStartPoint)
-		{
+		{ 
 			bindingSourceRideFriendsGrid.DataSource = i_AllFriendsFromStartPoint;
 			int counter = 0;
 			foreach (User currentUser in i_AllFriendsFromStartPoint)

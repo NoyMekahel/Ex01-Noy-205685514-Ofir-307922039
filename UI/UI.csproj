@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -91,6 +91,12 @@
     <Compile Include="UserDetailsControl.Designer.cs">
       <DependentUpon>UserDetailsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="VideoCreatorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VideoCreatorControl.Designer.cs">
+      <DependentUpon>VideoCreatorControl.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
@@ -137,8 +143,12 @@
     <EmbeddedResource Include="UserDetailsControl.resx">
       <DependentUpon>UserDetailsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VideoCreatorControl.resx">
+      <DependentUpon>VideoCreatorControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\faccebook-background.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -167,9 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout-button2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

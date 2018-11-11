@@ -238,10 +238,13 @@ namespace UI
 		
 				foreach (Post currentPost in allPosts)
 				{
-					ListViewItem item = new ListViewItem();
-					item.SubItems.Add(currentPost.CreatedTime.ToString());
-					item.SubItems.Add(currentPost.Description.ToString());
-					likedPagesListView.Items.Add(item);
+					if (currentPost.Message != null)
+					{
+						ListViewItem item = new ListViewItem();
+						item.Text = currentPost.CreatedTime.ToString();
+						item.SubItems.Add(currentPost.Message);
+						postsListView.Items.Add(item);
+					}
 				}
 
 				postsButton.Enabled = false;
