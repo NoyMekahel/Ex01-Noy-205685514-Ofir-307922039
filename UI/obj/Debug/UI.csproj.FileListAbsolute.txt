@@ -67,3 +67,4 @@ C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debu
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debug\UI.UserDetailsControl.resources
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debug\UI.VideoCreatorControl.resources
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.AlbumControl.resources

@@ -15,5 +15,34 @@ namespace UI
 		{
 			InitializeComponent();
 		}
+
+		private void sharedPhotosRadioButton_CheckedChanged(object sender, EventArgs e)
+		{
+			if(sharedPhotosRadioButton.Checked == true)
+			{
+
+			}
+			else
+			{
+				friendsCheckedListBox.Visible = false;
+			}
+		}
+
+		private void albumsPhotosRadioButton_CheckedChanged(object sender, EventArgs e)
+		{
+			if (albumsPhotosRadioButton.Checked == true)
+			{
+
+			}
+			else
+			{
+				albumsCheckedListBox.Visible = false;
+			}
+		}
+
+		private void createVideoButton_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

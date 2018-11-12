@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -35,6 +35,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AlbumControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlbumControl.Designer.cs">
+      <DependentUpon>AlbumControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlbumPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AlbumControl.resx">
+      <DependentUpon>AlbumControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacebookApp.resx">
       <DependentUpon>FacebookApp.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,7 +157,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Resources\faccebook-background.jpg" />
   </ItemGroup>
   <ItemGroup>
