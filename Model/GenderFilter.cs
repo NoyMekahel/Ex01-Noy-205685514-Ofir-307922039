@@ -22,7 +22,7 @@ namespace Model
 
 			foreach (User user in i_Friends)
 			{
-				if (user.Gender.Value == m_GenderType)
+				if (user.Gender == m_GenderType)
 				{
 					friendsFromStartPointToEndPoint.Add(user);
 				}

@@ -29,6 +29,28 @@ namespace Model
 			return m_LoggedInUser.Friends;
 		}
 
+		public ICollection<string> GetFriendsNames()
+		{
+			List<string> allNames = new List<string>();
+
+			foreach(User friend in m_LoggedInUser.Friends)
+			{
+				allNames.Add(friend.Name);
+			}
+			return allNames;
+		}
+
+		public ICollection<string> GetAlbumsNames()
+		{
+			List<string> allNames = new List<string>();
+
+			foreach (Album album in m_LoggedInUser.Albums)
+			{
+				allNames.Add(album.Name);
+			}
+			return allNames;
+		}
+
 		public Education[] GetEducations()
 		{
 			return m_LoggedInUser.Educations;
@@ -98,6 +120,24 @@ namespace Model
 			return allWorkPlacesNames;
 		}
 
+		public FacebookObjectCollection<Photo> GetAlbumsPhotos(ICollection<string> i_AlbumsNamesCollection)
+		{
+			FacebookObjectCollection<Photo> photosCollection = new FacebookObjectCollection<Photo>();
+
+			foreach (Album album in m_LoggedInUser.Albums)
+			{
+				if (i_AlbumsNamesCollection.Contains(album.Name))
+				{
+					foreach (Photo photo in album.Photos)
+					{
+						photosCollection.Add(photo);
+					}
+				}
+			}
+
+			return photosCollection;
+		}
+
 		public ICollection<string> GetAcademicInstitutionsNames()
 		{
 			List<string> allAcademicInstitutionsNames = new List<string>(m_LoggedInUser.Educations.Length);
@@ -108,6 +148,28 @@ namespace Model
 			}
 
 			return allAcademicInstitutionsNames;
+		}
+
+		public FacebookObjectCollection<Photo> GetSharedFriendsPhotos(ICollection<string> i_FriendsNamesCollection)
+		{
+			FacebookObjectCollection<Photo> photosList = new FacebookObjectCollection<Photo>();
+
+			foreach (Album album in m_LoggedInUser.Albums)
+			{
+				foreach (Photo photo in album.Photos)
+				{
+					foreach (PhotoTag tag in photo.Tags)
+					{
+						if (i_FriendsNamesCollection.Contains(tag.User.Name))
+						{
+							photosList.Add(photo);
+							break;
+						}
+					}
+				}
+			}
+
+			return photosList;
 		}
 
 		public string GetFirstName()

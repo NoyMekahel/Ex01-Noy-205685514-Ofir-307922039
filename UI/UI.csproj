@@ -63,6 +63,7 @@
     <Compile Include="HomePageControl.Designer.cs">
       <DependentUpon>HomePageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="IBackable.cs" />
     <Compile Include="ILogoutable.cs" />
     <Compile Include="MapForm.cs">
       <SubType>Form</SubType>
@@ -97,11 +98,11 @@
     <Compile Include="UserDetailsControl.Designer.cs">
       <DependentUpon>UserDetailsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="VideoCreatorControl.cs">
+    <Compile Include="VideoCreatorPageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VideoCreatorControl.Designer.cs">
-      <DependentUpon>VideoCreatorControl.cs</DependentUpon>
+    <Compile Include="VideoCreatorPageControl.Designer.cs">
+      <DependentUpon>VideoCreatorPageControl.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -152,11 +153,12 @@
     <EmbeddedResource Include="UserDetailsControl.resx">
       <DependentUpon>UserDetailsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VideoCreatorControl.resx">
-      <DependentUpon>VideoCreatorControl.cs</DependentUpon>
+    <EmbeddedResource Include="VideoCreatorPageControl.resx">
+      <DependentUpon>VideoCreatorPageControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Photo.datasource" />
     <None Include="Resources\faccebook-background.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loading_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

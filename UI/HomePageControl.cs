@@ -18,7 +18,7 @@ namespace UI
 			InitializeComponent();
 		}
 
-		public void findARideButton_AddClickedListener(EventHandler i_EventHandler)
+		internal void FindARideButton_AddClickedListener(EventHandler i_EventHandler)
 		{
 			this.findARideButton.Click += i_EventHandler;
 		}
@@ -118,7 +118,7 @@ namespace UI
 			try
 			{
 				FacebookObjectCollection<Post> allPosts = DataManagerWrapper.DataManager.GetUserPosts();
-		
+
 				foreach (Post currentPost in allPosts)
 				{
 					if (currentPost.Message != null)
@@ -129,7 +129,8 @@ namespace UI
 						postsListView.Items.Add(item);
 					}
 				}
-
+				postsListView.Columns[messagesColumn.Index].Width = -1;
+				//postsListView.BackgroundImage.
 				postsButton.Enabled = false;
 				postsListView.Visible = true;
 			}
@@ -150,6 +151,11 @@ namespace UI
 		{
 			Button button = sender as Button;
 			button.Cursor = Cursors.Default;
+		}
+
+		internal void CreateVideoButton_AddClickedListener(EventHandler i_EventHandler)
+		{
+			this.createVideoButton.Click += i_EventHandler;
 		}
 	}
 }

@@ -31,7 +31,6 @@ namespace UI
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.backButton = new System.Windows.Forms.Button();
 			this.fromLocationLabel = new System.Windows.Forms.Label();
 			this.eventsComboBox = new System.Windows.Forms.ComboBox();
 			this.locationsListBox = new System.Windows.Forms.ListBox();
@@ -45,30 +44,13 @@ namespace UI
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceRideFriendsGrid)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// backButton
-			// 
-			this.backButton.BackgroundImage = global::UI.Properties.Resources.back_button2;
-			this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.backButton.FlatAppearance.BorderSize = 0;
-			this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.backButton.Location = new System.Drawing.Point(13, 595);
-			this.backButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.backButton.Name = "backButton";
-			this.backButton.Size = new System.Drawing.Size(75, 22);
-			this.backButton.TabIndex = 30;
-			this.backButton.UseVisualStyleBackColor = true;
-			this.backButton.MouseEnter += new System.EventHandler(this.backButton_MouseEnter);
-			this.backButton.MouseLeave += new System.EventHandler(this.backButton_MouseLeave);
-			// 
 			// fromLocationLabel
 			// 
 			this.fromLocationLabel.AutoSize = true;
 			this.fromLocationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
 			this.fromLocationLabel.Location = new System.Drawing.Point(13, 36);
 			this.fromLocationLabel.Name = "fromLocationLabel";
-			this.fromLocationLabel.Size = new System.Drawing.Size(252, 29);
+			this.fromLocationLabel.Size = new System.Drawing.Size(168, 20);
 			this.fromLocationLabel.TabIndex = 29;
 			this.fromLocationLabel.Text = "Choose Starting Point:";
 			// 
@@ -79,18 +61,17 @@ namespace UI
 			this.eventsComboBox.Location = new System.Drawing.Point(420, 492);
 			this.eventsComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.eventsComboBox.Name = "eventsComboBox";
-			this.eventsComboBox.Size = new System.Drawing.Size(187, 28);
+			this.eventsComboBox.Size = new System.Drawing.Size(187, 21);
 			this.eventsComboBox.TabIndex = 28;
 			this.eventsComboBox.SelectedIndexChanged += new System.EventHandler(this.eventsComboBox_SelectedIndexChanged);
 			// 
 			// locationsListBox
 			// 
 			this.locationsListBox.FormattingEnabled = true;
-			this.locationsListBox.ItemHeight = 20;
 			this.locationsListBox.Location = new System.Drawing.Point(13, 61);
 			this.locationsListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.locationsListBox.Name = "locationsListBox";
-			this.locationsListBox.Size = new System.Drawing.Size(187, 364);
+			this.locationsListBox.Size = new System.Drawing.Size(187, 355);
 			this.locationsListBox.TabIndex = 25;
 			this.locationsListBox.SelectedIndexChanged += new System.EventHandler(this.locationsListBox_SelectedIndexChanged);
 			// 
@@ -137,7 +118,7 @@ namespace UI
 			this.academicComboBox.Location = new System.Drawing.Point(13, 492);
 			this.academicComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.academicComboBox.Name = "academicComboBox";
-			this.academicComboBox.Size = new System.Drawing.Size(187, 28);
+			this.academicComboBox.Size = new System.Drawing.Size(187, 21);
 			this.academicComboBox.TabIndex = 31;
 			this.academicComboBox.SelectedIndexChanged += new System.EventHandler(this.academicComboBox_SelectedIndexChanged);
 			// 
@@ -148,7 +129,7 @@ namespace UI
 			this.workComboBox.Location = new System.Drawing.Point(216, 492);
 			this.workComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.workComboBox.Name = "workComboBox";
-			this.workComboBox.Size = new System.Drawing.Size(187, 28);
+			this.workComboBox.Size = new System.Drawing.Size(187, 21);
 			this.workComboBox.TabIndex = 32;
 			this.workComboBox.SelectedIndexChanged += new System.EventHandler(this.workComboBox_SelectedIndexChanged);
 			// 
@@ -163,6 +144,7 @@ namespace UI
 			this.filterControl.Name = "filterControl";
 			this.filterControl.Size = new System.Drawing.Size(426, 406);
 			this.filterControl.TabIndex = 33;
+			this.filterControl.Visible = false;
 			// 
 			// RidePageControl
 			// 
@@ -170,7 +152,6 @@ namespace UI
 			this.Controls.Add(this.filterControl);
 			this.Controls.Add(this.workComboBox);
 			this.Controls.Add(this.academicComboBox);
-			this.Controls.Add(this.backButton);
 			this.Controls.Add(this.fromLocationLabel);
 			this.Controls.Add(this.eventsComboBox);
 			this.Controls.Add(this.locationsListBox);
@@ -187,7 +168,6 @@ namespace UI
 		}
 
 
-		private Button backButton;
 		private Label fromLocationLabel;
 		private ComboBox eventsComboBox;
 		private ListBox locationsListBox;

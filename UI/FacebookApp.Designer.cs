@@ -31,6 +31,7 @@ namespace UI
 		private void InitializeComponent()
 		{
 			this.logoutButton = new System.Windows.Forms.Button();
+			this.backButton = new System.Windows.Forms.Button();
 			this.mainPanel = new System.Windows.Forms.Panel();
 			this.loginButton = new System.Windows.Forms.Button();
 			this.mainPanel.SuspendLayout();
@@ -49,8 +50,26 @@ namespace UI
 			this.logoutButton.BackgroundImage = global::UI.Properties.Resources.logout_button;
 			this.logoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-			this.logoutButton.MouseEnter += new System.EventHandler(this.logoutButton_MouseEnter);
-			this.logoutButton.MouseLeave += new System.EventHandler(this.logoutButton_MouseLeave);
+			this.logoutButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.logoutButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// backButton
+			// 
+			this.backButton.BackgroundImage = global::UI.Properties.Resources.back_button2;
+			this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.backButton.FlatAppearance.BorderSize = 0;
+			this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.backButton.Location = new System.Drawing.Point(13, 595);
+			this.backButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.backButton.Name = "backButton";
+			this.backButton.Size = new System.Drawing.Size(75, 22);
+			this.backButton.TabIndex = 30;
+			this.backButton.UseVisualStyleBackColor = true;
+			this.backButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.backButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.backButton.Click += new System.EventHandler(this.backButton_Click);
 			// 
 			// mainPanel
 			// 
@@ -102,6 +121,8 @@ namespace UI
 		private System.Windows.Forms.Panel mainPanel;
 		private System.Windows.Forms.Button loginButton;
 		private System.Windows.Forms.Button logoutButton;
+		private System.Windows.Forms.Button backButton;
+
 
 	}
 }

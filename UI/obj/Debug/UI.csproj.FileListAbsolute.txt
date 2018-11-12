@@ -47,7 +47,6 @@ C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.PhotoInfo.resources
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.MapForm.resources
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.FilterControl.resources
-C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.VideoCreatorControl.resources
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debug\UI.exe
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debug\UI.pdb
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\bin\Debug\UI.exe
@@ -68,3 +67,4 @@ C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debu
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debug\UI.VideoCreatorControl.resources
 C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.AlbumControl.resources
+C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.VideoCreatorPageControl.resources

@@ -11,7 +11,7 @@ using Model;
 
 namespace UI
 {
-	public partial class RidePageControl : UserControl, ILogoutable
+	public partial class RidePageControl : UserControl, ILogoutable, IBackable
 	{
 		private string m_RideFromLocationName;
 
@@ -181,11 +181,6 @@ namespace UI
 			}
 		}
 
-		public void backButton_AddListener(EventHandler i_EventHandler)
-		{
-			this.backButton.Click += i_EventHandler;
-		}
-
 		private void handlePageAfterStartPointSelected()
 		{
 			academicInstitutionButton.Enabled = true;
@@ -198,16 +193,9 @@ namespace UI
 			Controls.Add(i_LogoutButton);
 		}
 
-		private void backButton_MouseLeave(object sender, EventArgs e)
+		public void AddBackButton(Button i_BackButton)
 		{
-			Button logoutButton = sender as Button;
-			logoutButton.Cursor = Cursors.Default;
-		}
-
-		private void backButton_MouseEnter(object sender, EventArgs e)
-		{
-			Button logoutButton = sender as Button;
-			logoutButton.Cursor = Cursors.Hand;
+			Controls.Add(i_BackButton);
 		}
 	}
 }

@@ -64,8 +64,9 @@ namespace UI
 			this.likedPagesButton = new System.Windows.Forms.Button();
 			this.findARideButton = new System.Windows.Forms.Button();
 			this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.userDetailsControl = new UI.UserDetailsControl();
+			this.createVideoButton = new System.Windows.Forms.Button();
 			this.albumControl1 = new UI.AlbumControl();
+			this.userDetailsControl = new UI.UserDetailsControl();
 			((System.ComponentModel.ISupportInitialize)(this.friendsDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceFriendsGrid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
@@ -206,6 +207,7 @@ namespace UI
 			// postsListView
 			// 
 			this.postsListView.BackgroundImage = global::UI.Properties.Resources.facebook_widescreen_navy_background_image;
+			this.postsListView.BackgroundImageTiled = true;
 			this.postsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.postDateColumn,
             this.messagesColumn});
@@ -232,6 +234,7 @@ namespace UI
 			// likedPagesListView
 			// 
 			this.likedPagesListView.BackgroundImage = global::UI.Properties.Resources.facebook_widescreen_navy_background_image;
+			this.likedPagesListView.BackgroundImageTiled = true;
 			this.likedPagesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ImageColumnHeader,
             this.pageNameColumnHeader,
@@ -299,6 +302,31 @@ namespace UI
 			this.findARideButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
 			this.findARideButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
 			// 
+			// createVideoButton
+			// 
+			this.createVideoButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.createVideoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.createVideoButton.FlatAppearance.BorderSize = 0;
+			this.createVideoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.createVideoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.createVideoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.createVideoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.createVideoButton.Location = new System.Drawing.Point(291, 15);
+			this.createVideoButton.Name = "createVideoButton";
+			this.createVideoButton.Size = new System.Drawing.Size(96, 23);
+			this.createVideoButton.TabIndex = 22;
+			this.createVideoButton.Text = "Create Video";
+			this.createVideoButton.UseVisualStyleBackColor = true;
+			this.createVideoButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.createVideoButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// albumControl1
+			// 
+			this.albumControl1.Location = new System.Drawing.Point(264, 60);
+			this.albumControl1.Name = "albumControl1";
+			this.albumControl1.Size = new System.Drawing.Size(331, 233);
+			this.albumControl1.TabIndex = 21;
+			// 
 			// userDetailsControl
 			// 
 			this.userDetailsControl.BackColor = System.Drawing.Color.Transparent;
@@ -308,16 +336,10 @@ namespace UI
 			this.userDetailsControl.Size = new System.Drawing.Size(231, 240);
 			this.userDetailsControl.TabIndex = 12;
 			// 
-			// albumControl1
-			// 
-			this.albumControl1.Location = new System.Drawing.Point(264, 60);
-			this.albumControl1.Name = "albumControl1";
-			this.albumControl1.Size = new System.Drawing.Size(331, 233);
-			this.albumControl1.TabIndex = 21;
-			// 
 			// HomePageControl
 			// 
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.createVideoButton);
 			this.Controls.Add(this.albumControl1);
 			this.Controls.Add(this.postsButton);
 			this.Controls.Add(this.postsListView);
@@ -367,5 +389,6 @@ namespace UI
 		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
 		private System.Windows.Forms.ColumnHeader messagesColumn;
 		private AlbumControl albumControl1;
+		private System.Windows.Forms.Button createVideoButton;
 	}
 }

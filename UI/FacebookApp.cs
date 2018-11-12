@@ -15,6 +15,7 @@ namespace UI
 
 		private HomePageControl homePageControl;
 		private RidePageControl ridePageControl;
+		private VideoCreatorPageControl videoCreatorPageControl;
 
 		public FacebookApp()
 		{
@@ -28,8 +29,18 @@ namespace UI
 			homePageControl = new HomePageControl();
 			mainPanel.Controls.Add(this.homePageControl);
 			homePageControl.AddLogoutButton(logoutButton);
-			homePageControl.findARideButton_AddClickedListener(new EventHandler(findARideButton_Click));
+			homePageControl.FindARideButton_AddClickedListener(new EventHandler(findARideButton_Click));
+			homePageControl.CreateVideoButton_AddClickedListener(new EventHandler(createVideoButton_Click));
 			homePageControl.fetchUserInfo();
+		}
+
+		private void createVideoButton_Click(object sender, EventArgs e)
+		{
+			videoCreatorPageControl = new VideoCreatorPageControl();
+			videoCreatorPageControl.AddLogoutButton(logoutButton);
+			videoCreatorPageControl.AddBackButton(backButton);
+			mainPanel.Controls.Clear();
+			mainPanel.Controls.Add(videoCreatorPageControl);
 		}
 
 		private void logoutButton_Click(object sender, EventArgs e)
@@ -40,23 +51,23 @@ namespace UI
 			mainPanel.Controls.Add(loginButton);
 		}
 
-		private void logoutButton_MouseLeave(object sender, EventArgs e)
+		private void button_MouseLeave(object sender, EventArgs e)
 		{
-			Button logoutButton = sender as Button;
-			logoutButton.Cursor = Cursors.Default;
+			Button button = sender as Button;
+			button.Cursor = Cursors.Default;
 		}
 
-		private void logoutButton_MouseEnter(object sender, EventArgs e)
+		private void button_MouseEnter(object sender, EventArgs e)
 		{
-			Button logoutButton = sender as Button;
-			logoutButton.Cursor = Cursors.Hand;
+			Button button = sender as Button;
+			button.Cursor = Cursors.Hand;
 		}
 
 		private void findARideButton_Click(object sender, EventArgs e)
 		{
 			ridePageControl = new RidePageControl();
 			ridePageControl.AddLogoutButton(logoutButton);
-			ridePageControl.backButton_AddListener(new EventHandler(backButton_Click));
+			ridePageControl.AddBackButton(backButton);
 			mainPanel.Controls.Clear();
 			mainPanel.Controls.Add(ridePageControl);
 		}
