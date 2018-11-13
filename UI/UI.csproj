@@ -104,6 +104,12 @@
     <Compile Include="VideoCreatorPageControl.Designer.cs">
       <DependentUpon>VideoCreatorPageControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="VideoResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoResultForm.Designer.cs">
+      <DependentUpon>VideoResultForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VideoCreatorPageControl.resx">
       <DependentUpon>VideoCreatorPageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoResultForm.resx">
+      <DependentUpon>VideoResultForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +217,25 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,12 +6,13 @@ using System.Text;
 
 namespace Model
 {
+	/*2246590548924227*/
 	public class FacebookConnection
 	{
 		public static DataManager Login()
 		{
 			LoginResult result = FacebookService.Login(
-				"264186474290093",
+				"264186474290093", 
 				"user_birthday",
 				"user_events",
 				"user_posts",

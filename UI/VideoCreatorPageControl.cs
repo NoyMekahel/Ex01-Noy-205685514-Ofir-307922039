@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
+using System.IO;
 
 namespace UI
 {
 	public partial class VideoCreatorPageControl : UserControl, ILogoutable, IBackable
 	{
-		FacebookObjectCollection<Photo> m_FilteredPhotosCollection;
+		private FacebookObjectCollection<Photo> m_FilteredPhotosCollection;
+		private FacebookObjectCollection<Image> m_SelectedImagesCollection = new FacebookObjectCollection<Image>();
+		private string m_VideoURL;
 
 		public VideoCreatorPageControl()
 		{
@@ -86,10 +89,6 @@ namespace UI
 			}
 		}
 
-		private void createVideoButton_Click(object sender, EventArgs e)
-		{
-		}
-
 		private void setSelectedAlbumsPhotosOnListBox()
 		{
 			try
@@ -136,15 +135,17 @@ namespace UI
 			try
 			{
 				FacebookObjectCollection<Album> allAlbums = DataManagerWrapper.DataManager.GetAlbums();
-				int photoCounter = 1;
 
 				m_FilteredPhotosCollection = new FacebookObjectCollection<Photo>();
 				foreach (Album album in allAlbums)
 				{
+					int photoCounter = 1;
+
 					foreach (Photo photo in album.Photos)
 					{
-						photosCheckedListBox.Items.Add(string.Format("Picture {0}", photoCounter));
+						photosCheckedListBox.Items.Add(string.Format("{0} - Picture {1}", album.Name, photoCounter));
 						m_FilteredPhotosCollection.Add(photo);
+						photoCounter++;
 					}
 				}
 			}
@@ -165,7 +166,7 @@ namespace UI
 			}
 			else if (sharedPhotosRadioButton.Checked == true)
 			{
-				if (filterCheckedListBox.SelectedItems.Count == 0)
+				if (filterCheckedListBox.CheckedItems.Count == 0)
 				{
 					MessageBox.Show("Error! You didn't selected any friends.");
 				}
@@ -176,7 +177,7 @@ namespace UI
 			}
 			else
 			{
-				if (filterCheckedListBox.SelectedItems.Count == 0)
+				if (filterCheckedListBox.CheckedItems.Count == 0)
 				{
 					MessageBox.Show("Error! You didn't selected any album.");
 				}
@@ -197,11 +198,12 @@ namespace UI
 				imagePictureBox.LoadAsync(m_FilteredPhotosCollection[photosCheckedListBox.SelectedIndex].PictureNormalURL);
 				imagePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
-				if (photosCheckedListBox.Items.Count != 0)
+				if (photosCheckedListBox.CheckedItems.Count > 0)
 				{
-					createVideoButton.Enabled = true;
+					saveAsButton.Enabled = true;
 				}
 			}
+
 		}
 
 		public void AddLogoutButton(Button i_LogoutButton)
@@ -240,6 +242,53 @@ namespace UI
 				SongNameLabel.Text = openFileDialog.FileName;
 				SongNameLabel.Visible = true;
 				SongNameLabel.AutoSize = true;
+			}
+		}
+
+		private void watchVideoButton_Click(object sender, EventArgs e)
+		{
+			VideoResultForm videoResultForm = new VideoResultForm(m_VideoURL);
+			videoResultForm.ShowDialog();
+
+		}
+		//wmv, asf, avi, flv, mov, caf, ffm, m4v
+		private void saveAsButton_Click(object sender, EventArgs e)
+		{
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			saveFileDialog.Filter = "(*.mp4)|*.mp4";
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					if(!SongNameLabel.Text.Equals(string.Empty))
+					{
+						Model.VideoCreator.createVideo(m_SelectedImagesCollection, saveFileDialog.FileName, SongNameLabel.Text);
+					}
+					else
+					{
+						Model.VideoCreator.createVideo(m_SelectedImagesCollection, saveFileDialog.FileName);
+					}
+					m_VideoURL = saveFileDialog.FileName;
+					watchVideoButton.Visible = true;
+				}
+				catch(Exception ex)
+				{
+					FacebookApp.showFacebookError(ex.Message);
+				}
+			}
+		}
+
+		private void photosCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+		{
+			if(photosCheckedListBox.GetItemChecked(photosCheckedListBox.SelectedIndex))
+			{
+				m_SelectedImagesCollection.Remove(
+					m_FilteredPhotosCollection[photosCheckedListBox.SelectedIndex].ImageNormal);
+			}
+			else
+			{
+				m_SelectedImagesCollection.Add(
+					m_FilteredPhotosCollection[photosCheckedListBox.SelectedIndex].ImageNormal);
 			}
 		}
 	}

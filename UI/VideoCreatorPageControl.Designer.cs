@@ -36,11 +36,12 @@
 			this.filterCheckedListBox = new System.Windows.Forms.CheckedListBox();
 			this.selectPhotosButton = new System.Windows.Forms.Button();
 			this.photosCheckedListBox = new System.Windows.Forms.CheckedListBox();
-			this.createVideoButton = new System.Windows.Forms.Button();
-			this.imagePictureBox = new System.Windows.Forms.PictureBox();
-			this.photoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.saveAsButton = new System.Windows.Forms.Button();
 			this.addSongButton = new System.Windows.Forms.Button();
 			this.SongNameLabel = new System.Windows.Forms.Label();
+			this.imagePictureBox = new System.Windows.Forms.PictureBox();
+			this.photoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.watchVideoButton = new System.Windows.Forms.Button();
 			this.photosChooserGroupBox.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.imagePictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.photoBindingSource)).BeginInit();
@@ -123,20 +124,42 @@
 			this.photosCheckedListBox.Name = "photosCheckedListBox";
 			this.photosCheckedListBox.Size = new System.Drawing.Size(147, 364);
 			this.photosCheckedListBox.TabIndex = 4;
+			this.photosCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.photosCheckedListBox_ItemCheck);
 			this.photosCheckedListBox.Click += new System.EventHandler(this.checkedListBox_Click);
 			this.photosCheckedListBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkedListBox_MouseClick);
 			this.photosCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.photosCheckedListBox_SelectedIndexChanged);
 			// 
-			// createVideoButton
+			// saveAsButton
 			// 
-			this.createVideoButton.Enabled = false;
-			this.createVideoButton.Location = new System.Drawing.Point(494, 586);
-			this.createVideoButton.Name = "createVideoButton";
-			this.createVideoButton.Size = new System.Drawing.Size(98, 23);
-			this.createVideoButton.TabIndex = 6;
-			this.createVideoButton.Text = "Create Video";
-			this.createVideoButton.UseVisualStyleBackColor = true;
-			this.createVideoButton.Click += new System.EventHandler(this.createVideoButton_Click);
+			this.saveAsButton.Enabled = false;
+			this.saveAsButton.Location = new System.Drawing.Point(494, 574);
+			this.saveAsButton.Name = "saveAsButton";
+			this.saveAsButton.Size = new System.Drawing.Size(98, 23);
+			this.saveAsButton.TabIndex = 6;
+			this.saveAsButton.Text = "Save As";
+			this.saveAsButton.UseVisualStyleBackColor = true;
+			this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
+			// 
+			// addSongButton
+			// 
+			this.addSongButton.Location = new System.Drawing.Point(494, 545);
+			this.addSongButton.Name = "addSongButton";
+			this.addSongButton.Size = new System.Drawing.Size(98, 23);
+			this.addSongButton.TabIndex = 8;
+			this.addSongButton.Text = "Add Song";
+			this.addSongButton.UseVisualStyleBackColor = true;
+			this.addSongButton.Click += new System.EventHandler(this.addSongButton_Click);
+			// 
+			// SongNameLabel
+			// 
+			this.SongNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.SongNameLabel.AutoEllipsis = true;
+			this.SongNameLabel.Location = new System.Drawing.Point(188, 550);
+			this.SongNameLabel.MaximumSize = new System.Drawing.Size(300, 13);
+			this.SongNameLabel.Name = "SongNameLabel";
+			this.SongNameLabel.Size = new System.Drawing.Size(300, 13);
+			this.SongNameLabel.TabIndex = 9;
+			this.SongNameLabel.Visible = false;
 			// 
 			// imagePictureBox
 			// 
@@ -151,37 +174,27 @@
 			// 
 			this.photoBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Photo);
 			// 
-			// addSongButton
+			// watchVideoButton
 			// 
-			this.addSongButton.Location = new System.Drawing.Point(494, 557);
-			this.addSongButton.Name = "addSongButton";
-			this.addSongButton.Size = new System.Drawing.Size(98, 23);
-			this.addSongButton.TabIndex = 8;
-			this.addSongButton.Text = "Add Song";
-			this.addSongButton.UseVisualStyleBackColor = true;
-			this.addSongButton.Click += new System.EventHandler(this.addSongButton_Click);
-			// 
-			// SongNameLabel
-			// 
-			this.SongNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.SongNameLabel.AutoEllipsis = true;
-			this.SongNameLabel.Location = new System.Drawing.Point(188, 562);
-			this.SongNameLabel.MaximumSize = new System.Drawing.Size(300, 13);
-			this.SongNameLabel.Name = "SongNameLabel";
-			this.SongNameLabel.Size = new System.Drawing.Size(300, 13);
-			this.SongNameLabel.TabIndex = 9;
-			this.SongNameLabel.Text = "label1";
-			this.SongNameLabel.Visible = false;
+			this.watchVideoButton.Location = new System.Drawing.Point(494, 603);
+			this.watchVideoButton.Name = "watchVideoButton";
+			this.watchVideoButton.Size = new System.Drawing.Size(98, 23);
+			this.watchVideoButton.TabIndex = 10;
+			this.watchVideoButton.Text = "Watch Video";
+			this.watchVideoButton.UseVisualStyleBackColor = true;
+			this.watchVideoButton.Visible = false;
+			this.watchVideoButton.Click += new System.EventHandler(this.watchVideoButton_Click);
 			// 
 			// VideoCreatorPageControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.watchVideoButton);
 			this.Controls.Add(this.SongNameLabel);
 			this.Controls.Add(this.addSongButton);
 			this.Controls.Add(this.imagePictureBox);
-			this.Controls.Add(this.createVideoButton);
+			this.Controls.Add(this.saveAsButton);
 			this.Controls.Add(this.photosCheckedListBox);
 			this.Controls.Add(this.selectPhotosButton);
 			this.Controls.Add(this.filterCheckedListBox);
@@ -205,10 +218,11 @@
 		private System.Windows.Forms.CheckedListBox filterCheckedListBox;
 		private System.Windows.Forms.Button selectPhotosButton;
 		private System.Windows.Forms.CheckedListBox photosCheckedListBox;
-		private System.Windows.Forms.Button createVideoButton;
+		private System.Windows.Forms.Button saveAsButton;
 		private System.Windows.Forms.PictureBox imagePictureBox;
 		private System.Windows.Forms.BindingSource photoBindingSource;
 		private System.Windows.Forms.Button addSongButton;
 		private System.Windows.Forms.Label SongNameLabel;
+		private System.Windows.Forms.Button watchVideoButton;
 	}
 }

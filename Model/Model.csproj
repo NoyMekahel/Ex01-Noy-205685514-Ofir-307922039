@@ -41,7 +41,17 @@
     <Reference Include="FbGraphApiWrapper">
       <HintPath>..\resources\FbGraphApiWrapper.dll</HintPath>
     </Reference>
+    <Reference Include="Magick.NET-Q16-AnyCPU">
+      <HintPath>..\resources\Magick.NET-Q16-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.VideoConverter">
+      <HintPath>..\resources\NReco.VideoConverter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="taglib-sharp">
+      <HintPath>..\resources\taglib-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgeFilter.cs" />
