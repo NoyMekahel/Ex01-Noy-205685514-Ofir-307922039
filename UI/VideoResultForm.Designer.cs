@@ -37,6 +37,7 @@
 			// 
 			this.videoResultWindowsMediaPlayer.Enabled = true;
 			this.videoResultWindowsMediaPlayer.Location = new System.Drawing.Point(12, 12);
+			this.videoResultWindowsMediaPlayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.videoResultWindowsMediaPlayer.Name = "videoResultWindowsMediaPlayer";
 			this.videoResultWindowsMediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("videoResultWindowsMediaPlayer.OcxState")));
 			this.videoResultWindowsMediaPlayer.Size = new System.Drawing.Size(514, 388);
@@ -44,11 +45,13 @@
 			// 
 			// VideoResultForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(538, 410);
+			this.ClientSize = new System.Drawing.Size(807, 631);
 			this.Controls.Add(this.videoResultWindowsMediaPlayer);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "VideoResultForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Video Result";

@@ -237,6 +237,27 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frame-gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold-frame.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glitter-frame.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

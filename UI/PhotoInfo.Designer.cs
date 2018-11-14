@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhotoInfo));
 			this.likesLabel = new System.Windows.Forms.Label();
 			this.commentsListBox = new System.Windows.Forms.ListBox();
 			this.likesPictureBox = new System.Windows.Forms.PictureBox();
@@ -124,6 +125,7 @@
 			this.Controls.Add(this.likesLabel);
 			this.Controls.Add(this.photoPictureBox);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "PhotoInfo";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "PhotoInfo";

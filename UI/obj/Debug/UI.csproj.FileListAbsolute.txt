@@ -77,3 +77,16 @@ C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.csproj.ResolveComReference.cache
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.VideoResultForm.resources
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\Interop.WMPLib.dll
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.csproj.ResolveComReference.cache
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\taglib-sharp.dll
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\Magick.NET-Q16-AnyCPU.dll
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\NReco.VideoConverter.dll
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\Interop.WMPLib.dll
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.AlbumControl.resources
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.FilterControl.resources
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.MapForm.resources
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.VideoCreatorPageControl.resources
+C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\UI\obj\Debug\UI.VideoResultForm.resources
