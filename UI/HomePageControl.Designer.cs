@@ -61,12 +61,12 @@ namespace UI
 			this.pageNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.likesCountColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.albumControl1 = new UI.AlbumControl();
-			this.userDetailsControl = new UI.UserDetailsControl();
 			this.createVideoButton = new System.Windows.Forms.Button();
 			this.postsButton = new System.Windows.Forms.Button();
 			this.likedPagesButton = new System.Windows.Forms.Button();
 			this.findARideButton = new System.Windows.Forms.Button();
+			this.albumControl1 = new UI.AlbumControl();
+			this.userDetailsControl = new UI.UserDetailsControl();
 			((System.ComponentModel.ISupportInitialize)(this.friendsDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceFriendsGrid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
@@ -79,7 +79,7 @@ namespace UI
 			this.friensListLabel.Location = new System.Drawing.Point(11, 428);
 			this.friensListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.friensListLabel.Name = "friensListLabel";
-			this.friensListLabel.Size = new System.Drawing.Size(116, 24);
+			this.friensListLabel.Size = new System.Drawing.Size(176, 32);
 			this.friensListLabel.TabIndex = 11;
 			this.friensListLabel.Text = "Your friends:";
 			// 
@@ -194,7 +194,7 @@ namespace UI
             this.messagesColumn});
 			this.postsListView.Location = new System.Drawing.Point(264, 328);
 			this.postsListView.Name = "postsListView";
-			this.postsListView.Size = new System.Drawing.Size(324, 97);
+			this.postsListView.Size = new System.Drawing.Size(363, 97);
 			this.postsListView.TabIndex = 19;
 			this.postsListView.UseCompatibleStateImageBehavior = false;
 			this.postsListView.View = System.Windows.Forms.View.Details;
@@ -243,22 +243,6 @@ namespace UI
 			// 
 			this.likesCountColumnHeader.Text = "Likes";
 			this.likesCountColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// albumControl1
-			// 
-			this.albumControl1.Location = new System.Drawing.Point(264, 60);
-			this.albumControl1.Name = "albumControl1";
-			this.albumControl1.Size = new System.Drawing.Size(331, 233);
-			this.albumControl1.TabIndex = 21;
-			// 
-			// userDetailsControl
-			// 
-			this.userDetailsControl.BackColor = System.Drawing.Color.Transparent;
-			this.userDetailsControl.Location = new System.Drawing.Point(26, 29);
-			this.userDetailsControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.userDetailsControl.Name = "userDetailsControl";
-			this.userDetailsControl.Size = new System.Drawing.Size(231, 240);
-			this.userDetailsControl.TabIndex = 12;
 			// 
 			// createVideoButton
 			// 
@@ -337,6 +321,23 @@ namespace UI
 			this.findARideButton.UseVisualStyleBackColor = false;
 			this.findARideButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
 			this.findARideButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// albumControl1
+			// 
+			this.albumControl1.Location = new System.Drawing.Point(264, 60);
+			this.albumControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.albumControl1.Name = "albumControl1";
+			this.albumControl1.Size = new System.Drawing.Size(331, 233);
+			this.albumControl1.TabIndex = 21;
+			// 
+			// userDetailsControl
+			// 
+			this.userDetailsControl.BackColor = System.Drawing.Color.Transparent;
+			this.userDetailsControl.Location = new System.Drawing.Point(26, 29);
+			this.userDetailsControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.userDetailsControl.Name = "userDetailsControl";
+			this.userDetailsControl.Size = new System.Drawing.Size(231, 240);
+			this.userDetailsControl.TabIndex = 12;
 			// 
 			// HomePageControl
 			// 
