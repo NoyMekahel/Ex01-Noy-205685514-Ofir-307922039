@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-	partial class VideoResultForm
+	public partial class VideoResultForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -17,6 +17,7 @@
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 

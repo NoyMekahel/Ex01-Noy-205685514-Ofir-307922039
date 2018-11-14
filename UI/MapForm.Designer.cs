@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-	partial class MapForm
+	public partial class MapForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -17,6 +17,7 @@
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 

@@ -12,11 +12,11 @@ namespace UI
 {
 	public partial class FacebookApp : Form
 	{
-
 		private HomePageControl homePageControl;
 		private RidePageControl ridePageControl;
 		private VideoCreatorPageControl videoCreatorPageControl;
 		private AppSettings m_AppSettings;
+
 		public FacebookApp()
 		{
 			InitializeComponent();
@@ -36,7 +36,9 @@ namespace UI
 				}
 			}
 			catch(Exception)
-			{ }
+			{
+			}
+
 			base.OnShown(e);
 		}
 
@@ -72,12 +74,15 @@ namespace UI
 			{
 				m_AppSettings.LastAccessToken = null;
 			}
+
 			try
 			{
 				m_AppSettings.SaveToFile();
 			}
 			catch(Exception)
-			{}
+			{
+			}
+
 			base.OnClosing(e);
 		}
 

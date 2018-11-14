@@ -44,6 +44,7 @@ namespace UI
 			{
 				addSinglePhoto(currentPhoto);
 			}
+
 			albumsButton.Enabled = true;
 			albumsButton.Text = "Back to albums";
 		}
@@ -52,7 +53,6 @@ namespace UI
 		{
 			AlbumPictureBox albumToAdd = new AlbumPictureBox();
 			albumToAdd.Album = i_Album;
-			//albumToAdd.Image = i_Album.ImageSmall;
 			albumToAdd.LoadAsync(i_Album.PictureSmallURL);
 			albumToAdd.Size = new Size(140, 90);
 			albumToAdd.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -66,7 +66,6 @@ namespace UI
 		{
 			PhotoPictureBox photoToAdd = new PhotoPictureBox();
 			photoToAdd.Photo = i_Photo;
-			// photoToAdd.Image = i_Photo.ImageNormal;
 			photoToAdd.LoadAsync(i_Photo.PictureNormalURL);
 			photoToAdd.Size = new Size(95, 80);
 			photoToAdd.SizeMode = PictureBoxSizeMode.StretchImage;

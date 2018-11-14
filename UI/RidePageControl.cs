@@ -15,13 +15,11 @@ namespace UI
 	{
 		private string m_RideFromLocationName;
 
-
 		public RidePageControl()
 		{
 			InitializeComponent();
 			createLocationsList();
 		}
-
 
 		private void createLocationsList()
 		{
@@ -73,13 +71,13 @@ namespace UI
 					{
 						eventsComboBox.Items.Add(currEventName);
 					}
+
 					eventsComboBox.Enabled = true;
 				}
 				else
 				{
 					FacebookApp.showFacebookError("There are no events you go to.");
 				}
-
 			}
 			catch (Exception)
 			{
@@ -113,6 +111,7 @@ namespace UI
 					{
 						workComboBox.Items.Add(currWorkPlaceName);
 					}
+
 					workComboBox.Enabled = true;
 				}
 				else
@@ -120,7 +119,6 @@ namespace UI
 					FacebookApp.showFacebookError("There are no places where you work.");
 				}
 			}
-
 			catch (Exception)
 			{
 				FacebookApp.showFacebookError("Couldn't fetch your work experiences data.");
@@ -153,6 +151,7 @@ namespace UI
 					{
 						academicComboBox.Items.Add(currAcademicInstitution);
 					}
+
 					academicComboBox.Enabled = true;
 				}
 				else
@@ -160,7 +159,6 @@ namespace UI
 					FacebookApp.showFacebookError("There are no academic institutions where you study.");
 				}
 			}
-
 			catch(Exception)
 			{
 				FacebookApp.showFacebookError("Couldn't fetch your academic institutions data.");

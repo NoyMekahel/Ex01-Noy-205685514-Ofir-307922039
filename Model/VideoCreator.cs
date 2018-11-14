@@ -1,11 +1,9 @@
-﻿using ImageMagick;
-using NReco.VideoConverter;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
+using NReco.VideoConverter;
+using ImageMagick;
 
 namespace Model
 {
@@ -17,23 +15,31 @@ namespace Model
 			{
 				throw new Exception("You didn't sent any images");
 			}
+
 			try
 			{
 				TagLib.File songFile = TagLib.File.Create(i_SongURL, TagLib.ReadStyle.Average);
-				int animationDelay = (int)(songFile.Properties.Duration.TotalSeconds) * 100 / i_ImagesCollection.Count;
+				int animationDelay = (int)songFile.Properties.Duration.TotalSeconds * 100 / i_ImagesCollection.Count;
 
 				using (MagickImageCollection imageCollection = new MagickImageCollection())
 				{
 					createImageCollection(i_ImagesCollection, imageCollection, animationDelay);
 
 					FFMpegConverter converter = new NReco.VideoConverter.FFMpegConverter();
-					converter.ConvertMedia("video.gif", null, "video.mp4", Format.mp4, new ConvertSettings()
+					converter.ConvertMedia(
+						"video.gif",
+						null,
+						"video.mp4",
+						Format.mp4,
+						new ConvertSettings()
 					{
 						VideoCodec = "libx264"
 					});
 
-					converter.ConvertMedia(new[] {
-					new FFMpegInput("video.mp4"), new FFMpegInput(i_SongURL) }, i_FileURL, null,
+					converter.ConvertMedia(
+						new[] { new FFMpegInput("video.mp4"), new FFMpegInput(i_SongURL) },
+						i_FileURL,
+						null,
 					  new ConvertSettings()
 					  {
 						  AudioCodec = "copy",
@@ -43,7 +49,6 @@ namespace Model
 					  });
 				}
 			}
-
 			finally
 			{
 				File.Delete("video.gif");
@@ -65,13 +70,17 @@ namespace Model
 					createImageCollection(i_ImagesCollection, imageCollection, 600);
 
 					FFMpegConverter converter = new NReco.VideoConverter.FFMpegConverter();
-					converter.ConvertMedia("video.gif", null, i_FileURL, Format.mp4, new ConvertSettings()
+					converter.ConvertMedia(
+						"video.gif",
+						null,
+						i_FileURL,
+						Format.mp4,
+						new ConvertSettings()
 					{
 						VideoCodec = "libx264"
 					});
 				}
 			}
-
 			finally
 			{
 				File.Delete("video.gif");

@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-	partial class VideoCreatorPageControl
+	public partial class VideoCreatorPageControl
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -17,6 +17,7 @@
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 

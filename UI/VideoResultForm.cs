@@ -17,7 +17,6 @@ namespace UI
 			videoResultWindowsMediaPlayer.URL = i_VideoURL;
 		}
 
-
 		protected override void OnClosing(CancelEventArgs e)
 		{
 			base.OnClosing(e);

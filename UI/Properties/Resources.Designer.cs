@@ -63,16 +63,6 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap back_button {
-            get {
-                object obj = ResourceManager.GetObject("back_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap back_button2 {
             get {
                 object obj = ResourceManager.GetObject("back_button2", resourceCulture);
@@ -113,29 +103,9 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap faccebookbackground {
-            get {
-                object obj = ResourceManager.GetObject("faccebookbackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Facebook_Wallpapers {
             get {
                 object obj = ResourceManager.GetObject("Facebook_Wallpapers", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap facebook_widescreen_background_image {
-            get {
-                object obj = ResourceManager.GetObject("facebook_widescreen_background_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,16 +133,6 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap likeGIF {
-            get {
-                object obj = ResourceManager.GetObject("likeGIF", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap loading_gif {
             get {
                 object obj = ResourceManager.GetObject("loading_gif", resourceCulture);
@@ -193,29 +153,9 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logout_button2 {
-            get {
-                object obj = ResourceManager.GetObject("logout_button2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap orange_button {
             get {
                 object obj = ResourceManager.GetObject("orange_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap yellow_button {
-            get {
-                object obj = ResourceManager.GetObject("yellow_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

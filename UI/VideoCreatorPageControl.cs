@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
-using System.IO;
 
 namespace UI
 {
@@ -57,9 +53,9 @@ namespace UI
 		{
 			try
 			{
-				filterCheckedListBox.Items.Clear();
-				ICollection<string>  friendsNamesCollection = DataManagerWrapper.DataManager.GetFriendsNames();
+				ICollection<string> friendsNamesCollection = DataManagerWrapper.DataManager.GetFriendsNames();
 
+				filterCheckedListBox.Items.Clear();
 				foreach (string name in friendsNamesCollection)
 				{
 					filterCheckedListBox.Items.Add(name);
@@ -76,7 +72,7 @@ namespace UI
 			try
 			{
 				filterCheckedListBox.Items.Clear();
-				ICollection<string>  albumsNamesCollection = DataManagerWrapper.DataManager.GetAlbumsNames();
+				ICollection<string> albumsNamesCollection = DataManagerWrapper.DataManager.GetAlbumsNames();
 
 				foreach (string name in albumsNamesCollection)
 				{
@@ -97,7 +93,6 @@ namespace UI
 				m_FilteredPhotosCollection = DataManagerWrapper.DataManager.GetAlbumsPhotos(selectedAlbums);
 				populatePhotosCheckedListBox();
 			}
-
 			catch(Exception)
 			{
 				FacebookApp.showFacebookError("Couldn't fetch albums photos data.");
@@ -122,7 +117,6 @@ namespace UI
 				ICollection<string> selectedFriends = filterCheckedListBox.CheckedItems.Cast<string>().ToList();
 				m_FilteredPhotosCollection = DataManagerWrapper.DataManager.GetSharedFriendsPhotos(selectedFriends);
 				populatePhotosCheckedListBox();
-
 			}
 			catch (Exception)
 			{
@@ -137,7 +131,7 @@ namespace UI
 				FacebookObjectCollection<Album> allAlbums = DataManagerWrapper.DataManager.GetAlbums();
 
 				m_FilteredPhotosCollection = new FacebookObjectCollection<Photo>();
-				int nodeCouner = 0;
+
 				foreach (Album album in allAlbums)
 				{
 					int photoCounter = 1;
@@ -147,14 +141,12 @@ namespace UI
 						m_FilteredPhotosCollection.Add(photo);
 						photoCounter++;
 					}
-					nodeCouner++;
 				}
 			}
 			catch (Exception)
 			{
 				FacebookApp.showFacebookError("Couldn't fetch albums data.");
 			}
-
 		}
 
 		private void selectPhotosButton_Click(object sender, EventArgs e)
@@ -204,7 +196,6 @@ namespace UI
 					saveAsButton.Enabled = true;
 				}
 			}
-
 		}
 
 		public void AddLogoutButton(Button i_LogoutButton)
@@ -224,7 +215,6 @@ namespace UI
 			button.Cursor = Cursors.Hand;
 		}
 
-
 		private void checkedListBox_Click(object sender, EventArgs e)
 		{
 			changeItemCheckedStatus(sender as CheckedListBox);
@@ -239,9 +229,9 @@ namespace UI
 		{
 			if (i_CheckedListBox.SelectedItem != null)
 			{
-				i_CheckedListBox.SetItemCheckState(i_CheckedListBox.SelectedIndex,
-				i_CheckedListBox.GetItemCheckState(i_CheckedListBox.SelectedIndex) == CheckState.Checked ?
-				CheckState.Unchecked : CheckState.Checked);
+				CheckState checkState = i_CheckedListBox.GetItemCheckState(i_CheckedListBox.SelectedIndex) == CheckState.Checked ?
+				CheckState.Unchecked : CheckState.Checked;
+				i_CheckedListBox.SetItemCheckState(i_CheckedListBox.SelectedIndex, checkState);
 			}
 		}
 
@@ -262,9 +252,8 @@ namespace UI
 		{
 			VideoResultForm videoResultForm = new VideoResultForm(m_VideoURL);
 			videoResultForm.ShowDialog();
-
 		}
-		//wmv, asf, avi, flv, mov, caf, ffm, m4v
+
 		private void saveAsButton_Click(object sender, EventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -284,6 +273,7 @@ namespace UI
 					{
 						Model.VideoCreator.createVideo(m_SelectedImagesCollection, saveFileDialog.FileName);
 					}
+
 					saveAsButton.Enabled = true;
 					addSongButton.Enabled = true;
 					createVideoLabel.Text = "Video created!";

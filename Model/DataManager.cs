@@ -1,10 +1,7 @@
-﻿using FacebookWrapper;
+﻿using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using FacebookWrapper.ObjectModel;
-using System.Text.RegularExpressions;
 
 namespace Model
 {
@@ -13,6 +10,7 @@ namespace Model
 		private User m_LoggedInUser;
 
 		public Ride Ride { get; } = new Ride();
+
 		public string UserAccessToken { get; private set; }
 
 		public DataManager(User i_LoggedInUser, string i_UserAccessToken)
@@ -39,6 +37,7 @@ namespace Model
 			{
 				allNames.Add(friend.Name);
 			}
+
 			return allNames;
 		}
 
@@ -50,6 +49,7 @@ namespace Model
 			{
 				allNames.Add(album.Name);
 			}
+
 			return allNames;
 		}
 
@@ -211,7 +211,6 @@ namespace Model
 			}
 
 			return (birthday - todayDate).Days;
-
 		}
 
 		private DateTime parseStringToDateTime(string i_Date)
@@ -219,7 +218,7 @@ namespace Model
 			int day = 0, month = 0, year = 0;
 			if (Regex.IsMatch(i_Date, "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$"))
 			{
-				month =int.Parse(i_Date.Substring(0, 2));
+				month = int.Parse(i_Date.Substring(0, 2));
 				day = int.Parse(i_Date.Substring(3, 2));
 				year = int.Parse(i_Date.Substring(6, 4));
 			}

@@ -2,7 +2,7 @@
 
 namespace UI
 {
-	partial class RidePageControl
+	public partial class RidePageControl
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -19,6 +19,7 @@ namespace UI
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 
@@ -193,7 +194,6 @@ namespace UI
 			this.PerformLayout();
 
 		}
-
 
 		private Label fromLocationLabel;
 		private ComboBox eventsComboBox;

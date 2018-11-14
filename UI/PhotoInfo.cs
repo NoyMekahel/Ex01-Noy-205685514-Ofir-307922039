@@ -27,8 +27,7 @@ namespace UI
 			foreach (Comment comment in i_photo.Photo.Comments)
 			{
 				commentsListBox.Items.Add(comment.Message);
-			}
-			
+			}		
 		}
 	}
 }

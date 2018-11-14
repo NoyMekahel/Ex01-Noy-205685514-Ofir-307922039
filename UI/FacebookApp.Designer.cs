@@ -2,7 +2,7 @@
 
 namespace UI
 {
-	partial class FacebookApp
+	public partial class FacebookApp
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -19,6 +19,7 @@ namespace UI
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 
@@ -103,7 +104,7 @@ namespace UI
 			this.rememberUserCheckBox.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
 			this.rememberUserCheckBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.rememberUserCheckBox.Location = new System.Drawing.Point(272, 432);
-			this.rememberUserCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.rememberUserCheckBox.Margin = new System.Windows.Forms.Padding(2);
 			this.rememberUserCheckBox.Name = "rememberUserCheckBox";
 			this.rememberUserCheckBox.Size = new System.Drawing.Size(97, 19);
 			this.rememberUserCheckBox.TabIndex = 23;
@@ -120,6 +121,7 @@ namespace UI
 			this.ClientSize = new System.Drawing.Size(632, 630);
 			this.Controls.Add(this.mainPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
 			this.Name = "FacebookApp";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FacebookApp";
@@ -136,7 +138,5 @@ namespace UI
 		private System.Windows.Forms.Button logoutButton;
 		private System.Windows.Forms.Button backButton;
 		private System.Windows.Forms.CheckBox rememberUserCheckBox;
-
-
 	}
 }

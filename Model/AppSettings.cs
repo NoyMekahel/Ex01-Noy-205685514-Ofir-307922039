@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Model
@@ -11,10 +7,14 @@ namespace Model
 	public class AppSettings
 	{
 		public string LastAccessToken { get; set; }
+
 		public Point Location { get; set; }
+
 		public bool RememberUser { get; set; }
 
-		private AppSettings() { }
+		private AppSettings()
+		{
+		}
 
 		public static AppSettings LoadFromFile()
 		{

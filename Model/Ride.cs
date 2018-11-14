@@ -1,26 +1,25 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using FacebookWrapper.ObjectModel;
 
 namespace Model
 {
 	public class Ride
 	{
 		public ICollection<User> FriendsFromStartPoint { get; internal set; }
+
 		public ICollection<User> FriendsFromStartPointToEndPoint { get; private set; }
+
 		private List<IFilter> m_FilterList;
 
 		public ICollection<User> getFriendsFromWork(string i_WorkName)
 		{
 			List<User> friendsFromWork = new List<User>();
 
-			foreach(User user in FriendsFromStartPoint)
+			foreach (User user in FriendsFromStartPoint)
 			{
-				for(int workIndex=0; workIndex< user.WorkExperiences.Length; ++workIndex)
+				for (int workIndex = 0; workIndex < user.WorkExperiences.Length; ++workIndex)
 				{
-					if(user.WorkExperiences[workIndex].Name.Equals(i_WorkName))
+					if (user.WorkExperiences[workIndex].Name.Equals(i_WorkName))
 					{
 						friendsFromWork.Add(user);
 					}

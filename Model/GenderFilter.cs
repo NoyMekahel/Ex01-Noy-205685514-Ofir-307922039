@@ -8,7 +8,6 @@ namespace Model
 {
 	public class GenderFilter : IFilter
 	{
-
 		private User.eGender m_GenderType;
 
 		public GenderFilter(string i_GenderType)

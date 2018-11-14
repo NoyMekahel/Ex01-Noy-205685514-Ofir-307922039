@@ -91,7 +91,6 @@ namespace UI
 			{
 				FacebookApp.showFacebookError("FaceBook error! Couldn't fetch liked pages data");
 			}
-
 		}
 
 		private ImageList getAllPagesImage(FacebookObjectCollection<Page> i_AllLikedPages)
@@ -127,6 +126,7 @@ namespace UI
 						postsListView.Items.Add(item);
 					}
 				}
+
 				postsListView.Columns[messagesColumn.Index].Width = -1;
 				postsButton.Enabled = false;
 				postsListView.Visible = true;
@@ -135,7 +135,6 @@ namespace UI
 			{
 				FacebookApp.showFacebookError("FaceBook error! Couldn't fetch posts data");
 			}
-
 		}
 
 		private void button_MouseEnter(object sender, EventArgs e)
