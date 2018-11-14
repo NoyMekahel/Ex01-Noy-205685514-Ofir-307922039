@@ -50,11 +50,9 @@
 			this.photosChooserGroupBox.Controls.Add(this.albumsPhotosRadioButton);
 			this.photosChooserGroupBox.Controls.Add(this.sharedPhotosRadioButton);
 			this.photosChooserGroupBox.Controls.Add(this.allPhotosRadioButton);
-			this.photosChooserGroupBox.Location = new System.Drawing.Point(24, 20);
-			this.photosChooserGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.photosChooserGroupBox.Location = new System.Drawing.Point(16, 13);
 			this.photosChooserGroupBox.Name = "photosChooserGroupBox";
-			this.photosChooserGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.photosChooserGroupBox.Size = new System.Drawing.Size(184, 154);
+			this.photosChooserGroupBox.Size = new System.Drawing.Size(123, 100);
 			this.photosChooserGroupBox.TabIndex = 0;
 			this.photosChooserGroupBox.TabStop = false;
 			this.photosChooserGroupBox.Text = "Choose An Option:";
@@ -62,10 +60,9 @@
 			// albumsPhotosRadioButton
 			// 
 			this.albumsPhotosRadioButton.AutoSize = true;
-			this.albumsPhotosRadioButton.Location = new System.Drawing.Point(10, 115);
-			this.albumsPhotosRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.albumsPhotosRadioButton.Location = new System.Drawing.Point(7, 75);
 			this.albumsPhotosRadioButton.Name = "albumsPhotosRadioButton";
-			this.albumsPhotosRadioButton.Size = new System.Drawing.Size(144, 24);
+			this.albumsPhotosRadioButton.Size = new System.Drawing.Size(97, 17);
 			this.albumsPhotosRadioButton.TabIndex = 2;
 			this.albumsPhotosRadioButton.Text = "Album\'s Photos";
 			this.albumsPhotosRadioButton.UseVisualStyleBackColor = true;
@@ -74,10 +71,9 @@
 			// sharedPhotosRadioButton
 			// 
 			this.sharedPhotosRadioButton.AutoSize = true;
-			this.sharedPhotosRadioButton.Location = new System.Drawing.Point(10, 80);
-			this.sharedPhotosRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.sharedPhotosRadioButton.Location = new System.Drawing.Point(7, 52);
 			this.sharedPhotosRadioButton.Name = "sharedPhotosRadioButton";
-			this.sharedPhotosRadioButton.Size = new System.Drawing.Size(140, 24);
+			this.sharedPhotosRadioButton.Size = new System.Drawing.Size(95, 17);
 			this.sharedPhotosRadioButton.TabIndex = 1;
 			this.sharedPhotosRadioButton.Text = "Shared Photos";
 			this.sharedPhotosRadioButton.UseVisualStyleBackColor = true;
@@ -87,10 +83,9 @@
 			// 
 			this.allPhotosRadioButton.AutoSize = true;
 			this.allPhotosRadioButton.Checked = true;
-			this.allPhotosRadioButton.Location = new System.Drawing.Point(10, 45);
-			this.allPhotosRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.allPhotosRadioButton.Location = new System.Drawing.Point(7, 29);
 			this.allPhotosRadioButton.Name = "allPhotosRadioButton";
-			this.allPhotosRadioButton.Size = new System.Drawing.Size(105, 24);
+			this.allPhotosRadioButton.Size = new System.Drawing.Size(72, 17);
 			this.allPhotosRadioButton.TabIndex = 0;
 			this.allPhotosRadioButton.TabStop = true;
 			this.allPhotosRadioButton.Text = "All Photos";
@@ -101,10 +96,9 @@
 			// 
 			this.filterCheckedListBox.FormattingEnabled = true;
 			this.filterCheckedListBox.HorizontalScrollbar = true;
-			this.filterCheckedListBox.Location = new System.Drawing.Point(237, 29);
-			this.filterCheckedListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.filterCheckedListBox.Location = new System.Drawing.Point(158, 19);
 			this.filterCheckedListBox.Name = "filterCheckedListBox";
-			this.filterCheckedListBox.Size = new System.Drawing.Size(212, 130);
+			this.filterCheckedListBox.Size = new System.Drawing.Size(143, 94);
 			this.filterCheckedListBox.TabIndex = 1;
 			this.filterCheckedListBox.Visible = false;
 			this.filterCheckedListBox.Click += new System.EventHandler(this.checkedListBox_Click);
@@ -114,10 +108,9 @@
 			// 
 			this.photosCheckedListBox.FormattingEnabled = true;
 			this.photosCheckedListBox.HorizontalScrollbar = true;
-			this.photosCheckedListBox.Location = new System.Drawing.Point(24, 271);
-			this.photosCheckedListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.photosCheckedListBox.Location = new System.Drawing.Point(16, 176);
 			this.photosCheckedListBox.Name = "photosCheckedListBox";
-			this.photosCheckedListBox.Size = new System.Drawing.Size(218, 550);
+			this.photosCheckedListBox.Size = new System.Drawing.Size(147, 364);
 			this.photosCheckedListBox.TabIndex = 4;
 			this.photosCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.photosCheckedListBox_ItemCheck);
 			this.photosCheckedListBox.Click += new System.EventHandler(this.checkedListBox_Click);
@@ -128,21 +121,19 @@
 			// 
 			this.SongNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.SongNameLabel.AutoEllipsis = true;
-			this.SongNameLabel.Location = new System.Drawing.Point(282, 846);
-			this.SongNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.SongNameLabel.MaximumSize = new System.Drawing.Size(450, 20);
+			this.SongNameLabel.Location = new System.Drawing.Point(188, 550);
+			this.SongNameLabel.MaximumSize = new System.Drawing.Size(300, 13);
 			this.SongNameLabel.Name = "SongNameLabel";
-			this.SongNameLabel.Size = new System.Drawing.Size(450, 20);
+			this.SongNameLabel.Size = new System.Drawing.Size(300, 13);
 			this.SongNameLabel.TabIndex = 9;
 			this.SongNameLabel.Visible = false;
 			// 
 			// createVideoLabel
 			// 
 			this.createVideoLabel.AutoSize = true;
-			this.createVideoLabel.Location = new System.Drawing.Point(566, 891);
-			this.createVideoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.createVideoLabel.Location = new System.Drawing.Point(377, 579);
 			this.createVideoLabel.Name = "createVideoLabel";
-			this.createVideoLabel.Size = new System.Drawing.Size(13, 20);
+			this.createVideoLabel.Size = new System.Drawing.Size(10, 13);
 			this.createVideoLabel.TabIndex = 11;
 			this.createVideoLabel.Text = " ";
 			// 
@@ -156,10 +147,9 @@
 			this.selectPhotosButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.selectPhotosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.selectPhotosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.selectPhotosButton.Location = new System.Drawing.Point(34, 183);
-			this.selectPhotosButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.selectPhotosButton.Location = new System.Drawing.Point(23, 119);
 			this.selectPhotosButton.Name = "selectPhotosButton";
-			this.selectPhotosButton.Size = new System.Drawing.Size(162, 35);
+			this.selectPhotosButton.Size = new System.Drawing.Size(108, 23);
 			this.selectPhotosButton.TabIndex = 57;
 			this.selectPhotosButton.Text = "Select Photos";
 			this.selectPhotosButton.UseVisualStyleBackColor = false;
@@ -169,10 +159,9 @@
 			// 
 			// imagePictureBox
 			// 
-			this.imagePictureBox.Location = new System.Drawing.Point(282, 271);
-			this.imagePictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.imagePictureBox.Location = new System.Drawing.Point(188, 176);
 			this.imagePictureBox.Name = "imagePictureBox";
-			this.imagePictureBox.Size = new System.Drawing.Size(606, 560);
+			this.imagePictureBox.Size = new System.Drawing.Size(404, 364);
 			this.imagePictureBox.TabIndex = 7;
 			this.imagePictureBox.TabStop = false;
 			this.imagePictureBox.Visible = false;
@@ -187,10 +176,9 @@
 			this.watchVideoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.watchVideoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.watchVideoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.watchVideoButton.Location = new System.Drawing.Point(726, 928);
-			this.watchVideoButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.watchVideoButton.Location = new System.Drawing.Point(484, 603);
 			this.watchVideoButton.Name = "watchVideoButton";
-			this.watchVideoButton.Size = new System.Drawing.Size(162, 35);
+			this.watchVideoButton.Size = new System.Drawing.Size(108, 23);
 			this.watchVideoButton.TabIndex = 58;
 			this.watchVideoButton.Text = "Watch Video";
 			this.watchVideoButton.UseVisualStyleBackColor = false;
@@ -210,10 +198,9 @@
 			this.saveAsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.saveAsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.saveAsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.saveAsButton.Location = new System.Drawing.Point(726, 883);
-			this.saveAsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.saveAsButton.Location = new System.Drawing.Point(484, 574);
 			this.saveAsButton.Name = "saveAsButton";
-			this.saveAsButton.Size = new System.Drawing.Size(162, 35);
+			this.saveAsButton.Size = new System.Drawing.Size(108, 23);
 			this.saveAsButton.TabIndex = 59;
 			this.saveAsButton.Text = "Save As";
 			this.saveAsButton.UseVisualStyleBackColor = false;
@@ -231,10 +218,9 @@
 			this.addSongButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.addSongButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.addSongButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.addSongButton.Location = new System.Drawing.Point(726, 838);
-			this.addSongButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.addSongButton.Location = new System.Drawing.Point(484, 545);
 			this.addSongButton.Name = "addSongButton";
-			this.addSongButton.Size = new System.Drawing.Size(162, 35);
+			this.addSongButton.Size = new System.Drawing.Size(108, 23);
 			this.addSongButton.TabIndex = 60;
 			this.addSongButton.Text = "Add Song";
 			this.addSongButton.UseVisualStyleBackColor = false;
@@ -244,7 +230,7 @@
 			// 
 			// VideoCreatorPageControl
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.addSongButton);
@@ -257,9 +243,8 @@
 			this.Controls.Add(this.photosCheckedListBox);
 			this.Controls.Add(this.filterCheckedListBox);
 			this.Controls.Add(this.photosChooserGroupBox);
-			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "VideoCreatorPageControl";
-			this.Size = new System.Drawing.Size(954, 966);
+			this.Size = new System.Drawing.Size(636, 628);
 			this.photosChooserGroupBox.ResumeLayout(false);
 			this.photosChooserGroupBox.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.imagePictureBox)).EndInit();

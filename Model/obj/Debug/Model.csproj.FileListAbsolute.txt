@@ -27,7 +27,3 @@ C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-3079220392\Model\obj\D
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\Magick.NET-Q16-AnyCPU.dll
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\NReco.VideoConverter.dll
 C:\Users\ofir yakov\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\taglib-sharp.dll
-C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\Magick.NET-Q16-AnyCPU.dll
-C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\NReco.VideoConverter.dll
-C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\bin\Debug\taglib-sharp.dll
-C:\Users\noy mekahel\Source\Repos\Ex01-Noy-205685514-Ofir-307922039\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
