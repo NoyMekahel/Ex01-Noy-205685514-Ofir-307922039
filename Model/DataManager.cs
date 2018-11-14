@@ -13,10 +13,12 @@ namespace Model
 		private User m_LoggedInUser;
 
 		public Ride Ride { get; } = new Ride();
+		public string UserAccessToken { get; private set; }
 
-		public DataManager(User i_LoggedInUser)
+		public DataManager(User i_LoggedInUser, string i_UserAccessToken)
 		{
 			m_LoggedInUser = i_LoggedInUser;
+			UserAccessToken = i_UserAccessToken;
 		}
 
 		public string GetPictureNormalURL()

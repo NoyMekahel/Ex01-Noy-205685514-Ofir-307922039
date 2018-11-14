@@ -79,6 +79,7 @@ namespace UI
 				{
 					FacebookApp.showFacebookError("There are no events you go to.");
 				}
+
 			}
 			catch (Exception)
 			{
@@ -88,7 +89,6 @@ namespace UI
 
 		private void eventsComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
 			try
 			{
 				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromChosenEvent((sender as ComboBox).SelectedItem.ToString());
@@ -196,6 +196,18 @@ namespace UI
 		public void AddBackButton(Button i_BackButton)
 		{
 			Controls.Add(i_BackButton);
+		}
+
+		private void button_MouseLeave(object sender, EventArgs e)
+		{
+			Button button = sender as Button;
+			button.Cursor = Cursors.Default;
+		}
+
+		private void button_MouseEnter(object sender, EventArgs e)
+		{
+			Button button = sender as Button;
+			button.Cursor = Cursors.Hand;
 		}
 	}
 }

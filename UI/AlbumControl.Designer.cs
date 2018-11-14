@@ -28,30 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.albumsButton = new System.Windows.Forms.Button();
 			this.userAlbumsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.userAlbumsPhotosFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
 			this.albumsNameLabel = new System.Windows.Forms.Label();
+			this.albumsButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
-			// 
-			// albumsButton
-			// 
-			this.albumsButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
-			this.albumsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.albumsButton.FlatAppearance.BorderSize = 0;
-			this.albumsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.albumsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.albumsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.albumsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.albumsButton.Location = new System.Drawing.Point(3, 3);
-			this.albumsButton.Name = "albumsButton";
-			this.albumsButton.Size = new System.Drawing.Size(111, 30);
-			this.albumsButton.TabIndex = 16;
-			this.albumsButton.Text = "Albums";
-			this.albumsButton.UseVisualStyleBackColor = true;
-			this.albumsButton.Click += new System.EventHandler(this.albumsButton_Click);
-			this.albumsButton.MouseEnter += new System.EventHandler(this.albumsButton_MouseEnter);
-			this.albumsButton.MouseLeave += new System.EventHandler(this.albumsButton_MouseLeave);
 			// 
 			// userAlbumsFlowLayoutPanel
 			// 
@@ -83,12 +64,32 @@
 			this.albumsNameLabel.Size = new System.Drawing.Size(0, 13);
 			this.albumsNameLabel.TabIndex = 17;
 			// 
+			// albumsButton
+			// 
+			this.albumsButton.BackColor = System.Drawing.Color.Transparent;
+			this.albumsButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.albumsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.albumsButton.FlatAppearance.BorderSize = 0;
+			this.albumsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.albumsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.albumsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.albumsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.albumsButton.Location = new System.Drawing.Point(3, 10);
+			this.albumsButton.Name = "albumsButton";
+			this.albumsButton.Size = new System.Drawing.Size(108, 23);
+			this.albumsButton.TabIndex = 58;
+			this.albumsButton.Text = "Albums";
+			this.albumsButton.UseVisualStyleBackColor = false;
+			this.albumsButton.Click += new System.EventHandler(this.albumsButton_Click);
+			this.albumsButton.MouseEnter += new System.EventHandler(this.albumsButton_MouseEnter);
+			this.albumsButton.MouseLeave += new System.EventHandler(this.albumsButton_MouseLeave);
+			// 
 			// AlbumControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.albumsNameLabel);
 			this.Controls.Add(this.albumsButton);
+			this.Controls.Add(this.albumsNameLabel);
 			this.Controls.Add(this.userAlbumsFlowLayoutPanel);
 			this.Name = "AlbumControl";
 			this.Size = new System.Drawing.Size(331, 233);
@@ -98,11 +99,9 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button albumsButton;
 		private System.Windows.Forms.FlowLayoutPanel userAlbumsFlowLayoutPanel;
 		private System.Windows.Forms.Label albumsNameLabel;
 		private System.Windows.Forms.FlowLayoutPanel userAlbumsPhotosFlowLayoutPanel;
-
+		private System.Windows.Forms.Button albumsButton;
 	}
 }

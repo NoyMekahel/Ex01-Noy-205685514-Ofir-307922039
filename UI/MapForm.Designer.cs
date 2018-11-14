@@ -49,7 +49,7 @@
 			this.Controls.Add(this.googleMapWebBrowser);
 			this.Name = "MapForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "MapForm";
+			this.Text = "Map";
 			this.ResumeLayout(false);
 
 		}

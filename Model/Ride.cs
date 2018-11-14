@@ -69,14 +69,14 @@ namespace Model
 			return friendsFromChosenEvent;
 		}
 
-		public void AddFilter(IFilter genderFilter)
+		public void AddFilter(IFilter i_Filter)
 		{
 			if(m_FilterList == null)
 			{
 				m_FilterList = new List<IFilter>();
 			}
 
-			m_FilterList.Add(genderFilter);
+			m_FilterList.Add(i_Filter);
 		}
 
 		public ICollection<User> Filter()

@@ -16,10 +16,69 @@ namespace UI
 		private HomePageControl homePageControl;
 		private RidePageControl ridePageControl;
 		private VideoCreatorPageControl videoCreatorPageControl;
-
+		private AppSettings m_AppSettings;
 		public FacebookApp()
 		{
 			InitializeComponent();
+		}
+
+		protected override void OnShown(EventArgs e)
+		{
+			try
+			{
+				m_AppSettings = AppSettings.LoadFromFile();
+				if (m_AppSettings.RememberUser && !string.IsNullOrEmpty(m_AppSettings.LastAccessToken))
+				{
+					DataManager dataManager = FacebookConnection.Connect(m_AppSettings.LastAccessToken);
+					DataManagerWrapper.setDataManager(this, dataManager);
+					initializeUserPreferences();
+					showHomePage();
+				}
+			}
+			catch(Exception)
+			{ }
+			base.OnShown(e);
+		}
+
+		private void initializeUserPreferences()
+		{
+			this.Location = m_AppSettings.Location;
+			rememberUserCheckBox.Checked = m_AppSettings.RememberUser;
+		}
+
+		private void loginButton_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				DataManager dataManager = FacebookConnection.Login();
+				DataManagerWrapper.setDataManager(this, dataManager);
+				showHomePage();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		protected override void OnClosing(CancelEventArgs e)
+		{
+			m_AppSettings.Location = this.Location;
+			m_AppSettings.RememberUser = rememberUserCheckBox.Checked ? true : false;
+			if(m_AppSettings.RememberUser)
+			{
+				m_AppSettings.LastAccessToken = DataManagerWrapper.DataManager.UserAccessToken;
+			}
+			else
+			{
+				m_AppSettings.LastAccessToken = null;
+			}
+			try
+			{
+				m_AppSettings.SaveToFile();
+			}
+			catch(Exception)
+			{}
+			base.OnClosing(e);
 		}
 
 		private void showHomePage()
@@ -49,6 +108,8 @@ namespace UI
 			FacebookConnection.Logout();
 			mainPanel.Controls.Clear();
 			mainPanel.Controls.Add(loginButton);
+			rememberUserCheckBox.Checked = false;
+			mainPanel.Controls.Add(rememberUserCheckBox);
 		}
 
 		private void button_MouseLeave(object sender, EventArgs e)
@@ -87,20 +148,6 @@ namespace UI
 		internal static void showFacebookError(string i_ErrorMessage)
 		{
 			MessageBox.Show(i_ErrorMessage);
-		}
-
-		private void loginButton_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				DataManager dataManager = FacebookConnection.Login();
-				DataManagerWrapper.setDataManager(this, dataManager);
-				showHomePage();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
 		}
 	}
 }

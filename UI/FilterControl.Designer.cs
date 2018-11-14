@@ -29,14 +29,19 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilterControl));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.friendsResultDataGrid = new System.Windows.Forms.DataGridView();
+			this.imageSmallDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.relationshipStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.religionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.AgeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bindingSourceRideFriendsGrid = new System.Windows.Forms.BindingSource(this.components);
 			this.maleRadioButton = new System.Windows.Forms.RadioButton();
 			this.famaleRadioButton = new System.Windows.Forms.RadioButton();
@@ -48,14 +53,8 @@
 			this.age1RadioButton = new System.Windows.Forms.RadioButton();
 			this.ageGroupBox = new System.Windows.Forms.GroupBox();
 			this.ageCheckBox = new System.Windows.Forms.CheckBox();
-			this.FilterButton = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.imageSmallDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.AgeColunm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.relationshipStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.religionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.filterButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.friendsResultDataGrid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceRideFriendsGrid)).BeginInit();
 			this.GenderGroupBox.SuspendLayout();
@@ -70,20 +69,75 @@
 			this.friendsResultDataGrid.AllowUserToOrderColumns = true;
 			this.friendsResultDataGrid.AllowUserToResizeRows = false;
 			this.friendsResultDataGrid.AutoGenerateColumns = false;
+			this.friendsResultDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.friendsResultDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.friendsResultDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imageSmallDataGridViewImageColumn,
             this.nameDataGridViewTextBoxColumn,
             this.genderDataGridViewTextBoxColumn,
-            this.AgeColunm,
             this.relationshipStatusDataGridViewTextBoxColumn,
-            this.religionDataGridViewTextBoxColumn});
+            this.religionDataGridViewTextBoxColumn,
+            this.AgeColumn});
 			this.friendsResultDataGrid.DataSource = this.bindingSourceRideFriendsGrid;
 			this.friendsResultDataGrid.Location = new System.Drawing.Point(17, 19);
 			this.friendsResultDataGrid.Name = "friendsResultDataGrid";
 			this.friendsResultDataGrid.RowTemplate.Height = 28;
 			this.friendsResultDataGrid.Size = new System.Drawing.Size(397, 256);
 			this.friendsResultDataGrid.TabIndex = 49;
+			// 
+			// imageSmallDataGridViewImageColumn
+			// 
+			this.imageSmallDataGridViewImageColumn.DataPropertyName = "ImageSmall";
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+			this.imageSmallDataGridViewImageColumn.DefaultCellStyle = dataGridViewCellStyle13;
+			this.imageSmallDataGridViewImageColumn.HeaderText = "Image";
+			this.imageSmallDataGridViewImageColumn.Name = "imageSmallDataGridViewImageColumn";
+			this.imageSmallDataGridViewImageColumn.ReadOnly = true;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+			this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// genderDataGridViewTextBoxColumn
+			// 
+			this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+			dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+			this.genderDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+			this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+			this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+			this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// relationshipStatusDataGridViewTextBoxColumn
+			// 
+			this.relationshipStatusDataGridViewTextBoxColumn.DataPropertyName = "RelationshipStatus";
+			dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+			this.relationshipStatusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+			this.relationshipStatusDataGridViewTextBoxColumn.HeaderText = "RelationshipStatus";
+			this.relationshipStatusDataGridViewTextBoxColumn.Name = "relationshipStatusDataGridViewTextBoxColumn";
+			this.relationshipStatusDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// religionDataGridViewTextBoxColumn
+			// 
+			this.religionDataGridViewTextBoxColumn.DataPropertyName = "Religion";
+			dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+			this.religionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+			this.religionDataGridViewTextBoxColumn.HeaderText = "Religion";
+			this.religionDataGridViewTextBoxColumn.Name = "religionDataGridViewTextBoxColumn";
+			this.religionDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// AgeColumn
+			// 
+			dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+			this.AgeColumn.DefaultCellStyle = dataGridViewCellStyle18;
+			this.AgeColumn.HeaderText = "Age";
+			this.AgeColumn.Name = "AgeColumn";
+			this.AgeColumn.ReadOnly = true;
 			// 
 			// bindingSourceRideFriendsGrid
 			// 
@@ -199,20 +253,9 @@
 			this.ageCheckBox.UseVisualStyleBackColor = true;
 			this.ageCheckBox.CheckedChanged += new System.EventHandler(this.ageCheckBox_CheckedChanged);
 			// 
-			// FilterButton
-			// 
-			this.FilterButton.Enabled = false;
-			this.FilterButton.Location = new System.Drawing.Point(168, 86);
-			this.FilterButton.Name = "FilterButton";
-			this.FilterButton.Size = new System.Drawing.Size(75, 30);
-			this.FilterButton.TabIndex = 52;
-			this.FilterButton.Text = "Filter";
-			this.FilterButton.UseVisualStyleBackColor = true;
-			this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
-			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.FilterButton);
+			this.panel1.Controls.Add(this.filterButton);
 			this.panel1.Controls.Add(this.genderCheckBox);
 			this.panel1.Controls.Add(this.ageGroupBox);
 			this.panel1.Controls.Add(this.ageCheckBox);
@@ -222,59 +265,26 @@
 			this.panel1.Size = new System.Drawing.Size(397, 127);
 			this.panel1.TabIndex = 51;
 			// 
-			// imageSmallDataGridViewImageColumn
+			// filterButton
 			// 
-			this.imageSmallDataGridViewImageColumn.DataPropertyName = "ImageSmall";
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
-			this.imageSmallDataGridViewImageColumn.DefaultCellStyle = dataGridViewCellStyle1;
-			this.imageSmallDataGridViewImageColumn.HeaderText = "Image";
-			this.imageSmallDataGridViewImageColumn.Name = "imageSmallDataGridViewImageColumn";
-			this.imageSmallDataGridViewImageColumn.ReadOnly = true;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-			this.nameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-			this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// genderDataGridViewTextBoxColumn
-			// 
-			this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-			this.genderDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-			this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-			this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-			this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// AgeColunm
-			// 
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-			this.AgeColunm.DefaultCellStyle = dataGridViewCellStyle4;
-			this.AgeColunm.HeaderText = "Age";
-			this.AgeColunm.Name = "AgeColunm";
-			// 
-			// relationshipStatusDataGridViewTextBoxColumn
-			// 
-			this.relationshipStatusDataGridViewTextBoxColumn.DataPropertyName = "RelationshipStatus";
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-			this.relationshipStatusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-			this.relationshipStatusDataGridViewTextBoxColumn.HeaderText = "RelationshipStatus";
-			this.relationshipStatusDataGridViewTextBoxColumn.Name = "relationshipStatusDataGridViewTextBoxColumn";
-			this.relationshipStatusDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// religionDataGridViewTextBoxColumn
-			// 
-			this.religionDataGridViewTextBoxColumn.DataPropertyName = "Religion";
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-			this.religionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-			this.religionDataGridViewTextBoxColumn.HeaderText = "Religion";
-			this.religionDataGridViewTextBoxColumn.Name = "religionDataGridViewTextBoxColumn";
-			this.religionDataGridViewTextBoxColumn.ReadOnly = true;
+			this.filterButton.BackColor = System.Drawing.Color.Transparent;
+			this.filterButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.filterButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.filterButton.Enabled = false;
+			this.filterButton.FlatAppearance.BorderSize = 0;
+			this.filterButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.filterButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.filterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.filterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.filterButton.Location = new System.Drawing.Point(152, 86);
+			this.filterButton.Name = "filterButton";
+			this.filterButton.Size = new System.Drawing.Size(96, 23);
+			this.filterButton.TabIndex = 53;
+			this.filterButton.Text = "Filter";
+			this.filterButton.UseVisualStyleBackColor = false;
+			this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+			this.filterButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.filterButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
 			// 
 			// FilterControl
 			// 
@@ -309,14 +319,14 @@
 		private System.Windows.Forms.RadioButton age1RadioButton;
 		private System.Windows.Forms.GroupBox ageGroupBox;
 		private System.Windows.Forms.CheckBox ageCheckBox;
-		private System.Windows.Forms.Button FilterButton;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.BindingSource bindingSourceRideFriendsGrid;
 		private System.Windows.Forms.DataGridViewImageColumn imageSmallDataGridViewImageColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn AgeColunm;
 		private System.Windows.Forms.DataGridViewTextBoxColumn relationshipStatusDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn religionDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn AgeColumn;
+		private System.Windows.Forms.Button filterButton;
 	}
 }

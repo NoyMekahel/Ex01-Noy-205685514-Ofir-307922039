@@ -23,7 +23,7 @@ namespace Model
 
 			foreach(User user in i_Friends)
 			{
-				int age = GetAgeFromUserBirthday(user.Birthday);
+				int? age = GetAgeFromUserBirthday(user.Birthday);
 				if(age >= m_MinAge && age <= m_MaxAge)
 				{
 					friendsFromStartPointToEndPoint.Add(user);
@@ -33,9 +33,9 @@ namespace Model
 			return friendsFromStartPointToEndPoint;
 		}
 
-		public static int GetAgeFromUserBirthday(string i_Birthday)
+		public static int? GetAgeFromUserBirthday(string i_Birthday)
 		{
-			int age = -1;
+			int? age = null;
 			int birthYear;
 			if(isDateContainsYear(i_Birthday))
 			{

@@ -53,7 +53,6 @@ namespace UI
 			this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
 			this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
 			this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
-			this.postsButton = new System.Windows.Forms.Button();
 			this.postsListView = new System.Windows.Forms.ListView();
 			this.postDateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.messagesColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,12 +60,13 @@ namespace UI
 			this.ImageColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.pageNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.likesCountColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.likedPagesButton = new System.Windows.Forms.Button();
-			this.findARideButton = new System.Windows.Forms.Button();
 			this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.createVideoButton = new System.Windows.Forms.Button();
 			this.albumControl1 = new UI.AlbumControl();
 			this.userDetailsControl = new UI.UserDetailsControl();
+			this.createVideoButton = new System.Windows.Forms.Button();
+			this.postsButton = new System.Windows.Forms.Button();
+			this.likedPagesButton = new System.Windows.Forms.Button();
+			this.findARideButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.friendsDataGridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceFriendsGrid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
@@ -185,25 +185,6 @@ namespace UI
 			// 
 			this.bindingSourceFriendsGrid.DataSource = typeof(FacebookWrapper.ObjectModel.User);
 			// 
-			// postsButton
-			// 
-			this.postsButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
-			this.postsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.postsButton.FlatAppearance.BorderSize = 0;
-			this.postsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.postsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.postsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.postsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.postsButton.Location = new System.Drawing.Point(264, 299);
-			this.postsButton.Name = "postsButton";
-			this.postsButton.Size = new System.Drawing.Size(75, 23);
-			this.postsButton.TabIndex = 20;
-			this.postsButton.Text = "Posts";
-			this.postsButton.UseVisualStyleBackColor = true;
-			this.postsButton.Click += new System.EventHandler(this.postsButton_Click);
-			this.postsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.postsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
-			// 
 			// postsListView
 			// 
 			this.postsListView.BackgroundImage = global::UI.Properties.Resources.facebook_widescreen_navy_background_image;
@@ -228,7 +209,6 @@ namespace UI
 			// messagesColumn
 			// 
 			this.messagesColumn.Text = "Message";
-			this.messagesColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.messagesColumn.Width = 211;
 			// 
 			// likedPagesListView
@@ -264,62 +244,6 @@ namespace UI
 			this.likesCountColumnHeader.Text = "Likes";
 			this.likesCountColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
-			// likedPagesButton
-			// 
-			this.likedPagesButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
-			this.likedPagesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.likedPagesButton.FlatAppearance.BorderSize = 0;
-			this.likedPagesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.likedPagesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.likedPagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.likedPagesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.likedPagesButton.Location = new System.Drawing.Point(3, 299);
-			this.likedPagesButton.Name = "likedPagesButton";
-			this.likedPagesButton.Size = new System.Drawing.Size(75, 23);
-			this.likedPagesButton.TabIndex = 16;
-			this.likedPagesButton.Text = "Liked Pages";
-			this.likedPagesButton.UseVisualStyleBackColor = true;
-			this.likedPagesButton.Click += new System.EventHandler(this.likedPagesButton_Click);
-			this.likedPagesButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.likedPagesButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
-			// 
-			// findARideButton
-			// 
-			this.findARideButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
-			this.findARideButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.findARideButton.FlatAppearance.BorderSize = 0;
-			this.findARideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.findARideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.findARideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.findARideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.findARideButton.Location = new System.Drawing.Point(403, 15);
-			this.findARideButton.Name = "findARideButton";
-			this.findARideButton.Size = new System.Drawing.Size(96, 23);
-			this.findARideButton.TabIndex = 9;
-			this.findARideButton.Text = "Find A Ride";
-			this.findARideButton.UseVisualStyleBackColor = true;
-			this.findARideButton.Visible = false;
-			this.findARideButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.findARideButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
-			// 
-			// createVideoButton
-			// 
-			this.createVideoButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
-			this.createVideoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.createVideoButton.FlatAppearance.BorderSize = 0;
-			this.createVideoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.createVideoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.createVideoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.createVideoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.createVideoButton.Location = new System.Drawing.Point(291, 15);
-			this.createVideoButton.Name = "createVideoButton";
-			this.createVideoButton.Size = new System.Drawing.Size(96, 23);
-			this.createVideoButton.TabIndex = 22;
-			this.createVideoButton.Text = "Create Video";
-			this.createVideoButton.UseVisualStyleBackColor = true;
-			this.createVideoButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.createVideoButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
-			// 
 			// albumControl1
 			// 
 			this.albumControl1.Location = new System.Drawing.Point(264, 60);
@@ -336,19 +260,97 @@ namespace UI
 			this.userDetailsControl.Size = new System.Drawing.Size(231, 240);
 			this.userDetailsControl.TabIndex = 12;
 			// 
+			// createVideoButton
+			// 
+			this.createVideoButton.BackColor = System.Drawing.Color.Transparent;
+			this.createVideoButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.createVideoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.createVideoButton.FlatAppearance.BorderSize = 0;
+			this.createVideoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.createVideoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.createVideoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.createVideoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.createVideoButton.Location = new System.Drawing.Point(291, 15);
+			this.createVideoButton.Name = "createVideoButton";
+			this.createVideoButton.Size = new System.Drawing.Size(96, 23);
+			this.createVideoButton.TabIndex = 59;
+			this.createVideoButton.Text = "Create Video";
+			this.createVideoButton.UseVisualStyleBackColor = false;
+			this.createVideoButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.createVideoButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// postsButton
+			// 
+			this.postsButton.BackColor = System.Drawing.Color.Transparent;
+			this.postsButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.postsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.postsButton.FlatAppearance.BorderSize = 0;
+			this.postsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.postsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.postsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.postsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.postsButton.Location = new System.Drawing.Point(264, 299);
+			this.postsButton.Name = "postsButton";
+			this.postsButton.Size = new System.Drawing.Size(96, 23);
+			this.postsButton.TabIndex = 60;
+			this.postsButton.Text = "Posts";
+			this.postsButton.UseVisualStyleBackColor = false;
+			this.postsButton.Click += new System.EventHandler(this.postsButton_Click);
+			this.postsButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.postsButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// likedPagesButton
+			// 
+			this.likedPagesButton.BackColor = System.Drawing.Color.Transparent;
+			this.likedPagesButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.likedPagesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.likedPagesButton.FlatAppearance.BorderSize = 0;
+			this.likedPagesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.likedPagesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.likedPagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.likedPagesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.likedPagesButton.Location = new System.Drawing.Point(3, 299);
+			this.likedPagesButton.Name = "likedPagesButton";
+			this.likedPagesButton.Size = new System.Drawing.Size(96, 23);
+			this.likedPagesButton.TabIndex = 61;
+			this.likedPagesButton.Text = "Liked Pages";
+			this.likedPagesButton.UseVisualStyleBackColor = false;
+			this.likedPagesButton.Click += new System.EventHandler(this.likedPagesButton_Click);
+			this.likedPagesButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.likedPagesButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// findARideButton
+			// 
+			this.findARideButton.BackColor = System.Drawing.Color.Transparent;
+			this.findARideButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.findARideButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.findARideButton.FlatAppearance.BorderSize = 0;
+			this.findARideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.findARideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.findARideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.findARideButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.findARideButton.Location = new System.Drawing.Point(393, 15);
+			this.findARideButton.Name = "findARideButton";
+			this.findARideButton.Size = new System.Drawing.Size(96, 23);
+			this.findARideButton.TabIndex = 62;
+			this.findARideButton.Text = "Find A Ride";
+			this.findARideButton.UseVisualStyleBackColor = false;
+			this.findARideButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.findARideButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
 			// HomePageControl
 			// 
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.findARideButton);
+			this.Controls.Add(this.likedPagesButton);
+			this.Controls.Add(this.postsButton);
 			this.Controls.Add(this.createVideoButton);
 			this.Controls.Add(this.albumControl1);
-			this.Controls.Add(this.postsButton);
 			this.Controls.Add(this.postsListView);
 			this.Controls.Add(this.likedPagesListView);
-			this.Controls.Add(this.likedPagesButton);
 			this.Controls.Add(this.userDetailsControl);
 			this.Controls.Add(this.friensListLabel);
 			this.Controls.Add(this.friendsDataGridView);
-			this.Controls.Add(this.findARideButton);
 			this.Name = "HomePageControl";
 			this.Size = new System.Drawing.Size(630, 637);
 			((System.ComponentModel.ISupportInitialize)(this.friendsDataGridView)).EndInit();
@@ -362,7 +364,6 @@ namespace UI
 
 		private System.Windows.Forms.Label friensListLabel;
 		private System.Windows.Forms.DataGridView friendsDataGridView;
-		private System.Windows.Forms.Button findARideButton;
 		private System.Windows.Forms.BindingSource bindingSourceFriendsGrid;
 		#endregion
 
@@ -371,14 +372,12 @@ namespace UI
 		private System.ComponentModel.BackgroundWorker backgroundWorker3;
 		private System.ComponentModel.BackgroundWorker backgroundWorker4;
 		private UserDetailsControl userDetailsControl;
-		private System.Windows.Forms.Button likedPagesButton;
 		private System.Windows.Forms.ColumnHeader pageNameColumnHeader;
 		private System.Windows.Forms.ColumnHeader likesCountColumnHeader;
 		private System.Windows.Forms.ColumnHeader ImageColumnHeader;
 		private System.Windows.Forms.ListView likedPagesListView;
 		private System.Windows.Forms.ListView postsListView;
 		private System.Windows.Forms.ColumnHeader postDateColumn;
-		private System.Windows.Forms.Button postsButton;
 		private System.Windows.Forms.BindingSource postsBindingSource;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
@@ -390,5 +389,8 @@ namespace UI
 		private System.Windows.Forms.ColumnHeader messagesColumn;
 		private AlbumControl albumControl1;
 		private System.Windows.Forms.Button createVideoButton;
+		private System.Windows.Forms.Button postsButton;
+		private System.Windows.Forms.Button likedPagesButton;
+		private System.Windows.Forms.Button findARideButton;
 	}
 }

@@ -137,16 +137,17 @@ namespace UI
 				FacebookObjectCollection<Album> allAlbums = DataManagerWrapper.DataManager.GetAlbums();
 
 				m_FilteredPhotosCollection = new FacebookObjectCollection<Photo>();
+				int nodeCouner = 0;
 				foreach (Album album in allAlbums)
 				{
 					int photoCounter = 1;
-
 					foreach (Photo photo in album.Photos)
 					{
 						photosCheckedListBox.Items.Add(string.Format("{0} - Picture {1}", album.Name, photoCounter));
 						m_FilteredPhotosCollection.Add(photo);
 						photoCounter++;
 					}
+					nodeCouner++;
 				}
 			}
 			catch (Exception)
@@ -211,6 +212,18 @@ namespace UI
 			Controls.Add(i_LogoutButton);
 		}
 
+		private void button_MouseLeave(object sender, EventArgs e)
+		{
+			Button button = sender as Button;
+			button.Cursor = Cursors.Default;
+		}
+
+		private void button_MouseEnter(object sender, EventArgs e)
+		{
+			Button button = sender as Button;
+			button.Cursor = Cursors.Hand;
+		}
+
 
 		private void checkedListBox_Click(object sender, EventArgs e)
 		{
@@ -260,7 +273,10 @@ namespace UI
 			{
 				try
 				{
-					if(!SongNameLabel.Text.Equals(string.Empty))
+					createVideoLabel.Text = "creating video...";
+					saveAsButton.Enabled = false;
+					addSongButton.Enabled = false;
+					if (!SongNameLabel.Text.Equals(string.Empty))
 					{
 						Model.VideoCreator.createVideo(m_SelectedImagesCollection, saveFileDialog.FileName, SongNameLabel.Text);
 					}
@@ -268,6 +284,9 @@ namespace UI
 					{
 						Model.VideoCreator.createVideo(m_SelectedImagesCollection, saveFileDialog.FileName);
 					}
+					saveAsButton.Enabled = true;
+					addSongButton.Enabled = true;
+					createVideoLabel.Text = "Video created!";
 					m_VideoURL = saveFileDialog.FileName;
 					watchVideoButton.Visible = true;
 				}

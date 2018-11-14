@@ -25,12 +25,10 @@ namespace UI
 
 		internal void fetchUserInfo()
 		{
-			findARideButton.Visible = true;
 			try
 			{
-                showUserFriends();
                 userDetailsControl.ShowUserInfo();
-				userDetailsControl.Visible = true;
+                showUserFriends();
 			}
 			catch (Exception)
 			{
@@ -130,7 +128,6 @@ namespace UI
 					}
 				}
 				postsListView.Columns[messagesColumn.Index].Width = -1;
-				//postsListView.BackgroundImage.
 				postsButton.Enabled = false;
 				postsListView.Visible = true;
 			}

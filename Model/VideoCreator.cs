@@ -17,30 +17,35 @@ namespace Model
 			{
 				throw new Exception("You didn't sent any images");
 			}
-
-			TagLib.File songFile = TagLib.File.Create(i_SongURL, TagLib.ReadStyle.Average);
-			int animationDelay = (int)(songFile.Properties.Duration.TotalSeconds) * 100 / i_ImagesCollection.Count;
-
-			using (MagickImageCollection imageCollection = new MagickImageCollection())
+			try
 			{
-				createImageCollection(i_ImagesCollection, imageCollection, animationDelay);
+				TagLib.File songFile = TagLib.File.Create(i_SongURL, TagLib.ReadStyle.Average);
+				int animationDelay = (int)(songFile.Properties.Duration.TotalSeconds) * 100 / i_ImagesCollection.Count;
 
-				FFMpegConverter converter = new NReco.VideoConverter.FFMpegConverter();
-				converter.ConvertMedia("video.gif", null, "video.mp4", Format.mp4, new ConvertSettings()
+				using (MagickImageCollection imageCollection = new MagickImageCollection())
 				{
-					VideoCodec = "libx264"
-				});
+					createImageCollection(i_ImagesCollection, imageCollection, animationDelay);
 
-				converter.ConvertMedia(new[] {
+					FFMpegConverter converter = new NReco.VideoConverter.FFMpegConverter();
+					converter.ConvertMedia("video.gif", null, "video.mp4", Format.mp4, new ConvertSettings()
+					{
+						VideoCodec = "libx264"
+					});
+
+					converter.ConvertMedia(new[] {
 					new FFMpegInput("video.mp4"), new FFMpegInput(i_SongURL) }, i_FileURL, null,
-				  new ConvertSettings()
-				  {
-					AudioCodec = "copy",
-					VideoCodec = "libx264",
-					CustomInputArgs = "-framerate 25",
-					CustomOutputArgs = " -map 0:v:0 -map 1:a:0 "
-				  });
+					  new ConvertSettings()
+					  {
+						  AudioCodec = "copy",
+						  VideoCodec = "libx264",
+						  CustomInputArgs = "-framerate 25",
+						  CustomOutputArgs = " -map 0:v:0 -map 1:a:0 "
+					  });
+				}
+			}
 
+			finally
+			{
 				File.Delete("video.gif");
 				File.Delete("video.mp4");
 			}
@@ -53,15 +58,22 @@ namespace Model
 				throw new Exception("You didn't sent any images");
 			}
 
-			using (MagickImageCollection imageCollection = new MagickImageCollection())
+			try
 			{
-				createImageCollection(i_ImagesCollection, imageCollection, 600);
-				
-				FFMpegConverter converter = new NReco.VideoConverter.FFMpegConverter();
-				converter.ConvertMedia("video.gif", null, i_FileURL, Format.mp4, new ConvertSettings()
+				using (MagickImageCollection imageCollection = new MagickImageCollection())
 				{
-					VideoCodec = "libx264" //"libx264"
-				});
+					createImageCollection(i_ImagesCollection, imageCollection, 600);
+
+					FFMpegConverter converter = new NReco.VideoConverter.FFMpegConverter();
+					converter.ConvertMedia("video.gif", null, i_FileURL, Format.mp4, new ConvertSettings()
+					{
+						VideoCodec = "libx264"
+					});
+				}
+			}
+
+			finally
+			{
 				File.Delete("video.gif");
 			}
 		}

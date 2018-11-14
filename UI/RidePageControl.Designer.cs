@@ -34,12 +34,12 @@ namespace UI
 			this.fromLocationLabel = new System.Windows.Forms.Label();
 			this.eventsComboBox = new System.Windows.Forms.ComboBox();
 			this.locationsListBox = new System.Windows.Forms.ListBox();
-			this.eventButton = new System.Windows.Forms.Button();
-			this.workButton = new System.Windows.Forms.Button();
-			this.academicInstitutionButton = new System.Windows.Forms.Button();
 			this.academicComboBox = new System.Windows.Forms.ComboBox();
 			this.workComboBox = new System.Windows.Forms.ComboBox();
 			this.bindingSourceRideFriendsGrid = new System.Windows.Forms.BindingSource(this.components);
+			this.eventButton = new System.Windows.Forms.Button();
+			this.workButton = new System.Windows.Forms.Button();
+			this.academicInstitutionButton = new System.Windows.Forms.Button();
 			this.filterControl = new UI.FilterControl();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceRideFriendsGrid)).BeginInit();
 			this.SuspendLayout();
@@ -75,42 +75,6 @@ namespace UI
 			this.locationsListBox.TabIndex = 25;
 			this.locationsListBox.SelectedIndexChanged += new System.EventHandler(this.locationsListBox_SelectedIndexChanged);
 			// 
-			// eventButton
-			// 
-			this.eventButton.Enabled = false;
-			this.eventButton.Location = new System.Drawing.Point(420, 460);
-			this.eventButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.eventButton.Name = "eventButton";
-			this.eventButton.Size = new System.Drawing.Size(187, 22);
-			this.eventButton.TabIndex = 24;
-			this.eventButton.Text = "Ride To Your Event";
-			this.eventButton.UseVisualStyleBackColor = true;
-			this.eventButton.Click += new System.EventHandler(this.eventButton_Click);
-			// 
-			// workButton
-			// 
-			this.workButton.Enabled = false;
-			this.workButton.Location = new System.Drawing.Point(216, 460);
-			this.workButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.workButton.Name = "workButton";
-			this.workButton.Size = new System.Drawing.Size(187, 22);
-			this.workButton.TabIndex = 23;
-			this.workButton.Text = "Ride To Your Work";
-			this.workButton.UseVisualStyleBackColor = true;
-			this.workButton.Click += new System.EventHandler(this.workButton_Click);
-			// 
-			// academicInstitutionButton
-			// 
-			this.academicInstitutionButton.Enabled = false;
-			this.academicInstitutionButton.Location = new System.Drawing.Point(13, 460);
-			this.academicInstitutionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.academicInstitutionButton.Name = "academicInstitutionButton";
-			this.academicInstitutionButton.Size = new System.Drawing.Size(187, 22);
-			this.academicInstitutionButton.TabIndex = 22;
-			this.academicInstitutionButton.Text = "Ride To Your Academic Institution";
-			this.academicInstitutionButton.UseVisualStyleBackColor = true;
-			this.academicInstitutionButton.Click += new System.EventHandler(this.academicInstitutionButton_Click);
-			// 
 			// academicComboBox
 			// 
 			this.academicComboBox.Enabled = false;
@@ -137,6 +101,69 @@ namespace UI
 			// 
 			this.bindingSourceRideFriendsGrid.DataSource = typeof(FacebookWrapper.ObjectModel.User);
 			// 
+			// eventButton
+			// 
+			this.eventButton.BackColor = System.Drawing.Color.Transparent;
+			this.eventButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.eventButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.eventButton.Enabled = false;
+			this.eventButton.FlatAppearance.BorderSize = 0;
+			this.eventButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.eventButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.eventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.eventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.eventButton.Location = new System.Drawing.Point(420, 456);
+			this.eventButton.Name = "eventButton";
+			this.eventButton.Size = new System.Drawing.Size(187, 23);
+			this.eventButton.TabIndex = 54;
+			this.eventButton.Text = "Ride To Your Event";
+			this.eventButton.UseVisualStyleBackColor = false;
+			this.eventButton.Click += new System.EventHandler(this.eventButton_Click);
+			this.eventButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.eventButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// workButton
+			// 
+			this.workButton.BackColor = System.Drawing.Color.Transparent;
+			this.workButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.workButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.workButton.Enabled = false;
+			this.workButton.FlatAppearance.BorderSize = 0;
+			this.workButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.workButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.workButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.workButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.workButton.Location = new System.Drawing.Point(216, 456);
+			this.workButton.Name = "workButton";
+			this.workButton.Size = new System.Drawing.Size(187, 23);
+			this.workButton.TabIndex = 55;
+			this.workButton.Text = "Ride To Your Work";
+			this.workButton.UseVisualStyleBackColor = false;
+			this.workButton.Click += new System.EventHandler(this.workButton_Click);
+			this.workButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.workButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// academicInstitutionButton
+			// 
+			this.academicInstitutionButton.BackColor = System.Drawing.Color.Transparent;
+			this.academicInstitutionButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.academicInstitutionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.academicInstitutionButton.Enabled = false;
+			this.academicInstitutionButton.FlatAppearance.BorderSize = 0;
+			this.academicInstitutionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.academicInstitutionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.academicInstitutionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.academicInstitutionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.academicInstitutionButton.Location = new System.Drawing.Point(13, 456);
+			this.academicInstitutionButton.Name = "academicInstitutionButton";
+			this.academicInstitutionButton.Size = new System.Drawing.Size(189, 23);
+			this.academicInstitutionButton.TabIndex = 56;
+			this.academicInstitutionButton.Text = "Ride To Your Academic Institution";
+			this.academicInstitutionButton.UseVisualStyleBackColor = false;
+			this.academicInstitutionButton.Click += new System.EventHandler(this.academicInstitutionButton_Click);
+			this.academicInstitutionButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.academicInstitutionButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
 			// filterControl
 			// 
 			this.filterControl.Location = new System.Drawing.Point(205, 42);
@@ -149,15 +176,15 @@ namespace UI
 			// RidePageControl
 			// 
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.academicInstitutionButton);
+			this.Controls.Add(this.workButton);
+			this.Controls.Add(this.eventButton);
 			this.Controls.Add(this.filterControl);
 			this.Controls.Add(this.workComboBox);
 			this.Controls.Add(this.academicComboBox);
 			this.Controls.Add(this.fromLocationLabel);
 			this.Controls.Add(this.eventsComboBox);
 			this.Controls.Add(this.locationsListBox);
-			this.Controls.Add(this.eventButton);
-			this.Controls.Add(this.workButton);
-			this.Controls.Add(this.academicInstitutionButton);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "RidePageControl";
 			this.Size = new System.Drawing.Size(636, 628);
@@ -171,9 +198,6 @@ namespace UI
 		private Label fromLocationLabel;
 		private ComboBox eventsComboBox;
 		private ListBox locationsListBox;
-		private Button eventButton;
-		private Button workButton;
-		private Button academicInstitutionButton;
 		private ComboBox academicComboBox;
 		private ComboBox workComboBox;
 		private BindingSource bindingSourceRideFriendsGrid;
@@ -181,5 +205,8 @@ namespace UI
 		#endregion
 
 		private FilterControl filterControl;
+		private Button eventButton;
+		private Button workButton;
+		private Button academicInstitutionButton;
 	}
 }

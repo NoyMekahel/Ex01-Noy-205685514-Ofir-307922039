@@ -49,12 +49,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.XML" />
     <Reference Include="taglib-sharp">
       <HintPath>..\resources\taglib-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgeFilter.cs" />
+    <Compile Include="AppSettings.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="FacebookConnection.cs" />
     <Compile Include="GenderFilter.cs" />
