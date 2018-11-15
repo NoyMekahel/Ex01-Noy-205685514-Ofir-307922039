@@ -31,14 +31,14 @@ namespace UI
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.friensListLabel = new System.Windows.Forms.Label();
 			this.friendsDataGridView = new System.Windows.Forms.DataGridView();
 			this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +61,7 @@ namespace UI
 			this.pageNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.likesCountColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.createVideoButton = new System.Windows.Forms.Button();
+			this.createCollageButton = new System.Windows.Forms.Button();
 			this.postsButton = new System.Windows.Forms.Button();
 			this.likedPagesButton = new System.Windows.Forms.Button();
 			this.findARideButton = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@ namespace UI
 			this.friensListLabel.Location = new System.Drawing.Point(11, 428);
 			this.friensListLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.friensListLabel.Name = "friensListLabel";
-			this.friensListLabel.Size = new System.Drawing.Size(176, 32);
+			this.friensListLabel.Size = new System.Drawing.Size(116, 24);
 			this.friensListLabel.TabIndex = 11;
 			this.friensListLabel.Text = "Your friends:";
 			// 
@@ -106,14 +106,14 @@ namespace UI
 			this.friendsDataGridView.Margin = new System.Windows.Forms.Padding(2);
 			this.friendsDataGridView.Name = "friendsDataGridView";
 			this.friendsDataGridView.ReadOnly = true;
-			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.friendsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.friendsDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
 			this.friendsDataGridView.RowTemplate.Height = 28;
 			this.friendsDataGridView.Size = new System.Drawing.Size(626, 164);
 			this.friendsDataGridView.TabIndex = 10;
@@ -121,8 +121,8 @@ namespace UI
 			// FirstName
 			// 
 			this.FirstName.DataPropertyName = "FirstName";
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.FirstName.DefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.FirstName.DefaultCellStyle = dataGridViewCellStyle9;
 			this.FirstName.HeaderText = "FirstName";
 			this.FirstName.Name = "FirstName";
 			this.FirstName.ReadOnly = true;
@@ -130,8 +130,8 @@ namespace UI
 			// LastName
 			// 
 			this.LastName.DataPropertyName = "LastName";
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.LastName.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.LastName.DefaultCellStyle = dataGridViewCellStyle10;
 			this.LastName.HeaderText = "LastName";
 			this.LastName.Name = "LastName";
 			this.LastName.ReadOnly = true;
@@ -139,9 +139,9 @@ namespace UI
 			// ImageSmall
 			// 
 			this.ImageSmall.DataPropertyName = "ImageSmall";
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.NullValue = null;
-			this.ImageSmall.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle11.NullValue = null;
+			this.ImageSmall.DefaultCellStyle = dataGridViewCellStyle11;
 			this.ImageSmall.HeaderText = "Image";
 			this.ImageSmall.Name = "ImageSmall";
 			this.ImageSmall.ReadOnly = true;
@@ -149,8 +149,8 @@ namespace UI
 			// birthdayDataGridViewTextBoxColumn
 			// 
 			this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.birthdayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.birthdayDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
 			this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
 			this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
 			this.birthdayDataGridViewTextBoxColumn.ReadOnly = true;
@@ -158,8 +158,8 @@ namespace UI
 			// aboutDataGridViewTextBoxColumn
 			// 
 			this.aboutDataGridViewTextBoxColumn.DataPropertyName = "About";
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.aboutDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.aboutDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
 			this.aboutDataGridViewTextBoxColumn.HeaderText = "About";
 			this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
 			this.aboutDataGridViewTextBoxColumn.ReadOnly = true;
@@ -167,16 +167,16 @@ namespace UI
 			// emailDataGridViewTextBoxColumn
 			// 
 			this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.emailDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
 			this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
 			this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
 			this.emailDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// locationColumn
 			// 
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.locationColumn.DefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.locationColumn.DefaultCellStyle = dataGridViewCellStyle15;
 			this.locationColumn.HeaderText = "Location";
 			this.locationColumn.Name = "locationColumn";
 			this.locationColumn.ReadOnly = true;
@@ -244,24 +244,24 @@ namespace UI
 			this.likesCountColumnHeader.Text = "Likes";
 			this.likesCountColumnHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
-			// createVideoButton
+			// createCollageButton
 			// 
-			this.createVideoButton.BackColor = System.Drawing.Color.Transparent;
-			this.createVideoButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
-			this.createVideoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.createVideoButton.FlatAppearance.BorderSize = 0;
-			this.createVideoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.createVideoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.createVideoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.createVideoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.createVideoButton.Location = new System.Drawing.Point(291, 15);
-			this.createVideoButton.Name = "createVideoButton";
-			this.createVideoButton.Size = new System.Drawing.Size(96, 23);
-			this.createVideoButton.TabIndex = 59;
-			this.createVideoButton.Text = "Create Video";
-			this.createVideoButton.UseVisualStyleBackColor = false;
-			this.createVideoButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.createVideoButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.createCollageButton.BackColor = System.Drawing.Color.Transparent;
+			this.createCollageButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
+			this.createCollageButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.createCollageButton.FlatAppearance.BorderSize = 0;
+			this.createCollageButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.createCollageButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.createCollageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.createCollageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.createCollageButton.Location = new System.Drawing.Point(286, 15);
+			this.createCollageButton.Name = "createCollageButton";
+			this.createCollageButton.Size = new System.Drawing.Size(101, 23);
+			this.createCollageButton.TabIndex = 59;
+			this.createCollageButton.Text = "Create Collage";
+			this.createCollageButton.UseVisualStyleBackColor = false;
+			this.createCollageButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
+			this.createCollageButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
 			// 
 			// postsButton
 			// 
@@ -345,7 +345,7 @@ namespace UI
 			this.Controls.Add(this.findARideButton);
 			this.Controls.Add(this.likedPagesButton);
 			this.Controls.Add(this.postsButton);
-			this.Controls.Add(this.createVideoButton);
+			this.Controls.Add(this.createCollageButton);
 			this.Controls.Add(this.albumControl1);
 			this.Controls.Add(this.postsListView);
 			this.Controls.Add(this.likedPagesListView);
@@ -389,7 +389,7 @@ namespace UI
 		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
 		private System.Windows.Forms.ColumnHeader messagesColumn;
 		private AlbumControl albumControl1;
-		private System.Windows.Forms.Button createVideoButton;
+		private System.Windows.Forms.Button createCollageButton;
 		private System.Windows.Forms.Button postsButton;
 		private System.Windows.Forms.Button likedPagesButton;
 		private System.Windows.Forms.Button findARideButton;

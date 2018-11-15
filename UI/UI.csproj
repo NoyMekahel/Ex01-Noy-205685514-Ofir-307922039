@@ -44,6 +44,12 @@
     <Compile Include="AlbumPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CollageViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollageViewForm.Designer.cs">
+      <DependentUpon>CollageViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataManagerWrapper.cs" />
     <Compile Include="FacebookApp.cs">
       <SubType>Form</SubType>
@@ -56,6 +62,12 @@
     </Compile>
     <Compile Include="FilterControl.Designer.cs">
       <DependentUpon>FilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollageFrameOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollageFrameOptionsForm.Designer.cs">
+      <DependentUpon>CollageFrameOptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePageControl.cs">
       <SubType>UserControl</SubType>
@@ -98,17 +110,11 @@
     <Compile Include="UserDetailsControl.Designer.cs">
       <DependentUpon>UserDetailsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="VideoCreatorPageControl.cs">
+    <Compile Include="CollagePageControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VideoCreatorPageControl.Designer.cs">
-      <DependentUpon>VideoCreatorPageControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VideoResultForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VideoResultForm.Designer.cs">
-      <DependentUpon>VideoResultForm.cs</DependentUpon>
+    <Compile Include="CollagePageControl.Designer.cs">
+      <DependentUpon>CollagePageControl.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -134,11 +140,17 @@
     <EmbeddedResource Include="AlbumControl.resx">
       <DependentUpon>AlbumControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CollageViewForm.resx">
+      <DependentUpon>CollageViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacebookApp.resx">
       <DependentUpon>FacebookApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FilterControl.resx">
       <DependentUpon>FilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollageFrameOptionsForm.resx">
+      <DependentUpon>CollageFrameOptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePageControl.resx">
       <DependentUpon>HomePageControl.cs</DependentUpon>
@@ -159,11 +171,8 @@
     <EmbeddedResource Include="UserDetailsControl.resx">
       <DependentUpon>UserDetailsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VideoCreatorPageControl.resx">
-      <DependentUpon>VideoCreatorPageControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VideoResultForm.resx">
-      <DependentUpon>VideoResultForm.cs</DependentUpon>
+    <EmbeddedResource Include="CollagePageControl.resx">
+      <DependentUpon>CollagePageControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

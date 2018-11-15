@@ -15,7 +15,7 @@ namespace UI
 
 		private HomePageControl homePageControl;
 		private RidePageControl ridePageControl;
-		private VideoCreatorPageControl videoCreatorPageControl;
+		private CollagePageControl videoCreatorPageControl;
 		private AppSettings m_AppSettings;
 		public FacebookApp()
 		{
@@ -89,13 +89,13 @@ namespace UI
 			mainPanel.Controls.Add(this.homePageControl);
 			homePageControl.AddLogoutButton(logoutButton);
 			homePageControl.FindARideButton_AddClickedListener(new EventHandler(findARideButton_Click));
-			homePageControl.CreateVideoButton_AddClickedListener(new EventHandler(createVideoButton_Click));
+			homePageControl.CreateCollageButton_AddClickedListener(new EventHandler(createCollageButton_Click));
 			homePageControl.fetchUserInfo();
 		}
 
-		private void createVideoButton_Click(object sender, EventArgs e)
+		private void createCollageButton_Click(object sender, EventArgs e)
 		{
-			videoCreatorPageControl = new VideoCreatorPageControl();
+			videoCreatorPageControl = new CollagePageControl();
 			videoCreatorPageControl.AddLogoutButton(logoutButton);
 			videoCreatorPageControl.AddBackButton(backButton);
 			mainPanel.Controls.Clear();

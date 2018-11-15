@@ -57,12 +57,21 @@
   <ItemGroup>
     <Compile Include="AgeFilter.cs" />
     <Compile Include="AppSettings.cs" />
+    <Compile Include="CollageData.cs" />
+    <Compile Include="CollagesFactory.cs" />
     <Compile Include="DataManager.cs" />
+    <Compile Include="EightImagesCollage.cs" />
     <Compile Include="FacebookConnection.cs" />
+    <Compile Include="FiveImagesCollage.cs" />
+    <Compile Include="FourImagesCollage.cs" />
     <Compile Include="GenderFilter.cs" />
+    <Compile Include="ICollageble.cs" />
     <Compile Include="IFilter.cs" />
     <Compile Include="Ride.cs" />
-    <Compile Include="VideoCreator.cs" />
+    <Compile Include="SevenImagesCollage.cs" />
+    <Compile Include="SixImagesCollage.cs" />
+    <Compile Include="SubFramePosition.cs" />
+    <Compile Include="ThreeImagesCollage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

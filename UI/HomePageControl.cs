@@ -150,9 +150,9 @@ namespace UI
 			button.Cursor = Cursors.Default;
 		}
 
-		internal void CreateVideoButton_AddClickedListener(EventHandler i_EventHandler)
+		internal void CreateCollageButton_AddClickedListener(EventHandler i_EventHandler)
 		{
-			this.createVideoButton.Click += i_EventHandler;
+			this.createCollageButton.Click += i_EventHandler;
 		}
 	}
 }
