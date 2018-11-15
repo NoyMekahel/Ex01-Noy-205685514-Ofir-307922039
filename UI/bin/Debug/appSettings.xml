@@ -2,8 +2,8 @@
 <AppSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <LastAccessToken>EAAf7QxZBf10MBAH8zPW0cI9UR8wVf7wQ6jrNhcsTZBFZAYPzoJFHE1HyROKER0wasMfVXAw6lVdWhVgdChHaqtBFS7ksGxlzysCnimhdhYn3adbXZCcfXPhMp23PbNbwnXaglV2q1LjxoKB4s7w9ZCziqaTw2DSwZD</LastAccessToken>
   <Location>
-    <X>515</X>
-    <Y>150</Y>
+    <X>-1287</X>
+    <Y>145</Y>
   </Location>
   <RememberUser>true</RememberUser>
 </AppSettings>

@@ -9,9 +9,9 @@ namespace Model
 	public static class CollagesFactory
 	{
 
-		public static ICollection<ICollageble> CreateAllCollages()
+		public static ICollection<CollageBase> CreateAllCollages()
 		{
-			List<ICollageble> allCollagesList = new List<ICollageble>();
+			List<CollageBase> allCollagesList = new List<CollageBase>();
 
 			allCollagesList.Add(new ThreeImagesCollage());
 			allCollagesList.Add(new FourImagesCollage());

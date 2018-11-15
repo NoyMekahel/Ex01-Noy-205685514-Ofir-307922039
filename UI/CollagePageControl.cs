@@ -19,7 +19,7 @@ namespace UI
 		private FacebookObjectCollection<Photo> m_FilteredPhotosCollection;
 		private FacebookObjectCollection<Image> m_SelectedImagesCollection = new FacebookObjectCollection<Image>();
 		private eFrameCollage m_FrameUserChoice;
-		private ICollection<ICollageble> m_AllCollagesCollection;
+		private ICollection<CollageBase> m_AllCollagesCollection;
 
 		public CollagePageControl()
 		{

@@ -38,14 +38,16 @@
 			this.saveAsButton.BackColor = System.Drawing.Color.Transparent;
 			this.saveAsButton.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.saveAsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.saveAsButton.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.saveAsButton.FlatAppearance.BorderSize = 0;
 			this.saveAsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.saveAsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.saveAsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.saveAsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.saveAsButton.Location = new System.Drawing.Point(505, 622);
+			this.saveAsButton.Location = new System.Drawing.Point(758, 957);
+			this.saveAsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.saveAsButton.Name = "saveAsButton";
-			this.saveAsButton.Size = new System.Drawing.Size(108, 23);
+			this.saveAsButton.Size = new System.Drawing.Size(162, 35);
 			this.saveAsButton.TabIndex = 60;
 			this.saveAsButton.Text = "Save As";
 			this.saveAsButton.UseVisualStyleBackColor = false;
@@ -53,20 +55,22 @@
 			// 
 			// collageViewPictureBox
 			// 
-			this.collageViewPictureBox.Location = new System.Drawing.Point(13, 13);
+			this.collageViewPictureBox.Location = new System.Drawing.Point(20, 20);
+			this.collageViewPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.collageViewPictureBox.Name = "collageViewPictureBox";
-			this.collageViewPictureBox.Size = new System.Drawing.Size(600, 600);
+			this.collageViewPictureBox.Size = new System.Drawing.Size(900, 923);
 			this.collageViewPictureBox.TabIndex = 0;
 			this.collageViewPictureBox.TabStop = false;
 			// 
 			// CollageViewForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(627, 657);
+			this.ClientSize = new System.Drawing.Size(940, 1011);
 			this.Controls.Add(this.saveAsButton);
 			this.Controls.Add(this.collageViewPictureBox);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "CollageViewForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "CollageViewForm";

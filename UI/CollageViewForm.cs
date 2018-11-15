@@ -12,9 +12,9 @@ namespace UI
 {
 	public partial class CollageViewForm : Form
 	{
-		private ICollageble m_Collage;
+		private CollageBase m_Collage;
 
-		public CollageViewForm(ICollageble i_Collage)
+		public CollageViewForm(CollageBase i_Collage)
 		{
 			InitializeComponent();
 			m_Collage = i_Collage;

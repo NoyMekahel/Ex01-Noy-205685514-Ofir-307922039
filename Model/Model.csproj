@@ -41,18 +41,9 @@
     <Reference Include="FbGraphApiWrapper">
       <HintPath>..\resources\FbGraphApiWrapper.dll</HintPath>
     </Reference>
-    <Reference Include="Magick.NET-Q16-AnyCPU">
-      <HintPath>..\resources\Magick.NET-Q16-AnyCPU.dll</HintPath>
-    </Reference>
-    <Reference Include="NReco.VideoConverter">
-      <HintPath>..\resources\NReco.VideoConverter.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.XML" />
-    <Reference Include="taglib-sharp">
-      <HintPath>..\resources\taglib-sharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgeFilter.cs" />
@@ -65,7 +56,7 @@
     <Compile Include="FiveImagesCollage.cs" />
     <Compile Include="FourImagesCollage.cs" />
     <Compile Include="GenderFilter.cs" />
-    <Compile Include="ICollageble.cs" />
+    <Compile Include="CollageBase.cs" />
     <Compile Include="IFilter.cs" />
     <Compile Include="Ride.cs" />
     <Compile Include="SevenImagesCollage.cs" />

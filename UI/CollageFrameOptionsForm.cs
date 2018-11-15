@@ -14,15 +14,14 @@ namespace UI
 	{
 		private List<Panel> m_CollageFramePanelList = new List<Panel>();
 
-		public CollageFrameOptionsForm(ICollection<ICollageble> i_AllCollagesCollection)
+		public CollageFrameOptionsForm(ICollection<CollageBase> i_AllCollagesCollection)
 		{
 			InitializeComponent();
 			createCollageSkeletonPanels(i_AllCollagesCollection);
 		}
 
-		private void createCollageSkeletonPanels(ICollection<ICollageble> i_AllCollagesCollection)
+		private void createCollageSkeletonPanels(ICollection<CollageBase> i_AllCollagesCollection)
 		{
-
 			// location of the panel
 			int x = 25, y = 54;
 			for(int collageIndex = 3; collageIndex <= 8; collageIndex++)
@@ -46,11 +45,11 @@ namespace UI
 			showSkeletons(i_AllCollagesCollection);
 		}
 
-		private void showSkeletons(ICollection<ICollageble> i_AllCollagesCollection)
+		private void showSkeletons(ICollection<CollageBase> i_AllCollagesCollection)
 		{
 
 			int index = 0;
-			foreach(ICollageble collage in i_AllCollagesCollection)
+			foreach(CollageBase collage in i_AllCollagesCollection)
 			{
 				PictureBox pb = new PictureBox();
 				pb.Location = new Point(0, 0);
