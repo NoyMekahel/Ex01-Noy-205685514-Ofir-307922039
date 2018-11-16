@@ -145,25 +145,19 @@
   <data name="logout_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logout_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout-button2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back-button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="blue_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue_button.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="orange_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orange_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="yellow_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yellow_button.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="loading_gif" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loading_gif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back-button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="map_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

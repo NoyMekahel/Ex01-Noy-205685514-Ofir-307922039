@@ -44,50 +44,50 @@
     <Compile Include="AlbumPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CollageViewForm.cs">
+    <Compile Include="FormCollageView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CollageViewForm.Designer.cs">
-      <DependentUpon>CollageViewForm.cs</DependentUpon>
+    <Compile Include="FormCollageView.Designer.cs">
+      <DependentUpon>FormCollageView.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManagerWrapper.cs" />
-    <Compile Include="FacebookApp.cs">
+    <Compile Include="FormFacebookApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacebookApp.Designer.cs">
-      <DependentUpon>FacebookApp.cs</DependentUpon>
+    <Compile Include="FormFacebookApp.Designer.cs">
+      <DependentUpon>FormFacebookApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FilterControl.cs">
+    <Compile Include="ControlFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FilterControl.Designer.cs">
-      <DependentUpon>FilterControl.cs</DependentUpon>
+    <Compile Include="ControlFilter.Designer.cs">
+      <DependentUpon>ControlFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="CollageFrameOptionsForm.cs">
+    <Compile Include="FormCollageFrameOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CollageFrameOptionsForm.Designer.cs">
-      <DependentUpon>CollageFrameOptionsForm.cs</DependentUpon>
+    <Compile Include="FormCollageFrameOptions.Designer.cs">
+      <DependentUpon>FormCollageFrameOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePageControl.cs">
+    <Compile Include="ControlHomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomePageControl.Designer.cs">
-      <DependentUpon>HomePageControl.cs</DependentUpon>
+    <Compile Include="ControlHomePage.Designer.cs">
+      <DependentUpon>ControlHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="IBackable.cs" />
     <Compile Include="ILogoutable.cs" />
-    <Compile Include="MapForm.cs">
+    <Compile Include="FormMap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MapForm.Designer.cs">
-      <DependentUpon>MapForm.cs</DependentUpon>
+    <Compile Include="FormMap.Designer.cs">
+      <DependentUpon>FormMap.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhotoInfo.cs">
+    <Compile Include="FormPhotoInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhotoInfo.Designer.cs">
-      <DependentUpon>PhotoInfo.cs</DependentUpon>
+    <Compile Include="FormPhotoInfo.Designer.cs">
+      <DependentUpon>FormPhotoInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="PhotoPictureBox.cs">
       <SubType>Component</SubType>
@@ -98,23 +98,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RidePageControl.cs">
+    <Compile Include="ControlRidePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RidePageControl.Designer.cs">
-      <DependentUpon>RidePageControl.cs</DependentUpon>
+    <Compile Include="ControlRidePage.Designer.cs">
+      <DependentUpon>ControlRidePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserDetailsControl.cs">
+    <Compile Include="ControlUserDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserDetailsControl.Designer.cs">
-      <DependentUpon>UserDetailsControl.cs</DependentUpon>
+    <Compile Include="ControlUserDetails.Designer.cs">
+      <DependentUpon>ControlUserDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="CollagePageControl.cs">
+    <Compile Include="ControlCollagePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CollagePageControl.Designer.cs">
-      <DependentUpon>CollagePageControl.cs</DependentUpon>
+    <Compile Include="ControlCollagePage.Designer.cs">
+      <DependentUpon>ControlCollagePage.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -140,39 +140,39 @@
     <EmbeddedResource Include="AlbumControl.resx">
       <DependentUpon>AlbumControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollageViewForm.resx">
-      <DependentUpon>CollageViewForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormCollageView.resx">
+      <DependentUpon>FormCollageView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FacebookApp.resx">
-      <DependentUpon>FacebookApp.cs</DependentUpon>
+    <EmbeddedResource Include="FormFacebookApp.resx">
+      <DependentUpon>FormFacebookApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FilterControl.resx">
-      <DependentUpon>FilterControl.cs</DependentUpon>
+    <EmbeddedResource Include="ControlFilter.resx">
+      <DependentUpon>ControlFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollageFrameOptionsForm.resx">
-      <DependentUpon>CollageFrameOptionsForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormCollageFrameOptions.resx">
+      <DependentUpon>FormCollageFrameOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePageControl.resx">
-      <DependentUpon>HomePageControl.cs</DependentUpon>
+    <EmbeddedResource Include="ControlHomePage.resx">
+      <DependentUpon>ControlHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapForm.resx">
-      <DependentUpon>MapForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormMap.resx">
+      <DependentUpon>FormMap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhotoInfo.resx">
-      <DependentUpon>PhotoInfo.cs</DependentUpon>
+    <EmbeddedResource Include="FormPhotoInfo.resx">
+      <DependentUpon>FormPhotoInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RidePageControl.resx">
-      <DependentUpon>RidePageControl.cs</DependentUpon>
+    <EmbeddedResource Include="ControlRidePage.resx">
+      <DependentUpon>ControlRidePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserDetailsControl.resx">
-      <DependentUpon>UserDetailsControl.cs</DependentUpon>
+    <EmbeddedResource Include="ControlUserDetails.resx">
+      <DependentUpon>ControlUserDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollagePageControl.resx">
-      <DependentUpon>CollagePageControl.cs</DependentUpon>
+    <EmbeddedResource Include="ControlCollagePage.resx">
+      <DependentUpon>ControlCollagePage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -210,9 +210,6 @@
     <None Include="Resources\back-button.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\back-button2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\blue_button.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +242,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

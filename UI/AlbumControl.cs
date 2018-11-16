@@ -10,9 +10,9 @@ using FacebookWrapper.ObjectModel;
 
 namespace UI
 {
-	public partial class AlbumControl : UserControl
+	public partial class controlAlbum : UserControl
 	{
-		public AlbumControl()
+		public controlAlbum()
 		{
 			InitializeComponent();
 		}
@@ -30,7 +30,7 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FacebookApp.showFacebookError();
+				FormFacebookApp.showFacebookError();
 			}
 		}
 
@@ -38,14 +38,14 @@ namespace UI
 		{
 			AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
 			albumsNameLabel.Text = albumPictureBox.Album.Name;
-			Controls.Remove(userAlbumsFlowLayoutPanel);
+			Controls.Remove(flowLayoutPanelUserAlbums);
 			Controls.Add(userAlbumsPhotosFlowLayoutPanel);
 			foreach (Photo currentPhoto in albumPictureBox.Album.Photos)
 			{
 				addSinglePhoto(currentPhoto);
 			}
-			albumsButton.Enabled = true;
-			albumsButton.Text = "Back to albums";
+			buttonAlbums.Enabled = true;
+			buttonAlbums.Text = "Back to albums";
 		}
 
 		private void addSingleAlbum(Album i_Album)
@@ -56,7 +56,7 @@ namespace UI
 			albumToAdd.LoadAsync(i_Album.PictureSmallURL);
 			albumToAdd.Size = new Size(140, 90);
 			albumToAdd.SizeMode = PictureBoxSizeMode.StretchImage;
-			userAlbumsFlowLayoutPanel.Controls.Add(albumToAdd);
+			flowLayoutPanelUserAlbums.Controls.Add(albumToAdd);
 			albumToAdd.MouseHover += albumPictureBox_MouseHover;
 			albumToAdd.MouseLeave += albumPictureBox_MouseLeave;
 			albumToAdd.Click += albumPictureBox_Click;
@@ -93,7 +93,7 @@ namespace UI
 		private void photoPictureBox_Click(object sender, EventArgs e)
 		{
 			PhotoPictureBox photo = sender as PhotoPictureBox;
-			PhotoInfo photoInfo = new PhotoInfo(photo);
+			FormPhotoInfo photoInfo = new FormPhotoInfo(photo);
 			photoInfo.ShowDialog();
 		}
 
@@ -124,25 +124,25 @@ namespace UI
 
 		private void albumsButton_Click(object sender, EventArgs e)
 		{
-			albumsButton.Enabled = false;
-			albumsButton.Text = "Albums";
-			userAlbumsFlowLayoutPanel.Controls.Clear();
-			userAlbumsFlowLayoutPanel.Visible = true;
+			buttonAlbums.Enabled = false;
+			buttonAlbums.Text = "Albums";
+			flowLayoutPanelUserAlbums.Controls.Clear();
+			flowLayoutPanelUserAlbums.Visible = true;
 			albumsNameLabel.Text = string.Empty;
 			userAlbumsPhotosFlowLayoutPanel.Controls.Clear();
 			showUserAlbums();
 			Controls.Remove(userAlbumsPhotosFlowLayoutPanel);
-			Controls.Add(userAlbumsFlowLayoutPanel);
+			Controls.Add(flowLayoutPanelUserAlbums);
 		}
 
 		private void albumsButton_MouseEnter(object sender, EventArgs e)
 		{
-			albumsButton.Cursor = Cursors.Hand;
+			buttonAlbums.Cursor = Cursors.Hand;
 		}
 
 		private void albumsButton_MouseLeave(object sender, EventArgs e)
 		{
-			albumsButton.Cursor = Cursors.Default;
+			buttonAlbums.Cursor = Cursors.Default;
 		}
 	}
 }

@@ -63,16 +63,6 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap back_button {
-            get {
-                object obj = ResourceManager.GetObject("back_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap back_button2 {
             get {
                 object obj = ResourceManager.GetObject("back_button2", resourceCulture);
@@ -191,12 +181,12 @@ namespace UI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap logout_button2 {
+        internal static System.Drawing.Icon map_icon {
             get {
-                object obj = ResourceManager.GetObject("logout_button2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("map_icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -206,16 +196,6 @@ namespace UI.Properties {
         internal static System.Drawing.Bitmap orange_button {
             get {
                 object obj = ResourceManager.GetObject("orange_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap yellow_button {
-            get {
-                object obj = ResourceManager.GetObject("yellow_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

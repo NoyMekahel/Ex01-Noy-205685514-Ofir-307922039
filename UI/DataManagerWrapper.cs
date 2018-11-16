@@ -12,9 +12,9 @@ namespace UI
 	class DataManagerWrapper
 	{
 		public static DataManager DataManager { get; private set; }
-		private static FacebookApp m_OwnerApp;
+		private static FormFacebookApp m_OwnerApp;
 
-		internal static void setDataManager(FacebookApp i_FacebookApp, DataManager i_DataManager)
+		internal static void setDataManager(FormFacebookApp i_FacebookApp, DataManager i_DataManager)
 		{
 			if(DataManager == null)
 			{
