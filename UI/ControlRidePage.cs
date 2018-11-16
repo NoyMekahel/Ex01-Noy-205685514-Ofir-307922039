@@ -65,13 +65,13 @@ namespace UI
 					{
 						comboBoxEvents.Items.Add(currEventName);
 					}
+
 					comboBoxEvents.Enabled = true;
 				}
 				else
 				{
 					FormFacebookApp.ShowFacebookError("There are no events you go to.");
 				}
-
 			}
 			catch (Exception)
 			{

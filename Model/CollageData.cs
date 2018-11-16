@@ -5,11 +5,18 @@ namespace Model
 {
 	public class CollageData
 	{
-		private readonly Point r_InitPoint = new Point(0, 0);
+		public enum eFrameCollage
+		{
+			THREE_IMAGES, FOUR_IMAGES, FIVE_IMAGES, SIX_IMAGES, SEVEN_IMAGES, EIGHT_IMAGES
+		}
+
 		private const int k_Size = 600;
-		public enum eFrameCollage { THREE_IMAGES, FOUR_IMAGES, FIVE_IMAGES, SIX_IMAGES, SEVEN_IMAGES, EIGHT_IMAGES }
+		private readonly Point r_InitPoint = new Point(0, 0);
+
 		public Bitmap Collage { get; set; }
+
 		public Bitmap CollageSkeleton { get; set; }
+
 		public List<SubFramePosition> SubFramePositionList { get; set; }
 
 		public int Size

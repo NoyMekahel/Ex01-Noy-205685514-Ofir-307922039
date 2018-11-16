@@ -1,10 +1,9 @@
-﻿using FacebookWrapper;
-using System;
+﻿using System;
+using FacebookWrapper;
 
 namespace Model
 {
 	/*264186474290093- US*/
-	/*2246590548924227 - liad*/
 
 	public class FacebookConnection
 	{
@@ -21,7 +20,7 @@ namespace Model
 
 			if (!string.IsNullOrEmpty(result.AccessToken))
 			{		
-				 return (new DataManager(result.LoggedInUser, result.AccessToken));
+				 return new DataManager(result.LoggedInUser, result.AccessToken);
 			}
 			else
 			{
@@ -32,7 +31,7 @@ namespace Model
 		public static DataManager Connect(string i_LastAccessToken)
 		{
 			LoginResult result = FacebookService.Connect(i_LastAccessToken);
-			return (new DataManager(result.LoggedInUser, result.AccessToken));
+			return new DataManager(result.LoggedInUser, result.AccessToken);
 		}
 
 		public static void Logout()

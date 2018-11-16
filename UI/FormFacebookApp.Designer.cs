@@ -2,7 +2,7 @@
 
 namespace UI
 {
-	partial class FormFacebookApp
+	public partial class FormFacebookApp
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -19,6 +19,7 @@ namespace UI
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 

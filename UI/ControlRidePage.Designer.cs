@@ -2,7 +2,7 @@
 
 namespace UI
 {
-	partial class ControlRidePage
+	public partial class ControlRidePage
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -19,6 +19,7 @@ namespace UI
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 
@@ -191,7 +192,6 @@ namespace UI
 			this.PerformLayout();
 
 		}
-
 
 		private Label labelFromLocation;		
 		private ListBox listBoxLocations;

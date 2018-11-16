@@ -63,8 +63,15 @@ namespace UI
 				DataManagerWrapper.DataManager.Ride.AddFilter(new AgeFilter(agePreferenceRadioButton.Text));
 			}
 
-			ICollection<User> friendsAfterFilter = DataManagerWrapper.DataManager.Ride.Filter();
-			FillFriendsResultOnDataTable(friendsAfterFilter);
+			try
+			{
+				ICollection<User> friendsAfterFilter = DataManagerWrapper.DataManager.Ride.Filter();
+				FillFriendsResultOnDataTable(friendsAfterFilter);
+			}
+			catch (Exception ex)
+			{
+				FormFacebookApp.ShowFacebookError(ex.Message);
+			}
 		}
 
 		internal void FillFriendsResultOnDataTable(ICollection<User> i_AllFriendsFromStartPoint)

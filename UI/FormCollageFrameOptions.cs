@@ -1,9 +1,9 @@
-﻿using Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Model;
 
 namespace UI
 {
@@ -24,7 +24,6 @@ namespace UI
 			const int k_RightLimit = 455;
 			const int k_NextPanelX = 215;
 			const int k_NextPanelY = 200;
-
 
 			// location of the first panel
 			int x = k_StartLineX, y = 54;

@@ -57,7 +57,7 @@ namespace UI
 			try
 			{
 				checkedListBoxFilter.Items.Clear();
-				ICollection<string>  friendsNamesCollection = DataManagerWrapper.DataManager.GetFriendsNames();
+				ICollection<string> friendsNamesCollection = DataManagerWrapper.DataManager.GetFriendsNames();
 
 				foreach (string name in friendsNamesCollection)
 				{
@@ -75,7 +75,7 @@ namespace UI
 			try
 			{
 				checkedListBoxFilter.Items.Clear();
-				ICollection<string>  albumsNamesCollection = DataManagerWrapper.DataManager.GetAlbumsNames();
+				ICollection<string> albumsNamesCollection = DataManagerWrapper.DataManager.GetAlbumsNames();
 
 				foreach (string name in albumsNamesCollection)
 				{
@@ -96,7 +96,6 @@ namespace UI
 				m_FilteredPhotosCollection = DataManagerWrapper.DataManager.GetAlbumsPhotos(selectedAlbums);
 				populateCheckedListBoxPhotos();
 			}
-
 			catch(Exception)
 			{
 				FormFacebookApp.ShowFacebookError("Couldn't fetch albums photos data.");
@@ -121,7 +120,6 @@ namespace UI
 				ICollection<string> selectedFriends = checkedListBoxFilter.CheckedItems.Cast<string>().ToList();
 				m_FilteredPhotosCollection = DataManagerWrapper.DataManager.GetSharedFriendsPhotos(selectedFriends);
 				populateCheckedListBoxPhotos();
-
 			}
 			catch (Exception)
 			{
@@ -146,6 +144,7 @@ namespace UI
 						m_FilteredPhotosCollection.Add(photo);
 						photoCounter++;
 					}
+
 					nodeCouner++;
 				}
 			}
@@ -222,9 +221,9 @@ namespace UI
 		{
 			if (i_CheckedListBox.SelectedItem != null)
 			{
-				i_CheckedListBox.SetItemCheckState(i_CheckedListBox.SelectedIndex,
-				i_CheckedListBox.GetItemCheckState(i_CheckedListBox.SelectedIndex) == CheckState.Checked ?
-				CheckState.Unchecked : CheckState.Checked);
+				i_CheckedListBox.SetItemCheckState(
+					i_CheckedListBox.SelectedIndex,
+				i_CheckedListBox.GetItemCheckState(i_CheckedListBox.SelectedIndex) == CheckState.Checked ? CheckState.Unchecked : CheckState.Checked);
 			}
 		}
 

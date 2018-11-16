@@ -2,7 +2,7 @@
 
 namespace UI
 {
-	interface IBackable
+	internal interface IBackable
 	{
 		void AddBackButton(Button i_BackButton);
 	}

@@ -1,10 +1,7 @@
-﻿using FacebookWrapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using FacebookWrapper.ObjectModel;
 using System.Text.RegularExpressions;
+using FacebookWrapper.ObjectModel;
 
 namespace Model
 {
@@ -13,6 +10,7 @@ namespace Model
 		private User m_LoggedInUser;
 
 		public Ride Ride { get; } = new Ride();
+
 		public string UserAccessToken { get; private set; }
 
 		public DataManager(User i_LoggedInUser, string i_UserAccessToken)
@@ -39,6 +37,7 @@ namespace Model
 			{
 				allNames.Add(friend.Name);
 			}
+
 			return allNames;
 		}
 
@@ -50,6 +49,7 @@ namespace Model
 			{
 				allNames.Add(album.Name);
 			}
+
 			return allNames;
 		}
 
@@ -229,7 +229,7 @@ namespace Model
 
 			if (Regex.IsMatch(i_Date, k_DateRegexWithYear))
 			{
-				month =int.Parse(i_Date.Substring(k_StartOfMonth, k_LengthOfMonthOrDay));
+				month = int.Parse(i_Date.Substring(k_StartOfMonth, k_LengthOfMonthOrDay));
 				day = int.Parse(i_Date.Substring(k_StartOfDay, k_LengthOfMonthOrDay));
 				year = int.Parse(i_Date.Substring(k_StartOfYear, k_LengthOfYear));
 			}

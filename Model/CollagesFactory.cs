@@ -4,7 +4,6 @@ namespace Model
 {
 	public static class CollagesFactory
 	{
-
 		public static ICollection<CollageBase> CreateAllCollages()
 		{
 			List<CollageBase> allCollagesList = new List<CollageBase>();

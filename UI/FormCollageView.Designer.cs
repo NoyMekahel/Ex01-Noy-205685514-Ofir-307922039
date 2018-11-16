@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-	partial class FormCollageView
+	public partial class FormCollageView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -17,6 +17,7 @@
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 

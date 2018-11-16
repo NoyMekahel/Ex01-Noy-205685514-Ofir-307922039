@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-	partial class FormPhotoInfo
+	public partial class FormPhotoInfo
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -17,6 +17,7 @@
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 

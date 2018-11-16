@@ -2,7 +2,7 @@
 
 namespace UI
 {
-	partial class ControlHomePage
+	public partial class ControlHomePage
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -19,6 +19,7 @@ namespace UI
 			{
 				components.Dispose();
 			}
+
 			base.Dispose(disposing);
 		}
 
@@ -353,7 +354,6 @@ namespace UI
 			this.PerformLayout();
 
 		}
-
 
 		private System.Windows.Forms.Label labelFriensList;
 		private System.Windows.Forms.DataGridView dataGridViewFriends;

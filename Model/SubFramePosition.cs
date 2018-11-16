@@ -9,6 +9,7 @@ namespace Model
 	public class SubFramePosition
 	{
 		public Point Point { get; private set; }
+
 		public Size Size { get; private set; }
 
 		public SubFramePosition(Point i_Point, Size i_Size)
