@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.Photo.datasource" />
+    <None Include="Properties\DataSources\System.Drawing.Color.datasource" />
     <None Include="Resources\faccebook-background.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +249,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\map_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glitter-frame.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

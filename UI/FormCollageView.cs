@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Model;
+using System.Reflection;
 
 namespace UI
 {
@@ -18,6 +19,13 @@ namespace UI
 		{
 			InitializeComponent();
 			m_Collage = i_Collage;
+			displayCollageResult();
+		}
+
+		private void displayCollageResult()
+		{
+			Type colorType = typeof(Color);
+			bindingSourceColor.DataSource = colorType.GetProperties(BindingFlags.Static | BindingFlags.DeclaredOnly | BindingFlags.Public);
 			showCollage();
 		}
 
@@ -45,6 +53,13 @@ namespace UI
 
 			MessageBox.Show("Your collage saved!");
 			this.Close();
+		}
+
+		private void comboBoxFrameColor_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			Color userChoiceColor = Color.FromName(comboBoxFrameColor.GetItemText(comboBoxFrameColor.SelectedItem));
+			m_Collage.FillFrame(userChoiceColor);
+			showCollage();
 		}
 	}
 }

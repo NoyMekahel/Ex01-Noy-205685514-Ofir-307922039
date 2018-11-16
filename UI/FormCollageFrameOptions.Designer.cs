@@ -140,7 +140,7 @@
 			this.buttonSave.UseVisualStyleBackColor = true;
 			this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
 			// 
-			// formCollageFrameOptions
+			// FormCollageFrameOptions
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,9 +149,9 @@
 			this.Controls.Add(this.panelMain);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.Name = "formCollageFrameOptions";
+			this.Name = "FormCollageFrameOptions";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "FrameOptionsForm";
+			this.Text = "Frame Options";
 			this.panelMain.ResumeLayout(false);
 			this.panelMain.PerformLayout();
 			this.ResumeLayout(false);

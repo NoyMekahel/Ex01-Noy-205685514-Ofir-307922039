@@ -7,8 +7,6 @@ namespace Model
 	public abstract class CollageBase
 	{
 		protected CollageData m_CollageData = new CollageData();
-		protected Bitmap s_CollageSkeleton;
-		protected List<SubFramePosition> s_SubFramePositionList;
 
 		public abstract void createSubFramePositions();
 
@@ -23,22 +21,22 @@ namespace Model
 		public Bitmap GetSkeleton()
 		{
 			createSkeleton();
-			return s_CollageSkeleton;
+			return m_CollageData.CollageSkeleton;
 		}
 
 		protected void createSkeleton()
 		{
 			createSubFramePositions();
-			s_CollageSkeleton = new Bitmap(m_CollageData.Size, m_CollageData.Size);
-			using (Graphics g = Graphics.FromImage(s_CollageSkeleton))
+			m_CollageData.CollageSkeleton = new Bitmap(m_CollageData.Size, m_CollageData.Size);
+			using (Graphics g = Graphics.FromImage(m_CollageData.CollageSkeleton))
 			{
-				foreach (SubFramePosition subFramePosition in s_SubFramePositionList)
+				foreach (SubFramePosition subFramePosition in m_CollageData.SubFramePositionList)
 				{
 					g.FillRectangle(Brushes.LightGray, new Rectangle(subFramePosition.Point, subFramePosition.Size));
 					g.DrawRectangle(new Pen(Color.Black), new Rectangle(subFramePosition.Point, subFramePosition.Size));
 				}
 
-				g.DrawImage(s_CollageSkeleton, new Point(0, 0));
+				g.DrawImage(m_CollageData.CollageSkeleton, m_CollageData.InitPoint);
 			}
 		}
 
@@ -48,7 +46,7 @@ namespace Model
 			using (Graphics g = Graphics.FromImage(m_CollageData.Collage))
 			{
 				int counter = 0;
-				foreach (SubFramePosition subFramePosition in s_SubFramePositionList)
+				foreach (SubFramePosition subFramePosition in m_CollageData.SubFramePositionList)
 				{
 					g.DrawImage(
 						i_SelectedImages.ElementAt(counter),
@@ -59,13 +57,28 @@ namespace Model
 					counter++;
 				}
 
-				g.DrawImage(m_CollageData.Collage, new Point(0, 0));
+				g.DrawImage(m_CollageData.Collage, m_CollageData.InitPoint);
+				FillFrame(Color.White);
 			}
 		}
 
 		public void Save(string i_FilePath)
 		{
 			m_CollageData.Collage.Save(i_FilePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+		}
+
+		public void FillFrame(Color i_Color)
+		{
+			using (Graphics g = Graphics.FromImage(m_CollageData.Collage))
+			{
+				foreach (SubFramePosition subFramePosition in m_CollageData.SubFramePositionList)
+				{
+					g.DrawRectangle(new Pen(i_Color, 5), new Rectangle(subFramePosition.Point, subFramePosition.Size));
+				}
+
+				g.DrawRectangle(new Pen(i_Color, 8), new Rectangle(m_CollageData.InitPoint, m_CollageData.Collage.Size));
+				g.DrawImage(m_CollageData.Collage, m_CollageData.InitPoint);
+			}
 		}
 	}
 }
