@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Model;
 using FacebookWrapper.ObjectModel;
 
 namespace UI
@@ -18,12 +11,12 @@ namespace UI
 			InitializeComponent();
 		}
 
-		internal void FindARideButton_AddClickedListener(EventHandler i_EventHandler)
+		internal void ButtonFindARide_AddClickedListener(EventHandler i_EventHandler)
 		{
 			this.buttonFindARide.Click += i_EventHandler;
 		}
 
-		internal void fetchUserInfo()
+		internal void FetchUserInfo()
 		{
 			try
 			{
@@ -32,7 +25,7 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError();
+				FormFacebookApp.ShowFacebookError();
 			}
 		}
 
@@ -43,6 +36,7 @@ namespace UI
 				FacebookObjectCollection<User> allFriends = DataManagerWrapper.DataManager.GetFriends();
 				bindingSourceFriendsGrid.DataSource = allFriends;
 				int counter = 0;
+
 				foreach (User currentUser in allFriends)
 				{
 					DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
@@ -53,7 +47,7 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError();
+				FormFacebookApp.ShowFacebookError();
 			}
 		}
 
@@ -62,7 +56,7 @@ namespace UI
 			Controls.Add(i_LogoutButton);
 		}
 
-		private void likedPagesButton_Click(object sender, EventArgs e)
+		private void buttonLikedPages_Click(object sender, EventArgs e)
 		{
 			showUserLikedPages();
 		}
@@ -89,9 +83,8 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError("FaceBook error! Couldn't fetch liked pages data");
+				FormFacebookApp.ShowFacebookError("FaceBook error! Couldn't fetch liked pages data");
 			}
-
 		}
 
 		private ImageList getAllPagesImage(FacebookObjectCollection<Page> i_AllLikedPages)
@@ -106,7 +99,7 @@ namespace UI
 			return allPagesImage;
 		}
 
-		private void postsButton_Click(object sender, EventArgs e)
+		private void buttonPosts_Click(object sender, EventArgs e)
 		{
 			showUserPosts();
 		}
@@ -127,30 +120,18 @@ namespace UI
 						listViewPosts.Items.Add(item);
 					}
 				}
+
 				listViewPosts.Columns[messagesColumn.Index].Width = -1;
 				buttonPosts.Enabled = false;
 				listViewPosts.Visible = true;
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError("FaceBook error! Couldn't fetch posts data");
+				FormFacebookApp.ShowFacebookError("FaceBook error! Couldn't fetch posts data");
 			}
-
 		}
 
-		private void button_MouseEnter(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Hand;
-		}
-
-		private void button_MouseLeave(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Default;
-		}
-
-		internal void CreateCollageButton_AddClickedListener(EventHandler i_EventHandler)
+		internal void ButtonCreateCollage_AddClickedListener(EventHandler i_EventHandler)
 		{
 			this.buttonCreateCollage.Click += i_EventHandler;
 		}

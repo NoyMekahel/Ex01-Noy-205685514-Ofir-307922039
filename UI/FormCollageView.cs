@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Model;
 using System.Reflection;
@@ -35,10 +30,11 @@ namespace UI
 			pictureBoxCollageView.SizeMode = PictureBoxSizeMode.StretchImage;
 		}
 
-		private void saveAsButton_Click(object sender, EventArgs e)
+		private void buttonSaveAs_Click(object sender, EventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.Filter = "(*.Jpeg)|*.Jpeg";
+
 			if (saveFileDialog.ShowDialog() == DialogResult.OK)
 			{
 				try
@@ -47,7 +43,7 @@ namespace UI
 				}
 				catch (Exception ex)
 				{
-					FormFacebookApp.showFacebookError(ex.Message);
+					FormFacebookApp.ShowFacebookError(ex.Message);
 				}
 			}
 

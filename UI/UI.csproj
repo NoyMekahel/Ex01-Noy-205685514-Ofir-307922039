@@ -35,11 +35,11 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AlbumControl.cs">
+    <Compile Include="ControlAlbum.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AlbumControl.Designer.cs">
-      <DependentUpon>AlbumControl.cs</DependentUpon>
+    <Compile Include="ControlAlbum.Designer.cs">
+      <DependentUpon>ControlAlbum.cs</DependentUpon>
     </Compile>
     <Compile Include="AlbumPictureBox.cs">
       <SubType>Component</SubType>
@@ -137,8 +137,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AlbumControl.resx">
-      <DependentUpon>AlbumControl.cs</DependentUpon>
+    <EmbeddedResource Include="ControlAlbum.resx">
+      <DependentUpon>ControlAlbum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCollageView.resx">
       <DependentUpon>FormCollageView.cs</DependentUpon>
@@ -181,15 +181,6 @@
     <None Include="Resources\faccebook-background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\faccebookbackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Facebook-Wallpapers.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\facebook-widescreen-background-image.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\facebook-widescreen-navy-background-image.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -199,28 +190,10 @@
     <None Include="Resources\comments.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\likeGIF.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logout-button.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logout-button2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\back-button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blue_button.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\yellow_button.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\orange_button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\loading_gif.gif" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

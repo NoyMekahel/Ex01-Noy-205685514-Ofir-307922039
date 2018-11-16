@@ -49,8 +49,8 @@ namespace UI
 			this.labelFromLocation.AutoSize = true;
 			this.labelFromLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
 			this.labelFromLocation.Location = new System.Drawing.Point(13, 36);
-			this.labelFromLocation.Name = "fromLocationLabel";
-			this.labelFromLocation.Size = new System.Drawing.Size(168, 20);
+			this.labelFromLocation.Name = "labelFromLocation";
+			this.labelFromLocation.Size = new System.Drawing.Size(252, 29);
 			this.labelFromLocation.TabIndex = 29;
 			this.labelFromLocation.Text = "Choose Starting Point:";
 			// 
@@ -60,20 +60,21 @@ namespace UI
 			this.comboBoxEvents.FormattingEnabled = true;
 			this.comboBoxEvents.Location = new System.Drawing.Point(420, 492);
 			this.comboBoxEvents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.comboBoxEvents.Name = "eventsComboBox";
-			this.comboBoxEvents.Size = new System.Drawing.Size(187, 21);
+			this.comboBoxEvents.Name = "comboBoxEvents";
+			this.comboBoxEvents.Size = new System.Drawing.Size(187, 28);
 			this.comboBoxEvents.TabIndex = 28;
-			this.comboBoxEvents.SelectedIndexChanged += new System.EventHandler(this.eventsComboBox_SelectedIndexChanged);
+			this.comboBoxEvents.SelectedIndexChanged += new System.EventHandler(this.comboBoxEvents_SelectedIndexChanged);
 			// 
 			// listBoxLocations
 			// 
 			this.listBoxLocations.FormattingEnabled = true;
+			this.listBoxLocations.ItemHeight = 20;
 			this.listBoxLocations.Location = new System.Drawing.Point(13, 61);
 			this.listBoxLocations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.listBoxLocations.Name = "locationsListBox";
-			this.listBoxLocations.Size = new System.Drawing.Size(187, 355);
+			this.listBoxLocations.Name = "listBoxLocations";
+			this.listBoxLocations.Size = new System.Drawing.Size(187, 344);
 			this.listBoxLocations.TabIndex = 25;
-			this.listBoxLocations.SelectedIndexChanged += new System.EventHandler(this.locationsListBox_SelectedIndexChanged);
+			this.listBoxLocations.SelectedIndexChanged += new System.EventHandler(this.listBoxLocations_SelectedIndexChanged);
 			// 
 			// comboBoxAcademic
 			// 
@@ -81,10 +82,10 @@ namespace UI
 			this.comboBoxAcademic.FormattingEnabled = true;
 			this.comboBoxAcademic.Location = new System.Drawing.Point(13, 492);
 			this.comboBoxAcademic.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.comboBoxAcademic.Name = "academicComboBox";
-			this.comboBoxAcademic.Size = new System.Drawing.Size(187, 21);
+			this.comboBoxAcademic.Name = "comboBoxAcademic";
+			this.comboBoxAcademic.Size = new System.Drawing.Size(187, 28);
 			this.comboBoxAcademic.TabIndex = 31;
-			this.comboBoxAcademic.SelectedIndexChanged += new System.EventHandler(this.academicComboBox_SelectedIndexChanged);
+			this.comboBoxAcademic.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcademic_SelectedIndexChanged);
 			// 
 			// comboBoxWork
 			// 
@@ -92,10 +93,10 @@ namespace UI
 			this.comboBoxWork.FormattingEnabled = true;
 			this.comboBoxWork.Location = new System.Drawing.Point(216, 492);
 			this.comboBoxWork.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.comboBoxWork.Name = "workComboBox";
-			this.comboBoxWork.Size = new System.Drawing.Size(187, 21);
+			this.comboBoxWork.Name = "comboBoxWork";
+			this.comboBoxWork.Size = new System.Drawing.Size(187, 28);
 			this.comboBoxWork.TabIndex = 32;
-			this.comboBoxWork.SelectedIndexChanged += new System.EventHandler(this.workComboBox_SelectedIndexChanged);
+			this.comboBoxWork.SelectedIndexChanged += new System.EventHandler(this.comboBoxWork_SelectedIndexChanged);
 			// 
 			// bindingSourceRideFriendsGrid
 			// 
@@ -106,6 +107,7 @@ namespace UI
 			this.buttonEvent.BackColor = System.Drawing.Color.Transparent;
 			this.buttonEvent.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonEvent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonEvent.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonEvent.Enabled = false;
 			this.buttonEvent.FlatAppearance.BorderSize = 0;
 			this.buttonEvent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -113,20 +115,19 @@ namespace UI
 			this.buttonEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
 			this.buttonEvent.Location = new System.Drawing.Point(420, 456);
-			this.buttonEvent.Name = "eventButton";
+			this.buttonEvent.Name = "buttonEvent";
 			this.buttonEvent.Size = new System.Drawing.Size(187, 23);
 			this.buttonEvent.TabIndex = 54;
 			this.buttonEvent.Text = "Ride To Your Event";
 			this.buttonEvent.UseVisualStyleBackColor = false;
-			this.buttonEvent.Click += new System.EventHandler(this.eventButton_Click);
-			this.buttonEvent.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonEvent.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonEvent.Click += new System.EventHandler(this.buttonEvent_Click);
 			// 
 			// buttonWork
 			// 
 			this.buttonWork.BackColor = System.Drawing.Color.Transparent;
 			this.buttonWork.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonWork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonWork.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonWork.Enabled = false;
 			this.buttonWork.FlatAppearance.BorderSize = 0;
 			this.buttonWork.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -134,20 +135,19 @@ namespace UI
 			this.buttonWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
 			this.buttonWork.Location = new System.Drawing.Point(216, 456);
-			this.buttonWork.Name = "workButton";
+			this.buttonWork.Name = "buttonWork";
 			this.buttonWork.Size = new System.Drawing.Size(187, 23);
 			this.buttonWork.TabIndex = 55;
 			this.buttonWork.Text = "Ride To Your Work";
 			this.buttonWork.UseVisualStyleBackColor = false;
-			this.buttonWork.Click += new System.EventHandler(this.workButton_Click);
-			this.buttonWork.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonWork.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonWork.Click += new System.EventHandler(this.buttonWork_Click);
 			// 
 			// buttonAcademicInstitution
 			// 
 			this.buttonAcademicInstitution.BackColor = System.Drawing.Color.Transparent;
 			this.buttonAcademicInstitution.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonAcademicInstitution.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonAcademicInstitution.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonAcademicInstitution.Enabled = false;
 			this.buttonAcademicInstitution.FlatAppearance.BorderSize = 0;
 			this.buttonAcademicInstitution.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -155,20 +155,18 @@ namespace UI
 			this.buttonAcademicInstitution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonAcademicInstitution.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
 			this.buttonAcademicInstitution.Location = new System.Drawing.Point(13, 456);
-			this.buttonAcademicInstitution.Name = "academicInstitutionButton";
+			this.buttonAcademicInstitution.Name = "buttonAcademicInstitution";
 			this.buttonAcademicInstitution.Size = new System.Drawing.Size(189, 23);
 			this.buttonAcademicInstitution.TabIndex = 56;
 			this.buttonAcademicInstitution.Text = "Ride To Your Academic Institution";
 			this.buttonAcademicInstitution.UseVisualStyleBackColor = false;
-			this.buttonAcademicInstitution.Click += new System.EventHandler(this.academicInstitutionButton_Click);
-			this.buttonAcademicInstitution.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonAcademicInstitution.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonAcademicInstitution.Click += new System.EventHandler(this.buttonAcademicInstitution_Click);
 			// 
-			// Controlfilter
+			// controlFilter
 			// 
 			this.controlFilter.Location = new System.Drawing.Point(205, 42);
 			this.controlFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.controlFilter.Name = "filterControl";
+			this.controlFilter.Name = "controlFilter";
 			this.controlFilter.Size = new System.Drawing.Size(426, 406);
 			this.controlFilter.TabIndex = 33;
 			this.controlFilter.Visible = false;

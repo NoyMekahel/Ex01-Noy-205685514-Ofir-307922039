@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
-using System.IO;
 using static Model.CollageData;
 using Model;
 
@@ -15,7 +11,6 @@ namespace UI
 {
 	public partial class ControlCollagePage : UserControl, ILogoutable, IBackable
 	{
-		private const int k_UserChoiceOffset = 3;
 		private FacebookObjectCollection<Photo> m_FilteredPhotosCollection;
 		private FacebookObjectCollection<Image> m_SelectedImagesCollection = new FacebookObjectCollection<Image>();
 		private eFrameCollage m_FrameUserChoice;
@@ -31,27 +26,27 @@ namespace UI
 			Controls.Add(i_BackButton);
 		}
 
-		private void sharedPhotosRadioButton_CheckedChanged(object sender, EventArgs e)
+		private void radioButtonSharedPhotos_CheckedChanged(object sender, EventArgs e)
 		{
-			if(sharedPhotosRadioButton.Checked == true)
+			if (radioButtonSharedPhotos.Checked == true)
 			{
 				createFriendsCheckListBox();
 				checkedListBoxFilter.Visible = true;
 			}
 		}
 
-		private void albumsPhotosRadioButton_CheckedChanged(object sender, EventArgs e)
+		private void radioButtonAlbumsPhotos_CheckedChanged(object sender, EventArgs e)
 		{
-			if (albumsPhotosRadioButton.Checked == true)
+			if (radioButtonAlbumsPhotos.Checked == true)
 			{
 				createAlbumsCheckListBox();
 				checkedListBoxFilter.Visible = true;
 			}
 		}
 
-		private void allPhotosRadioButton_CheckedChanged(object sender, EventArgs e)
+		private void radioButtonAllPhotos_CheckedChanged(object sender, EventArgs e)
 		{
-			if (allPhotosRadioButton.Checked == true)
+			if (radioButtonAllPhotos.Checked == true)
 			{
 				checkedListBoxFilter.Visible = false;
 			}
@@ -71,7 +66,7 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch your friends names data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch your friends names data.");
 			}
 		}
 
@@ -89,7 +84,7 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch your albums names data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch your albums names data.");
 			}
 		}
 
@@ -99,16 +94,16 @@ namespace UI
 			{
 				ICollection<string> selectedAlbums = checkedListBoxFilter.CheckedItems.Cast<string>().ToList();
 				m_FilteredPhotosCollection = DataManagerWrapper.DataManager.GetAlbumsPhotos(selectedAlbums);
-				populatePhotosCheckedListBox();
+				populateCheckedListBoxPhotos();
 			}
 
 			catch(Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch albums photos data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch albums photos data.");
 			}
 		}
 
-		private void populatePhotosCheckedListBox()
+		private void populateCheckedListBoxPhotos()
 		{
 			int photoCounter = 1;
 
@@ -125,12 +120,12 @@ namespace UI
 			{
 				ICollection<string> selectedFriends = checkedListBoxFilter.CheckedItems.Cast<string>().ToList();
 				m_FilteredPhotosCollection = DataManagerWrapper.DataManager.GetSharedFriendsPhotos(selectedFriends);
-				populatePhotosCheckedListBox();
+				populateCheckedListBoxPhotos();
 
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch friends shared photos data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch friends shared photos data.");
 			}
 		}
 
@@ -156,19 +151,18 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch albums data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch albums data.");
 			}
-
 		}
 
-		private void selectPhotosButton_Click(object sender, EventArgs e)
+		private void buttonSelectPhotos_Click(object sender, EventArgs e)
 		{
 			checkedListBoxPhotos.Items.Clear();
-			if (allPhotosRadioButton.Checked == true)
+			if (radioButtonAllPhotos.Checked == true)
 			{
 				setAllPhotosOnListBox();
 			}
-			else if (sharedPhotosRadioButton.Checked == true)
+			else if (radioButtonSharedPhotos.Checked == true)
 			{
 				if (checkedListBoxFilter.CheckedItems.Count == 0)
 				{
@@ -195,7 +189,7 @@ namespace UI
 			pictureBoxImage.Visible = true;
 		}
 
-		private void photosCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
+		private void listBoxPhotosChecked_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (checkedListBoxPhotos.SelectedItem != null)
 			{
@@ -207,24 +201,11 @@ namespace UI
 					buttonSeeCollage.Enabled = true;
 				}
 			}
-
 		}
 
 		public void AddLogoutButton(Button i_LogoutButton)
 		{
 			Controls.Add(i_LogoutButton);
-		}
-
-		private void button_MouseLeave(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Default;
-		}
-
-		private void button_MouseEnter(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Hand;
 		}
 
 		private void checkedListBox_Click(object sender, EventArgs e)
@@ -249,12 +230,13 @@ namespace UI
 
 		private bool checkIfUserSelectedTheCorrectImagesQuantity()
 		{
+			const int k_UserChoiceOffset = 3;
 			return m_SelectedImagesCollection.Count == (int)(m_FrameUserChoice + k_UserChoiceOffset);
 		}
 
 		private void photosCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
 		{
-			if(checkedListBoxPhotos.GetItemChecked(checkedListBoxPhotos.SelectedIndex))
+			if (checkedListBoxPhotos.GetItemChecked(checkedListBoxPhotos.SelectedIndex))
 			{
 				m_SelectedImagesCollection.Remove(
 					m_FilteredPhotosCollection[checkedListBoxPhotos.SelectedIndex].ImageNormal);
@@ -266,22 +248,22 @@ namespace UI
 			}
 		}
 
-		private void collageFrameButton_Click(object sender, EventArgs e)
+		private void buttonCollageFrame_Click(object sender, EventArgs e)
 		{
 			m_AllCollagesCollection = CollagesFactory.CreateAllCollages();
 			FormCollageFrameOptions collageForm = new FormCollageFrameOptions(m_AllCollagesCollection);
-			collageForm.FormClosing += CollageForm_FormClosing;
+			collageForm.FormClosing += formCollage_FormClosing;
 			collageForm.ShowDialog();
 		}
 
-		private void CollageForm_FormClosing(object sender, FormClosingEventArgs e)
+		private void formCollage_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			m_FrameUserChoice = (sender as FormCollageFrameOptions).GetUserChoice();
 			groupBoxPhotosChooser.Enabled = true;
 			buttonSelectPhotos.Enabled = true;
 		}
 
-		private void seeCollageButton_Click(object sender, EventArgs e)
+		private void buttonSeeCollage_Click(object sender, EventArgs e)
 		{
 			if (checkIfUserSelectedTheCorrectImagesQuantity())
 			{
@@ -293,12 +275,12 @@ namespace UI
 				}
 				catch (Exception ex)
 				{
-					FormFacebookApp.showFacebookError(ex.Message);
+					FormFacebookApp.ShowFacebookError(ex.Message);
 				}
 			}
 			else
 			{
-				FormFacebookApp.showFacebookError("Error! There is a mismatch between your frame choice to the number of images you selected.");
+				FormFacebookApp.ShowFacebookError("Error! There is a mismatch between your frame choice to the number of images you selected.");
 			}
 		}
 	}

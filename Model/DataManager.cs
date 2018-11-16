@@ -201,32 +201,42 @@ namespace Model
 
 		private int calculateDaysTillBirthday()
 		{
+			const int k_AddOneYear = 1;
+
 			DateTime birthdate = parseStringToDateTime(m_LoggedInUser.Birthday);
 			DateTime todayDate = DateTime.Today;
 			DateTime birthday = new DateTime(todayDate.Year, birthdate.Month, birthdate.Day);
 
 			if (birthday < todayDate)
 			{
-				birthday = birthday.AddYears(1);
+				birthday = birthday.AddYears(k_AddOneYear);
 			}
 
 			return (birthday - todayDate).Days;
-
 		}
 
 		private DateTime parseStringToDateTime(string i_Date)
 		{
+			const string k_DateRegexWithYear = "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$";
+			const string k_DateRegexWithoutYear = "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$";
+			const int k_StartOfMonth = 0;
+			const int k_StartOfDay = 3;
+			const int k_StartOfYear = 6;
+			const int k_LengthOfYear = 4;
+			const int k_LengthOfMonthOrDay = 2;
+
 			int day = 0, month = 0, year = 0;
-			if (Regex.IsMatch(i_Date, "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$"))
+
+			if (Regex.IsMatch(i_Date, k_DateRegexWithYear))
 			{
-				month =int.Parse(i_Date.Substring(0, 2));
-				day = int.Parse(i_Date.Substring(3, 2));
-				year = int.Parse(i_Date.Substring(6, 4));
+				month =int.Parse(i_Date.Substring(k_StartOfMonth, k_LengthOfMonthOrDay));
+				day = int.Parse(i_Date.Substring(k_StartOfDay, k_LengthOfMonthOrDay));
+				year = int.Parse(i_Date.Substring(k_StartOfYear, k_LengthOfYear));
 			}
-			else if (Regex.IsMatch(i_Date, "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$"))
+			else if (Regex.IsMatch(i_Date, k_DateRegexWithoutYear))
 			{
-				month = int.Parse(i_Date.Substring(0, 2));
-				day = int.Parse(i_Date.Substring(3, 2));
+				month = int.Parse(i_Date.Substring(k_StartOfMonth, k_LengthOfMonthOrDay));
+				day = int.Parse(i_Date.Substring(k_StartOfDay, k_LengthOfMonthOrDay));
 				year = DateTime.Today.Year;
 			}
 			else

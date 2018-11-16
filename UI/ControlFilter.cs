@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Model;
 using FacebookWrapper.ObjectModel;
@@ -18,7 +14,7 @@ namespace UI
 			InitializeComponent();
 		}
 
-		private void genderCheckBox_CheckedChanged(object sender, EventArgs e)
+		private void checkBoxGender_CheckedChanged(object sender, EventArgs e)
 		{
 			if (checkBoxGender.Checked)
 			{
@@ -35,7 +31,7 @@ namespace UI
 			}
 		}
 
-		private void ageCheckBox_CheckedChanged(object sender, EventArgs e)
+		private void checkBoxAge_CheckedChanged(object sender, EventArgs e)
 		{
 			if (checkBoxAge.Checked)
 			{
@@ -45,6 +41,7 @@ namespace UI
 			else
 			{
 				groupBoxAge.Visible = false;
+
 				if (checkBoxGender.Checked == false)
 				{
 					buttonFilter.Enabled = false;
@@ -52,7 +49,7 @@ namespace UI
 			}
 		}
 
-		private void filterButton_Click(object sender, EventArgs e)
+		private void buttonFilter_Click(object sender, EventArgs e)
 		{
 			if (checkBoxGender.Checked)
 			{
@@ -75,6 +72,7 @@ namespace UI
 			dataGridFriendsResult.Controls.Clear();
 			bindingSourceRideFriendsGrid.DataSource = i_AllFriendsFromStartPoint;
 			int counter = 0;
+
 			foreach (User currentUser in i_AllFriendsFromStartPoint)
 			{
 				DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
@@ -82,18 +80,6 @@ namespace UI
 				dataGridFriendsResult.Rows[counter].Cells[AgeColumn.Index] = cell;
 				counter++;
 			}
-		}
-
-		private void button_MouseLeave(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Default;
-		}
-
-		private void button_MouseEnter(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Hand;
 		}
 	}
 }

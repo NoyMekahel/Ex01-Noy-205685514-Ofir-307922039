@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
 			this.groupBoxPhotosChooser = new System.Windows.Forms.GroupBox();
-			this.albumsPhotosRadioButton = new System.Windows.Forms.RadioButton();
-			this.sharedPhotosRadioButton = new System.Windows.Forms.RadioButton();
-			this.allPhotosRadioButton = new System.Windows.Forms.RadioButton();
+			this.radioButtonAlbumsPhotos = new System.Windows.Forms.RadioButton();
+			this.radioButtonSharedPhotos = new System.Windows.Forms.RadioButton();
+			this.radioButtonAllPhotos = new System.Windows.Forms.RadioButton();
 			this.checkedListBoxFilter = new System.Windows.Forms.CheckedListBox();
 			this.checkedListBoxPhotos = new System.Windows.Forms.CheckedListBox();
 			this.buttonSelectPhotos = new System.Windows.Forms.Button();
@@ -44,9 +44,9 @@
 			// 
 			// groupBoxPhotosChooser
 			// 
-			this.groupBoxPhotosChooser.Controls.Add(this.albumsPhotosRadioButton);
-			this.groupBoxPhotosChooser.Controls.Add(this.sharedPhotosRadioButton);
-			this.groupBoxPhotosChooser.Controls.Add(this.allPhotosRadioButton);
+			this.groupBoxPhotosChooser.Controls.Add(this.radioButtonAlbumsPhotos);
+			this.groupBoxPhotosChooser.Controls.Add(this.radioButtonSharedPhotos);
+			this.groupBoxPhotosChooser.Controls.Add(this.radioButtonAllPhotos);
 			this.groupBoxPhotosChooser.Enabled = false;
 			this.groupBoxPhotosChooser.Location = new System.Drawing.Point(40, 100);
 			this.groupBoxPhotosChooser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -57,43 +57,43 @@
 			this.groupBoxPhotosChooser.TabStop = false;
 			this.groupBoxPhotosChooser.Text = "Choose An Option:";
 			// 
-			// albumsPhotosRadioButton
+			// radioButtonAlbumsPhotos
 			// 
-			this.albumsPhotosRadioButton.AutoSize = true;
-			this.albumsPhotosRadioButton.Location = new System.Drawing.Point(10, 115);
-			this.albumsPhotosRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.albumsPhotosRadioButton.Name = "albumsPhotosRadioButton";
-			this.albumsPhotosRadioButton.Size = new System.Drawing.Size(144, 24);
-			this.albumsPhotosRadioButton.TabIndex = 2;
-			this.albumsPhotosRadioButton.Text = "Album\'s Photos";
-			this.albumsPhotosRadioButton.UseVisualStyleBackColor = true;
-			this.albumsPhotosRadioButton.CheckedChanged += new System.EventHandler(this.albumsPhotosRadioButton_CheckedChanged);
+			this.radioButtonAlbumsPhotos.AutoSize = true;
+			this.radioButtonAlbumsPhotos.Location = new System.Drawing.Point(10, 115);
+			this.radioButtonAlbumsPhotos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.radioButtonAlbumsPhotos.Name = "radioButtonAlbumsPhotos";
+			this.radioButtonAlbumsPhotos.Size = new System.Drawing.Size(144, 24);
+			this.radioButtonAlbumsPhotos.TabIndex = 2;
+			this.radioButtonAlbumsPhotos.Text = "Album\'s Photos";
+			this.radioButtonAlbumsPhotos.UseVisualStyleBackColor = true;
+			this.radioButtonAlbumsPhotos.CheckedChanged += new System.EventHandler(this.radioButtonAlbumsPhotos_CheckedChanged);
 			// 
-			// sharedPhotosRadioButton
+			// radioButtonSharedPhotos
 			// 
-			this.sharedPhotosRadioButton.AutoSize = true;
-			this.sharedPhotosRadioButton.Location = new System.Drawing.Point(10, 80);
-			this.sharedPhotosRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.sharedPhotosRadioButton.Name = "sharedPhotosRadioButton";
-			this.sharedPhotosRadioButton.Size = new System.Drawing.Size(140, 24);
-			this.sharedPhotosRadioButton.TabIndex = 1;
-			this.sharedPhotosRadioButton.Text = "Shared Photos";
-			this.sharedPhotosRadioButton.UseVisualStyleBackColor = true;
-			this.sharedPhotosRadioButton.CheckedChanged += new System.EventHandler(this.sharedPhotosRadioButton_CheckedChanged);
+			this.radioButtonSharedPhotos.AutoSize = true;
+			this.radioButtonSharedPhotos.Location = new System.Drawing.Point(10, 80);
+			this.radioButtonSharedPhotos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.radioButtonSharedPhotos.Name = "radioButtonSharedPhotos";
+			this.radioButtonSharedPhotos.Size = new System.Drawing.Size(140, 24);
+			this.radioButtonSharedPhotos.TabIndex = 1;
+			this.radioButtonSharedPhotos.Text = "Shared Photos";
+			this.radioButtonSharedPhotos.UseVisualStyleBackColor = true;
+			this.radioButtonSharedPhotos.CheckedChanged += new System.EventHandler(this.radioButtonSharedPhotos_CheckedChanged);
 			// 
-			// allPhotosRadioButton
+			// radioButtonAllPhotos
 			// 
-			this.allPhotosRadioButton.AutoSize = true;
-			this.allPhotosRadioButton.Checked = true;
-			this.allPhotosRadioButton.Location = new System.Drawing.Point(10, 45);
-			this.allPhotosRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.allPhotosRadioButton.Name = "allPhotosRadioButton";
-			this.allPhotosRadioButton.Size = new System.Drawing.Size(105, 24);
-			this.allPhotosRadioButton.TabIndex = 0;
-			this.allPhotosRadioButton.TabStop = true;
-			this.allPhotosRadioButton.Text = "All Photos";
-			this.allPhotosRadioButton.UseVisualStyleBackColor = true;
-			this.allPhotosRadioButton.CheckedChanged += new System.EventHandler(this.allPhotosRadioButton_CheckedChanged);
+			this.radioButtonAllPhotos.AutoSize = true;
+			this.radioButtonAllPhotos.Checked = true;
+			this.radioButtonAllPhotos.Location = new System.Drawing.Point(10, 45);
+			this.radioButtonAllPhotos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.radioButtonAllPhotos.Name = "radioButtonAllPhotos";
+			this.radioButtonAllPhotos.Size = new System.Drawing.Size(105, 24);
+			this.radioButtonAllPhotos.TabIndex = 0;
+			this.radioButtonAllPhotos.TabStop = true;
+			this.radioButtonAllPhotos.Text = "All Photos";
+			this.radioButtonAllPhotos.UseVisualStyleBackColor = true;
+			this.radioButtonAllPhotos.CheckedChanged += new System.EventHandler(this.radioButtonAllPhotos_CheckedChanged);
 			// 
 			// checkedListBoxFilter
 			// 
@@ -120,13 +120,14 @@
 			this.checkedListBoxPhotos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.photosCheckedListBox_ItemCheck);
 			this.checkedListBoxPhotos.Click += new System.EventHandler(this.checkedListBox_Click);
 			this.checkedListBoxPhotos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkedListBox_MouseClick);
-			this.checkedListBoxPhotos.SelectedIndexChanged += new System.EventHandler(this.photosCheckedListBox_SelectedIndexChanged);
+			this.checkedListBoxPhotos.SelectedIndexChanged += new System.EventHandler(this.listBoxPhotosChecked_SelectedIndexChanged);
 			// 
 			// buttonSelectPhotos
 			// 
 			this.buttonSelectPhotos.BackColor = System.Drawing.Color.Transparent;
 			this.buttonSelectPhotos.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonSelectPhotos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonSelectPhotos.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonSelectPhotos.Enabled = false;
 			this.buttonSelectPhotos.FlatAppearance.BorderSize = 0;
 			this.buttonSelectPhotos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -140,9 +141,7 @@
 			this.buttonSelectPhotos.TabIndex = 57;
 			this.buttonSelectPhotos.Text = "Select Photos";
 			this.buttonSelectPhotos.UseVisualStyleBackColor = false;
-			this.buttonSelectPhotos.Click += new System.EventHandler(this.selectPhotosButton_Click);
-			this.buttonSelectPhotos.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonSelectPhotos.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonSelectPhotos.Click += new System.EventHandler(this.buttonSelectPhotos_Click);
 			// 
 			// pictureBoxImage
 			// 
@@ -159,6 +158,7 @@
 			this.buttonSeeCollage.BackColor = System.Drawing.Color.Transparent;
 			this.buttonSeeCollage.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonSeeCollage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonSeeCollage.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonSeeCollage.Enabled = false;
 			this.buttonSeeCollage.FlatAppearance.BorderSize = 0;
 			this.buttonSeeCollage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -172,15 +172,14 @@
 			this.buttonSeeCollage.TabIndex = 58;
 			this.buttonSeeCollage.Text = "See Collage";
 			this.buttonSeeCollage.UseVisualStyleBackColor = false;
-			this.buttonSeeCollage.Click += new System.EventHandler(this.seeCollageButton_Click);
-			this.buttonSeeCollage.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonSeeCollage.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonSeeCollage.Click += new System.EventHandler(this.buttonSeeCollage_Click);
 			// 
 			// buttonCollageFrame
 			// 
 			this.buttonCollageFrame.BackColor = System.Drawing.Color.Transparent;
 			this.buttonCollageFrame.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonCollageFrame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonCollageFrame.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonCollageFrame.FlatAppearance.BorderSize = 0;
 			this.buttonCollageFrame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonCollageFrame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -193,9 +192,7 @@
 			this.buttonCollageFrame.TabIndex = 61;
 			this.buttonCollageFrame.Text = "Choose Collage Frame";
 			this.buttonCollageFrame.UseVisualStyleBackColor = false;
-			this.buttonCollageFrame.Click += new System.EventHandler(this.collageFrameButton_Click);
-			this.buttonCollageFrame.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonCollageFrame.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonCollageFrame.Click += new System.EventHandler(this.buttonCollageFrame_Click);
 			// 
 			// ControlCollagePage
 			// 
@@ -222,9 +219,9 @@
 		#endregion
 
 		private System.Windows.Forms.GroupBox groupBoxPhotosChooser;
-		private System.Windows.Forms.RadioButton albumsPhotosRadioButton;
-		private System.Windows.Forms.RadioButton sharedPhotosRadioButton;
-		private System.Windows.Forms.RadioButton allPhotosRadioButton;
+		private System.Windows.Forms.RadioButton radioButtonAlbumsPhotos;
+		private System.Windows.Forms.RadioButton radioButtonSharedPhotos;
+		private System.Windows.Forms.RadioButton radioButtonAllPhotos;
 		private System.Windows.Forms.CheckedListBox checkedListBoxFilter;
 		private System.Windows.Forms.CheckedListBox checkedListBoxPhotos;
 		private System.Windows.Forms.Button buttonSelectPhotos;

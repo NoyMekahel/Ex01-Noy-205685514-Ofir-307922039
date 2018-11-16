@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
-using Model;
 
 namespace UI
 {
@@ -15,13 +9,11 @@ namespace UI
 	{
 		private string m_RideFromLocationName;
 
-
 		public ControlRidePage()
 		{
 			InitializeComponent();
 			createLocationsList();
 		}
-
 
 		private void createLocationsList()
 		{
@@ -36,11 +28,11 @@ namespace UI
 			}
 			catch(Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch your friends location data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch your friends location data.");
 			}
 		}
 
-		private void locationsListBox_SelectedIndexChanged(object sender, EventArgs e)
+		private void listBoxLocations_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if ((sender as ListBox).SelectedItem != null)
 			{
@@ -56,12 +48,12 @@ namespace UI
 				}
 				catch (Exception ex)
 				{
-					FormFacebookApp.showFacebookError(ex.Message);
+					FormFacebookApp.ShowFacebookError(ex.Message);
 				}
 			}
 		}
 
-		private void eventButton_Click(object sender, EventArgs e)
+		private void buttonEvent_Click(object sender, EventArgs e)
 		{
 			try
 			{
@@ -77,17 +69,17 @@ namespace UI
 				}
 				else
 				{
-					FormFacebookApp.showFacebookError("There are no events you go to.");
+					FormFacebookApp.ShowFacebookError("There are no events you go to.");
 				}
 
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch your events data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch your events data.");
 			}
 		}
 
-		private void eventsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		private void comboBoxEvents_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			try
 			{
@@ -97,11 +89,11 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError();
+				FormFacebookApp.ShowFacebookError();
 			}
 		}
 
-		private void workButton_Click(object sender, EventArgs e)
+		private void buttonWork_Click(object sender, EventArgs e)
 		{
 			try
 			{
@@ -113,21 +105,21 @@ namespace UI
 					{
 						comboBoxWork.Items.Add(currWorkPlaceName);
 					}
+
 					comboBoxWork.Enabled = true;
 				}
 				else
 				{
-					FormFacebookApp.showFacebookError("There are no places where you work.");
+					FormFacebookApp.ShowFacebookError("There are no places where you work.");
 				}
 			}
-
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch your work experiences data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch your work experiences data.");
 			}
 		}
 
-		private void workComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		private void comboBoxWork_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			try
 			{
@@ -137,11 +129,11 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError();
+				FormFacebookApp.ShowFacebookError();
 			}
 		}
 
-		private void academicInstitutionButton_Click(object sender, EventArgs e)
+		private void buttonAcademicInstitution_Click(object sender, EventArgs e)
 		{
 			try
 			{
@@ -153,21 +145,21 @@ namespace UI
 					{
 						comboBoxAcademic.Items.Add(currAcademicInstitution);
 					}
+
 					comboBoxAcademic.Enabled = true;
 				}
 				else
 				{
-					FormFacebookApp.showFacebookError("There are no academic institutions where you study.");
+					FormFacebookApp.ShowFacebookError("There are no academic institutions where you study.");
 				}
 			}
-
 			catch(Exception)
 			{
-				FormFacebookApp.showFacebookError("Couldn't fetch your academic institutions data.");
+				FormFacebookApp.ShowFacebookError("Couldn't fetch your academic institutions data.");
 			}
 		}
 
-		private void academicComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		private void comboBoxAcademic_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			try
 			{
@@ -177,7 +169,7 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError();
+				FormFacebookApp.ShowFacebookError();
 			}
 		}
 
@@ -196,18 +188,6 @@ namespace UI
 		public void AddBackButton(Button i_BackButton)
 		{
 			Controls.Add(i_BackButton);
-		}
-
-		private void button_MouseLeave(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Default;
-		}
-
-		private void button_MouseEnter(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Hand;
 		}
 	}
 }

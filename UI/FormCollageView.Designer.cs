@@ -56,7 +56,7 @@
 			this.buttonSaveAs.TabIndex = 60;
 			this.buttonSaveAs.Text = "Save As";
 			this.buttonSaveAs.UseVisualStyleBackColor = false;
-			this.buttonSaveAs.Click += new System.EventHandler(this.saveAsButton_Click);
+			this.buttonSaveAs.Click += new System.EventHandler(this.buttonSaveAs_Click);
 			// 
 			// pictureBoxCollageView
 			// 
@@ -72,7 +72,7 @@
 			this.comboBoxFrameColor.DataSource = this.bindingSourceColor;
 			this.comboBoxFrameColor.DisplayMember = "Name";
 			this.comboBoxFrameColor.FormattingEnabled = true;
-			this.comboBoxFrameColor.Location = new System.Drawing.Point(115, 636);
+			this.comboBoxFrameColor.Location = new System.Drawing.Point(115, 640);
 			this.comboBoxFrameColor.Name = "comboBoxFrameColor";
 			this.comboBoxFrameColor.Size = new System.Drawing.Size(193, 28);
 			this.comboBoxFrameColor.TabIndex = 61;
@@ -86,7 +86,7 @@
 			// labelFrameColor
 			// 
 			this.labelFrameColor.AutoSize = true;
-			this.labelFrameColor.Location = new System.Drawing.Point(12, 639);
+			this.labelFrameColor.Location = new System.Drawing.Point(12, 643);
 			this.labelFrameColor.Name = "labelFrameColor";
 			this.labelFrameColor.Size = new System.Drawing.Size(97, 20);
 			this.labelFrameColor.TabIndex = 62;

@@ -47,13 +47,12 @@ namespace UI
 			this.logoutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.logoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.logoutButton.Location = new System.Drawing.Point(510, 15);
 			this.logoutButton.Name = "logoutButton";
 			this.logoutButton.Size = new System.Drawing.Size(78, 23);
 			this.logoutButton.TabIndex = 7;
-			this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-			this.logoutButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.logoutButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.logoutButton.Click += new System.EventHandler(this.buttonLogout_Click);
 			// 
 			// backButton
 			// 
@@ -63,15 +62,14 @@ namespace UI
 			this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.backButton.Location = new System.Drawing.Point(13, 595);
 			this.backButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.backButton.Name = "backButton";
 			this.backButton.Size = new System.Drawing.Size(75, 22);
 			this.backButton.TabIndex = 30;
 			this.backButton.UseVisualStyleBackColor = true;
-			this.backButton.Click += new System.EventHandler(this.backButton_Click);
-			this.backButton.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.backButton.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.backButton.Click += new System.EventHandler(this.buttonBack_Click);
 			// 
 			// panelMain
 			// 
@@ -98,7 +96,7 @@ namespace UI
 			this.buttonlLogin.TabIndex = 8;
 			this.buttonlLogin.Text = "Login";
 			this.buttonlLogin.UseVisualStyleBackColor = false;
-			this.buttonlLogin.Click += new System.EventHandler(this.loginButton_Click);
+			this.buttonlLogin.Click += new System.EventHandler(this.buttonLogin_Click);
 			// 
 			// checkBoxRememberUser
 			// 
@@ -129,7 +127,6 @@ namespace UI
 			this.panelMain.ResumeLayout(false);
 			this.panelMain.PerformLayout();
 			this.ResumeLayout(false);
-
 		}
 
 		#endregion
@@ -139,7 +136,5 @@ namespace UI
 		private System.Windows.Forms.Button logoutButton;
 		private System.Windows.Forms.Button backButton;
 		private System.Windows.Forms.CheckBox checkBoxRememberUser;
-
-
 	}
 }

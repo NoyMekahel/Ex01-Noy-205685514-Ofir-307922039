@@ -69,14 +69,17 @@ namespace Model
 
 		public void FillFrame(Color i_Color)
 		{
+			const int k_SubFrameWidth = 5;
+			const int k_AllFrameWidth = 8;
+
 			using (Graphics g = Graphics.FromImage(m_CollageData.Collage))
 			{
 				foreach (SubFramePosition subFramePosition in m_CollageData.SubFramePositionList)
 				{
-					g.DrawRectangle(new Pen(i_Color, 5), new Rectangle(subFramePosition.Point, subFramePosition.Size));
+					g.DrawRectangle(new Pen(i_Color, k_SubFrameWidth), new Rectangle(subFramePosition.Point, subFramePosition.Size));
 				}
 
-				g.DrawRectangle(new Pen(i_Color, 8), new Rectangle(m_CollageData.InitPoint, m_CollageData.Collage.Size));
+				g.DrawRectangle(new Pen(i_Color, k_AllFrameWidth), new Rectangle(m_CollageData.InitPoint, m_CollageData.Collage.Size));
 				g.DrawImage(m_CollageData.Collage, m_CollageData.InitPoint);
 			}
 		}

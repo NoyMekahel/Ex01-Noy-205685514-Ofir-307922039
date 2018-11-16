@@ -1,11 +1,8 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace UI
@@ -22,23 +19,32 @@ namespace UI
 
 		private void createCollageSkeletonPanels(ICollection<CollageBase> i_AllCollagesCollection)
 		{
-			// location of the panel
-			int x = 25, y = 54;
-			for(int collageIndex = 3; collageIndex <= 8; collageIndex++)
+			const int k_StartLineX = 25;
+			const int k_FrameSize = 150;
+			const int k_RightLimit = 455;
+			const int k_NextPanelX = 215;
+			const int k_NextPanelY = 200;
+
+
+			// location of the first panel
+			int x = k_StartLineX, y = 54;
+			
+			for(int collageIndex = 0; collageIndex < Enum.GetNames(typeof(CollageData.eFrameCollage)).Length;  collageIndex++)
 			{
 				Panel panel = new Panel();
-				panel.Size = new System.Drawing.Size(150, 150);
-				panel.Location = new System.Drawing.Point(x, y);
+				panel.Size = new Size(k_FrameSize, k_FrameSize);
+				panel.Location = new Point(x, y);
 				m_CollageFramePanelList.Add(panel);
 				panelMain.Controls.Add(panel);
-				if (x == 455)
+
+				if (x == k_RightLimit)
 				{
-					x = 25;
-					y += 200;
+					x = k_StartLineX;
+					y += k_NextPanelY;
 				}
 				else
 				{
-					x += 215;
+					x += k_NextPanelX;
 				}
 			}
 
@@ -47,8 +53,8 @@ namespace UI
 
 		private void showSkeletons(ICollection<CollageBase> i_AllCollagesCollection)
 		{
-
 			int index = 0;
+
 			foreach(CollageBase collage in i_AllCollagesCollection)
 			{
 				PictureBox pb = new PictureBox();

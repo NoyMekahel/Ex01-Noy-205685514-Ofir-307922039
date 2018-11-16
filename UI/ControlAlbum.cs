@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 
 namespace UI
 {
-	public partial class controlAlbum : UserControl
+	public partial class ControlAlbum : UserControl
 	{
-		public controlAlbum()
+		public ControlAlbum()
 		{
 			InitializeComponent();
 		}
@@ -30,20 +25,22 @@ namespace UI
 			}
 			catch (Exception)
 			{
-				FormFacebookApp.showFacebookError();
+				FormFacebookApp.ShowFacebookError();
 			}
 		}
 
 		private void albumPictureBox_Click(object sender, EventArgs e)
 		{
 			AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
-			albumsNameLabel.Text = albumPictureBox.Album.Name;
+			labelAlbumsName.Text = albumPictureBox.Album.Name;
 			Controls.Remove(flowLayoutPanelUserAlbums);
-			Controls.Add(userAlbumsPhotosFlowLayoutPanel);
+			Controls.Add(flowLayoutPanelUserAlbumsPhotos);
+
 			foreach (Photo currentPhoto in albumPictureBox.Album.Photos)
 			{
 				addSinglePhoto(currentPhoto);
 			}
+
 			buttonAlbums.Enabled = true;
 			buttonAlbums.Text = "Back to albums";
 		}
@@ -52,7 +49,6 @@ namespace UI
 		{
 			AlbumPictureBox albumToAdd = new AlbumPictureBox();
 			albumToAdd.Album = i_Album;
-			//albumToAdd.Image = i_Album.ImageSmall;
 			albumToAdd.LoadAsync(i_Album.PictureSmallURL);
 			albumToAdd.Size = new Size(140, 90);
 			albumToAdd.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -66,11 +62,10 @@ namespace UI
 		{
 			PhotoPictureBox photoToAdd = new PhotoPictureBox();
 			photoToAdd.Photo = i_Photo;
-			// photoToAdd.Image = i_Photo.ImageNormal;
 			photoToAdd.LoadAsync(i_Photo.PictureNormalURL);
 			photoToAdd.Size = new Size(95, 80);
 			photoToAdd.SizeMode = PictureBoxSizeMode.StretchImage;
-			userAlbumsPhotosFlowLayoutPanel.Controls.Add(photoToAdd);
+			flowLayoutPanelUserAlbumsPhotos.Controls.Add(photoToAdd);
 			photoToAdd.Click += photoPictureBox_Click;
 			photoToAdd.MouseHover += photoPictureBox_MouseHover;
 			photoToAdd.MouseLeave += photoPictureBox_MouseLeave;
@@ -110,6 +105,7 @@ namespace UI
 			AlbumPictureBox albumPictureBox = sender as AlbumPictureBox;
 			albumPictureBox.BorderStyle = BorderStyle.Fixed3D;
 			albumPictureBox.Cursor = Cursors.Hand;
+
 			using (Graphics G = Graphics.FromHwnd(albumPictureBox.Handle))
 			{
 				PointF locationToDraw = new PointF();
@@ -122,27 +118,17 @@ namespace UI
 			}
 		}
 
-		private void albumsButton_Click(object sender, EventArgs e)
+		private void buttonAlbums_Click(object sender, EventArgs e)
 		{
 			buttonAlbums.Enabled = false;
 			buttonAlbums.Text = "Albums";
 			flowLayoutPanelUserAlbums.Controls.Clear();
 			flowLayoutPanelUserAlbums.Visible = true;
-			albumsNameLabel.Text = string.Empty;
-			userAlbumsPhotosFlowLayoutPanel.Controls.Clear();
+			labelAlbumsName.Text = string.Empty;
+			flowLayoutPanelUserAlbumsPhotos.Controls.Clear();
 			showUserAlbums();
-			Controls.Remove(userAlbumsPhotosFlowLayoutPanel);
+			Controls.Remove(flowLayoutPanelUserAlbumsPhotos);
 			Controls.Add(flowLayoutPanelUserAlbums);
-		}
-
-		private void albumsButton_MouseEnter(object sender, EventArgs e)
-		{
-			buttonAlbums.Cursor = Cursors.Hand;
-		}
-
-		private void albumsButton_MouseLeave(object sender, EventArgs e)
-		{
-			buttonAlbums.Cursor = Cursors.Default;
 		}
 	}
 }

@@ -49,10 +49,6 @@ namespace UI
 			this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.locationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bindingSourceFriendsGrid = new System.Windows.Forms.BindingSource(this.components);
-			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-			this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-			this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
-			this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
 			this.listViewPosts = new System.Windows.Forms.ListView();
 			this.postDateColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.messagesColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,15 +56,16 @@ namespace UI
 			this.ImageColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.pageNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.likesCountColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bindingSourcePosts = new System.Windows.Forms.BindingSource(this.components);
 			this.buttonCreateCollage = new System.Windows.Forms.Button();
 			this.buttonPosts = new System.Windows.Forms.Button();
 			this.buttonLikedPages = new System.Windows.Forms.Button();
 			this.buttonFindARide = new System.Windows.Forms.Button();
+			this.controlUserAlbums = new UI.ControlAlbum();
 			this.controlUserDetails = new UI.ControlUserDetails();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewFriends)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceFriendsGrid)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSourcePosts)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// labelFriensList
@@ -193,7 +190,7 @@ namespace UI
             this.messagesColumn});
 			this.listViewPosts.Location = new System.Drawing.Point(264, 328);
 			this.listViewPosts.Name = "listViewPosts";
-			this.listViewPosts.Size = new System.Drawing.Size(363, 97);
+			this.listViewPosts.Size = new System.Drawing.Size(363, 131);
 			this.listViewPosts.TabIndex = 19;
 			this.listViewPosts.UseCompatibleStateImageBehavior = false;
 			this.listViewPosts.View = System.Windows.Forms.View.Details;
@@ -248,6 +245,7 @@ namespace UI
 			this.buttonCreateCollage.BackColor = System.Drawing.Color.Transparent;
 			this.buttonCreateCollage.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonCreateCollage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonCreateCollage.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonCreateCollage.FlatAppearance.BorderSize = 0;
 			this.buttonCreateCollage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonCreateCollage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -259,14 +257,13 @@ namespace UI
 			this.buttonCreateCollage.TabIndex = 59;
 			this.buttonCreateCollage.Text = "Create Collage";
 			this.buttonCreateCollage.UseVisualStyleBackColor = false;
-			this.buttonCreateCollage.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonCreateCollage.MouseLeave += new System.EventHandler(this.button_MouseLeave);
 			// 
 			// buttonPosts
 			// 
 			this.buttonPosts.BackColor = System.Drawing.Color.Transparent;
 			this.buttonPosts.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonPosts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonPosts.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonPosts.FlatAppearance.BorderSize = 0;
 			this.buttonPosts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonPosts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -278,15 +275,14 @@ namespace UI
 			this.buttonPosts.TabIndex = 60;
 			this.buttonPosts.Text = "Posts";
 			this.buttonPosts.UseVisualStyleBackColor = false;
-			this.buttonPosts.Click += new System.EventHandler(this.postsButton_Click);
-			this.buttonPosts.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonPosts.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonPosts.Click += new System.EventHandler(this.buttonPosts_Click);
 			// 
 			// buttonLikedPages
 			// 
 			this.buttonLikedPages.BackColor = System.Drawing.Color.Transparent;
 			this.buttonLikedPages.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonLikedPages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonLikedPages.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonLikedPages.FlatAppearance.BorderSize = 0;
 			this.buttonLikedPages.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonLikedPages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -298,15 +294,14 @@ namespace UI
 			this.buttonLikedPages.TabIndex = 61;
 			this.buttonLikedPages.Text = "Liked Pages";
 			this.buttonLikedPages.UseVisualStyleBackColor = false;
-			this.buttonLikedPages.Click += new System.EventHandler(this.likedPagesButton_Click);
-			this.buttonLikedPages.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonLikedPages.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonLikedPages.Click += new System.EventHandler(this.buttonLikedPages_Click);
 			// 
 			// buttonFindARide
 			// 
 			this.buttonFindARide.BackColor = System.Drawing.Color.Transparent;
 			this.buttonFindARide.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonFindARide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonFindARide.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonFindARide.FlatAppearance.BorderSize = 0;
 			this.buttonFindARide.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.buttonFindARide.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -318,8 +313,14 @@ namespace UI
 			this.buttonFindARide.TabIndex = 62;
 			this.buttonFindARide.Text = "Find A Ride";
 			this.buttonFindARide.UseVisualStyleBackColor = false;
-			this.buttonFindARide.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonFindARide.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			// 
+			// controlUserAlbums
+			// 
+			this.controlUserAlbums.Location = new System.Drawing.Point(264, 46);
+			this.controlUserAlbums.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.controlUserAlbums.Name = "controlUserAlbums";
+			this.controlUserAlbums.Size = new System.Drawing.Size(362, 245);
+			this.controlUserAlbums.TabIndex = 63;
 			// 
 			// controlUserDetails
 			// 
@@ -333,6 +334,7 @@ namespace UI
 			// ControlHomePage
 			// 
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.controlUserAlbums);
 			this.Controls.Add(this.buttonFindARide);
 			this.Controls.Add(this.buttonLikedPages);
 			this.Controls.Add(this.buttonPosts);
@@ -346,7 +348,7 @@ namespace UI
 			this.Size = new System.Drawing.Size(630, 637);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewFriends)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceFriendsGrid)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSourcePosts)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -358,10 +360,6 @@ namespace UI
 		private System.Windows.Forms.BindingSource bindingSourceFriendsGrid;
 		#endregion
 
-		private System.ComponentModel.BackgroundWorker backgroundWorker1;
-		private System.ComponentModel.BackgroundWorker backgroundWorker2;
-		private System.ComponentModel.BackgroundWorker backgroundWorker3;
-		private System.ComponentModel.BackgroundWorker backgroundWorker4;
 		private ControlUserDetails controlUserDetails;
 		private System.Windows.Forms.ColumnHeader pageNameColumnHeader;
 		private System.Windows.Forms.ColumnHeader likesCountColumnHeader;
@@ -369,7 +367,7 @@ namespace UI
 		private System.Windows.Forms.ListView listViewLikedPages;
 		private System.Windows.Forms.ListView listViewPosts;
 		private System.Windows.Forms.ColumnHeader postDateColumn;
-		private System.Windows.Forms.BindingSource postsBindingSource;
+		private System.Windows.Forms.BindingSource bindingSourcePosts;
 		private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
 		private System.Windows.Forms.DataGridViewImageColumn ImageSmall;
@@ -378,10 +376,10 @@ namespace UI
 		private System.Windows.Forms.DataGridViewTextBoxColumn aboutDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
 		private System.Windows.Forms.ColumnHeader messagesColumn;
-		private controlAlbum albumControl1;
 		private System.Windows.Forms.Button buttonCreateCollage;
 		private System.Windows.Forms.Button buttonPosts;
 		private System.Windows.Forms.Button buttonLikedPages;
 		private System.Windows.Forms.Button buttonFindARide;
+		private ControlAlbum controlUserAlbums;
 	}
 }

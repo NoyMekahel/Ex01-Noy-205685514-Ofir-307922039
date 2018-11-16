@@ -191,7 +191,7 @@
 			this.checkBoxGender.TabIndex = 50;
 			this.checkBoxGender.Text = "Gender";
 			this.checkBoxGender.UseVisualStyleBackColor = true;
-			this.checkBoxGender.CheckedChanged += new System.EventHandler(this.genderCheckBox_CheckedChanged);
+			this.checkBoxGender.CheckedChanged += new System.EventHandler(this.checkBoxGender_CheckedChanged);
 			// 
 			// radioButtonAge4
 			// 
@@ -264,7 +264,7 @@
 			this.checkBoxAge.TabIndex = 51;
 			this.checkBoxAge.Text = "Age";
 			this.checkBoxAge.UseVisualStyleBackColor = true;
-			this.checkBoxAge.CheckedChanged += new System.EventHandler(this.ageCheckBox_CheckedChanged);
+			this.checkBoxAge.CheckedChanged += new System.EventHandler(this.checkBoxAge_CheckedChanged);
 			// 
 			// panelFilter
 			// 
@@ -284,6 +284,7 @@
 			this.buttonFilter.BackColor = System.Drawing.Color.Transparent;
 			this.buttonFilter.BackgroundImage = global::UI.Properties.Resources.orange_button;
 			this.buttonFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonFilter.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.buttonFilter.Enabled = false;
 			this.buttonFilter.FlatAppearance.BorderSize = 0;
 			this.buttonFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -297,9 +298,7 @@
 			this.buttonFilter.TabIndex = 53;
 			this.buttonFilter.Text = "Filter";
 			this.buttonFilter.UseVisualStyleBackColor = false;
-			this.buttonFilter.Click += new System.EventHandler(this.filterButton_Click);
-			this.buttonFilter.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-			this.buttonFilter.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+			this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
 			// 
 			// ControlFilter
 			// 

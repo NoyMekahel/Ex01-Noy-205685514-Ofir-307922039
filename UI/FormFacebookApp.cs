@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Model;
 
@@ -12,11 +7,11 @@ namespace UI
 {
 	public partial class FormFacebookApp : Form
 	{
-
-		private ControlHomePage homePageControl;
-		private ControlRidePage ridePageControl;
-		private ControlCollagePage videoCreatorPageControl;
+		private ControlHomePage controlHomePage;
+		private ControlRidePage controlRidePage;
+		private ControlCollagePage controlCollagePage;
 		private AppSettings m_AppSettings;
+
 		public FormFacebookApp()
 		{
 			InitializeComponent();
@@ -30,13 +25,15 @@ namespace UI
 				if (m_AppSettings.RememberUser && !string.IsNullOrEmpty(m_AppSettings.LastAccessToken))
 				{
 					DataManager dataManager = FacebookConnection.Connect(m_AppSettings.LastAccessToken);
-					DataManagerWrapper.setDataManager(this, dataManager);
+					DataManagerWrapper.SetDataManager(this, dataManager);
 					initializeUserPreferences();
 					showHomePage();
 				}
 			}
 			catch(Exception)
-			{ }
+			{
+			}
+
 			base.OnShown(e);
 		}
 
@@ -46,12 +43,12 @@ namespace UI
 			checkBoxRememberUser.Checked = m_AppSettings.RememberUser;
 		}
 
-		private void loginButton_Click(object sender, EventArgs e)
+		private void buttonLogin_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				DataManager dataManager = FacebookConnection.Login();
-				DataManagerWrapper.setDataManager(this, dataManager);
+				DataManagerWrapper.SetDataManager(this, dataManager);
 				showHomePage();
 			}
 			catch (Exception ex)
@@ -64,6 +61,7 @@ namespace UI
 		{
 			m_AppSettings.Location = this.Location;
 			m_AppSettings.RememberUser = checkBoxRememberUser.Checked ? true : false;
+
 			if(m_AppSettings.RememberUser)
 			{
 				m_AppSettings.LastAccessToken = DataManagerWrapper.DataManager.UserAccessToken;
@@ -72,12 +70,15 @@ namespace UI
 			{
 				m_AppSettings.LastAccessToken = null;
 			}
+
 			try
 			{
 				m_AppSettings.SaveToFile();
 			}
 			catch(Exception)
-			{}
+			{
+			}
+
 			base.OnClosing(e);
 		}
 
@@ -85,24 +86,24 @@ namespace UI
 		{
 			BackgroundImage = global::UI.Properties.Resources.facebook_widescreen_navy_background_image;
 			panelMain.Controls.Clear();
-			homePageControl = new ControlHomePage();
-			panelMain.Controls.Add(this.homePageControl);
-			homePageControl.AddLogoutButton(logoutButton);
-			homePageControl.FindARideButton_AddClickedListener(new EventHandler(findARideButton_Click));
-			homePageControl.CreateCollageButton_AddClickedListener(new EventHandler(createCollageButton_Click));
-			homePageControl.fetchUserInfo();
+			controlHomePage = new ControlHomePage();
+			panelMain.Controls.Add(this.controlHomePage);
+			controlHomePage.AddLogoutButton(logoutButton);
+			controlHomePage.ButtonFindARide_AddClickedListener(new EventHandler(buttonFindARide_Click));
+			controlHomePage.ButtonCreateCollage_AddClickedListener(new EventHandler(buttonCreateCollage_Click));
+			controlHomePage.FetchUserInfo();
 		}
 
-		private void createCollageButton_Click(object sender, EventArgs e)
+		private void buttonCreateCollage_Click(object sender, EventArgs e)
 		{
-			videoCreatorPageControl = new ControlCollagePage();
-			videoCreatorPageControl.AddLogoutButton(logoutButton);
-			videoCreatorPageControl.AddBackButton(backButton);
+			controlCollagePage = new ControlCollagePage();
+			controlCollagePage.AddLogoutButton(logoutButton);
+			controlCollagePage.AddBackButton(backButton);
 			panelMain.Controls.Clear();
-			panelMain.Controls.Add(videoCreatorPageControl);
+			panelMain.Controls.Add(controlCollagePage);
 		}
 
-		private void logoutButton_Click(object sender, EventArgs e)
+		private void buttonLogout_Click(object sender, EventArgs e)
 		{
 			this.BackgroundImage = global::UI.Properties.Resources.faccebook_background;
 			FacebookConnection.Logout();
@@ -112,40 +113,28 @@ namespace UI
 			panelMain.Controls.Add(checkBoxRememberUser);
 		}
 
-		private void button_MouseLeave(object sender, EventArgs e)
+		private void buttonFindARide_Click(object sender, EventArgs e)
 		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Default;
-		}
-
-		private void button_MouseEnter(object sender, EventArgs e)
-		{
-			Button button = sender as Button;
-			button.Cursor = Cursors.Hand;
-		}
-
-		private void findARideButton_Click(object sender, EventArgs e)
-		{
-			ridePageControl = new ControlRidePage();
-			ridePageControl.AddLogoutButton(logoutButton);
-			ridePageControl.AddBackButton(backButton);
+			controlRidePage = new ControlRidePage();
+			controlRidePage.AddLogoutButton(logoutButton);
+			controlRidePage.AddBackButton(backButton);
 			panelMain.Controls.Clear();
-			panelMain.Controls.Add(ridePageControl);
+			panelMain.Controls.Add(controlRidePage);
 		}
 
-		private void backButton_Click(object sender, EventArgs e)
+		private void buttonBack_Click(object sender, EventArgs e)
 		{
-			homePageControl.AddLogoutButton(logoutButton);
+			controlHomePage.AddLogoutButton(logoutButton);
 			panelMain.Controls.Clear();
-			panelMain.Controls.Add(homePageControl);
+			panelMain.Controls.Add(controlHomePage);
 		}
 
-		public static void showFacebookError()
+		internal static void ShowFacebookError()
 		{
-			showFacebookError("An error has occured. Couldn't retrieve the requested information from facebook");
+			ShowFacebookError("An error has occured. Couldn't retrieve the requested information from facebook");
 		}
 
-		internal static void showFacebookError(string i_ErrorMessage)
+		internal static void ShowFacebookError(string i_ErrorMessage)
 		{
 			MessageBox.Show(i_ErrorMessage);
 		}
