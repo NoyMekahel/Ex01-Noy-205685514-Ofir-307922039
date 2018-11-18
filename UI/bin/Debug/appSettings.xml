@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<AppSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <LastAccessToken>EAADwRrT0W60BACzY4ynQgtcS0JG9hsZAOfKXqhv3NBu3rlUEA8ERlK99Oja1iVdCRCNtgFn2pBbvcI4rMQYlhrXXfoEclQgpOSYsvoPZCpJIhs9wMMtzYBZB4EYUNDDFhMq5J3mK3HwdpVinWI9psp3X9xyS72IuHmTyy3ONAZDZD</LastAccessToken>
-  <Location>
-    <X>1035</X>
-    <Y>112</Y>
-  </Location>
-  <RememberUser>true</RememberUser>
-</AppSettings>
