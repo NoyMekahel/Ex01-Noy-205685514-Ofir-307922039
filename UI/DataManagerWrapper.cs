@@ -8,7 +8,7 @@ namespace UI
 {
 	// Creating this class to able all the panels to use the most updated datamanager without holding an instance of it,
 	// and the creator of this datamanager can only be the FormFacebookApp in which the login was preformed
-	internal class DataManagerWrapper
+	internal static class DataManagerWrapper
 	{
 		private static FormFacebookApp m_OwnerApp;
 

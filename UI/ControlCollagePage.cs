@@ -21,9 +21,9 @@ namespace UI
 			InitializeComponent();
 		}
 
-		public void AddBackButton(Button i_BackButton)
+		public void AddBackButton(Button i_buttonBack)
 		{
-			Controls.Add(i_BackButton);
+			Controls.Add(i_buttonBack);
 		}
 
 		private void radioButtonSharedPhotos_CheckedChanged(object sender, EventArgs e)
@@ -202,9 +202,9 @@ namespace UI
 			}
 		}
 
-		public void AddLogoutButton(Button i_LogoutButton)
+		public void AddLogoutButton(Button i_ButtonLogout)
 		{
-			Controls.Add(i_LogoutButton);
+			Controls.Add(i_ButtonLogout);
 		}
 
 		private void checkedListBox_Click(object sender, EventArgs e)

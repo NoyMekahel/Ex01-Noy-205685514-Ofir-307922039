@@ -180,14 +180,14 @@ namespace UI
 			buttonWork.Enabled = true;
 		}
 
-		public void AddLogoutButton(Button i_LogoutButton)
+		public void AddLogoutButton(Button i_buttonLogout)
 		{
-			Controls.Add(i_LogoutButton);
+			Controls.Add(i_buttonLogout);
 		}
 
-		public void AddBackButton(Button i_BackButton)
+		public void AddBackButton(Button i_buttonBack)
 		{
-			Controls.Add(i_BackButton);
+			Controls.Add(i_buttonBack);
 		}
 	}
 }

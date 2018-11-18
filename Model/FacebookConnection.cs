@@ -5,7 +5,7 @@ namespace Model
 {
 	/*264186474290093- US*/
 
-	public class FacebookConnection
+	public static class FacebookConnection
 	{
 		public static DataManager Login()
 		{

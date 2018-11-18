@@ -24,8 +24,7 @@ namespace UI
 				m_AppSettings = AppSettings.LoadFromFile();
 				if (m_AppSettings.RememberUser && !string.IsNullOrEmpty(m_AppSettings.LastAccessToken))
 				{
-					DataManager dataManager = FacebookConnection.Connect(m_AppSettings.LastAccessToken);
-					DataManagerWrapper.SetDataManager(this, dataManager);
+					DataManagerWrapper.SetDataManager(this, FacebookConnection.Connect(m_AppSettings.LastAccessToken));
 					initializeUserPreferences();
 					showHomePage();
 				}
@@ -47,8 +46,7 @@ namespace UI
 		{
 			try
 			{
-				DataManager dataManager = FacebookConnection.Login();
-				DataManagerWrapper.SetDataManager(this, dataManager);
+				DataManagerWrapper.SetDataManager(this, FacebookConnection.Login());
 				showHomePage();
 			}
 			catch (Exception ex)
@@ -88,7 +86,7 @@ namespace UI
 			panelMain.Controls.Clear();
 			controlHomePage = new ControlHomePage();
 			panelMain.Controls.Add(this.controlHomePage);
-			controlHomePage.AddLogoutButton(logoutButton);
+			controlHomePage.AddLogoutButton(buttonLogout);
 			controlHomePage.ButtonFindARide_AddClickedListener(new EventHandler(buttonFindARide_Click));
 			controlHomePage.ButtonCreateCollage_AddClickedListener(new EventHandler(buttonCreateCollage_Click));
 			controlHomePage.FetchUserInfo();
@@ -97,8 +95,8 @@ namespace UI
 		private void buttonCreateCollage_Click(object sender, EventArgs e)
 		{
 			controlCollagePage = new ControlCollagePage();
-			controlCollagePage.AddLogoutButton(logoutButton);
-			controlCollagePage.AddBackButton(backButton);
+			controlCollagePage.AddLogoutButton(buttonLogout);
+			controlCollagePage.AddBackButton(buttonBack);
 			panelMain.Controls.Clear();
 			panelMain.Controls.Add(controlCollagePage);
 		}
@@ -116,15 +114,15 @@ namespace UI
 		private void buttonFindARide_Click(object sender, EventArgs e)
 		{
 			controlRidePage = new ControlRidePage();
-			controlRidePage.AddLogoutButton(logoutButton);
-			controlRidePage.AddBackButton(backButton);
+			controlRidePage.AddLogoutButton(buttonLogout);
+			controlRidePage.AddBackButton(buttonBack);
 			panelMain.Controls.Clear();
 			panelMain.Controls.Add(controlRidePage);
 		}
 
 		private void buttonBack_Click(object sender, EventArgs e)
 		{
-			controlHomePage.AddLogoutButton(logoutButton);
+			controlHomePage.AddLogoutButton(buttonLogout);
 			panelMain.Controls.Clear();
 			panelMain.Controls.Add(controlHomePage);
 		}

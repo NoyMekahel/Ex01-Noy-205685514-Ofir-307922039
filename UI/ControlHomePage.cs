@@ -51,9 +51,9 @@ namespace UI
 			}
 		}
 
-        public void AddLogoutButton(Button i_LogoutButton)
+        public void AddLogoutButton(Button i_ButtonLogout)
 		{
-			Controls.Add(i_LogoutButton);
+			Controls.Add(i_ButtonLogout);
 		}
 
 		private void buttonLikedPages_Click(object sender, EventArgs e)

@@ -4,6 +4,6 @@ namespace UI
 {
 	internal interface IBackable
 	{
-		void AddBackButton(Button i_BackButton);
+		void AddBackButton(Button i_buttonBack);
 	}
 }

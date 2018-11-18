@@ -4,6 +4,6 @@ namespace UI
 {
 	internal interface ILogoutable
 	{
-		void AddLogoutButton(Button i_LogoutButton);
+		void AddLogoutButton(Button i_ButtonLogout);
 	}
 }

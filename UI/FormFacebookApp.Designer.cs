@@ -32,45 +32,45 @@ namespace UI
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFacebookApp));
-			this.logoutButton = new System.Windows.Forms.Button();
-			this.backButton = new System.Windows.Forms.Button();
+			this.buttonLogout = new System.Windows.Forms.Button();
+			this.buttonBack = new System.Windows.Forms.Button();
 			this.panelMain = new System.Windows.Forms.Panel();
 			this.buttonlLogin = new System.Windows.Forms.Button();
 			this.checkBoxRememberUser = new System.Windows.Forms.CheckBox();
 			this.panelMain.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// logoutButton
+			// buttonLogout
 			// 
-			this.logoutButton.BackgroundImage = global::UI.Properties.Resources.logout_button;
-			this.logoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.logoutButton.FlatAppearance.BorderSize = 0;
-			this.logoutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.logoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.logoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.logoutButton.Location = new System.Drawing.Point(510, 15);
-			this.logoutButton.Name = "logoutButton";
-			this.logoutButton.Size = new System.Drawing.Size(78, 23);
-			this.logoutButton.TabIndex = 7;
-			this.logoutButton.Click += new System.EventHandler(this.buttonLogout_Click);
+			this.buttonLogout.BackgroundImage = global::UI.Properties.Resources.logout_button;
+			this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonLogout.FlatAppearance.BorderSize = 0;
+			this.buttonLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.buttonLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonLogout.Location = new System.Drawing.Point(510, 15);
+			this.buttonLogout.Name = "buttonLogout";
+			this.buttonLogout.Size = new System.Drawing.Size(78, 23);
+			this.buttonLogout.TabIndex = 7;
+			this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
 			// 
-			// backButton
+			// buttonBack
 			// 
-			this.backButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton.BackgroundImage")));
-			this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.backButton.FlatAppearance.BorderSize = 0;
-			this.backButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.backButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-			this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.backButton.Location = new System.Drawing.Point(13, 595);
-			this.backButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.backButton.Name = "backButton";
-			this.backButton.Size = new System.Drawing.Size(75, 22);
-			this.backButton.TabIndex = 30;
-			this.backButton.UseVisualStyleBackColor = true;
-			this.backButton.Click += new System.EventHandler(this.buttonBack_Click);
+			this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
+			this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.buttonBack.FlatAppearance.BorderSize = 0;
+			this.buttonBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+			this.buttonBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+			this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.buttonBack.Location = new System.Drawing.Point(13, 595);
+			this.buttonBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.buttonBack.Name = "buttonBack";
+			this.buttonBack.Size = new System.Drawing.Size(75, 22);
+			this.buttonBack.TabIndex = 30;
+			this.buttonBack.UseVisualStyleBackColor = true;
+			this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
 			// 
 			// panelMain
 			// 
@@ -134,8 +134,8 @@ namespace UI
 
 		private System.Windows.Forms.Panel panelMain;
 		private System.Windows.Forms.Button buttonlLogin;
-		private System.Windows.Forms.Button logoutButton;
-		private System.Windows.Forms.Button backButton;
+		private System.Windows.Forms.Button buttonLogout;
+		private System.Windows.Forms.Button buttonBack;
 		private System.Windows.Forms.CheckBox checkBoxRememberUser;
 	}
 }

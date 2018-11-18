@@ -10,6 +10,8 @@ namespace Model
 {
 	public class AppSettings
 	{
+		private static AppSettings m_AppSettings;
+
 		public string LastAccessToken { get; set; }
 
 		public Point Location { get; set; }
@@ -22,18 +24,21 @@ namespace Model
 
 		public static AppSettings LoadFromFile()
 		{
-			AppSettings appSettings = new AppSettings();
+			if(m_AppSettings == null)
+			{
+				m_AppSettings = new AppSettings();
+			}
 
 			if (File.Exists("appSettings.xml"))
 			{
 				using (Stream stream = new FileStream("appSettings.xml", FileMode.Open))
 				{
 					XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
-					appSettings = serializer.Deserialize(stream) as AppSettings;
+					m_AppSettings = serializer.Deserialize(stream) as AppSettings;
 				}
 			}
 
-			return appSettings;
+			return m_AppSettings;
 		}
 
 		public void SaveToFile()
