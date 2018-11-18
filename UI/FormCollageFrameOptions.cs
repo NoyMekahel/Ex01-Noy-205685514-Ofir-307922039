@@ -30,9 +30,12 @@ namespace UI
 			
 			for(int collageIndex = 0; collageIndex < Enum.GetNames(typeof(CollageData.eFrameCollage)).Length;  collageIndex++)
 			{
-				Panel panel = new Panel();
-				panel.Size = new Size(k_FrameSize, k_FrameSize);
-				panel.Location = new Point(x, y);
+				Panel panel = new Panel()
+				{
+					Size = new Size(k_FrameSize, k_FrameSize),
+					Location = new Point(x, y)
+				};
+
 				m_CollageFramePanelList.Add(panel);
 				panelMain.Controls.Add(panel);
 
@@ -56,20 +59,22 @@ namespace UI
 
 			foreach(CollageBase collage in i_AllCollagesCollection)
 			{
-				PictureBox pb = new PictureBox();
-				pb.Location = new Point(0, 0);
-				pb.Image = new Bitmap(
-					collage.GetSkeleton(),
-					new Size(
+				PictureBox collagePictureBox = new PictureBox()
+				{
+					Location = new Point(0, 0),
+					Image = new Bitmap(
+						collage.GetSkeleton(),
+						new Size(
+							m_CollageFramePanelList[index].Width,
+							m_CollageFramePanelList[index].Height)),
+					Size = new Size(
 						m_CollageFramePanelList[index].Width,
-						m_CollageFramePanelList[index].Height));
+						m_CollageFramePanelList[index].Height),
+					SizeMode = PictureBoxSizeMode.StretchImage,
+					BorderStyle = BorderStyle.FixedSingle
+				};
 
-				pb.Size = new Size(
-						m_CollageFramePanelList[index].Width,
-						m_CollageFramePanelList[index].Height);
-				pb.SizeMode = PictureBoxSizeMode.StretchImage;
-				pb.BorderStyle = BorderStyle.FixedSingle;
-				m_CollageFramePanelList[index].Controls.Add(pb);
+				m_CollageFramePanelList[index].Controls.Add(collagePictureBox);
 				index++;
 			}
 		}

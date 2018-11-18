@@ -40,15 +40,14 @@ namespace UI
 				try
 				{
 					m_Collage.Save(saveFileDialog.FileName);
+					MessageBox.Show("Your collage saved!");
+					this.Close();
 				}
 				catch (Exception ex)
 				{
 					FormFacebookApp.ShowFacebookError(ex.Message);
 				}
 			}
-
-			MessageBox.Show("Your collage saved!");
-			this.Close();
 		}
 
 		private void comboBoxFrameColor_SelectedIndexChanged(object sender, EventArgs e)

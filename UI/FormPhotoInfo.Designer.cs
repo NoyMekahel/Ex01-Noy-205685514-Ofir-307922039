@@ -29,7 +29,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.likesLabel = new System.Windows.Forms.Label();
+			this.labelLikes = new System.Windows.Forms.Label();
 			this.listBoxComments = new System.Windows.Forms.ListBox();
 			this.pictureBoxLikes = new System.Windows.Forms.PictureBox();
 			this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
@@ -42,41 +42,45 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxComments2)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// likesLabel
+			// labelLikes
 			// 
-			this.likesLabel.AutoSize = true;
-			this.likesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.likesLabel.Location = new System.Drawing.Point(68, 371);
-			this.likesLabel.Name = "likesLabel";
-			this.likesLabel.Size = new System.Drawing.Size(30, 25);
-			this.likesLabel.TabIndex = 2;
-			this.likesLabel.Text = "...";
+			this.labelLikes.AutoSize = true;
+			this.labelLikes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+			this.labelLikes.Location = new System.Drawing.Point(45, 241);
+			this.labelLikes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.labelLikes.Name = "labelLikes";
+			this.labelLikes.Size = new System.Drawing.Size(23, 17);
+			this.labelLikes.TabIndex = 2;
+			this.labelLikes.Text = "...";
 			// 
 			// listBoxComments
 			// 
 			this.listBoxComments.FormattingEnabled = true;
-			this.listBoxComments.ItemHeight = 20;
-			this.listBoxComments.Location = new System.Drawing.Point(24, 460);
+			this.listBoxComments.HorizontalScrollbar = true;
+			this.listBoxComments.Location = new System.Drawing.Point(16, 299);
+			this.listBoxComments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.listBoxComments.Name = "listBoxComments";
-			this.listBoxComments.Size = new System.Drawing.Size(471, 144);
+			this.listBoxComments.Size = new System.Drawing.Size(315, 95);
 			this.listBoxComments.TabIndex = 4;
 			// 
 			// pictureBoxLikes
 			// 
 			this.pictureBoxLikes.Image = global::UI.Properties.Resources.like;
 			this.pictureBoxLikes.InitialImage = null;
-			this.pictureBoxLikes.Location = new System.Drawing.Point(24, 368);
+			this.pictureBoxLikes.Location = new System.Drawing.Point(16, 239);
+			this.pictureBoxLikes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.pictureBoxLikes.Name = "pictureBoxLikes";
-			this.pictureBoxLikes.Size = new System.Drawing.Size(38, 29);
+			this.pictureBoxLikes.Size = new System.Drawing.Size(25, 19);
 			this.pictureBoxLikes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBoxLikes.TabIndex = 3;
 			this.pictureBoxLikes.TabStop = false;
 			// 
 			// pictureBoxPhoto
 			// 
-			this.pictureBoxPhoto.Location = new System.Drawing.Point(24, 25);
+			this.pictureBoxPhoto.Location = new System.Drawing.Point(16, 16);
+			this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.pictureBoxPhoto.Name = "pictureBoxPhoto";
-			this.pictureBoxPhoto.Size = new System.Drawing.Size(471, 343);
+			this.pictureBoxPhoto.Size = new System.Drawing.Size(314, 223);
 			this.pictureBoxPhoto.TabIndex = 1;
 			this.pictureBoxPhoto.TabStop = false;
 			// 
@@ -84,9 +88,10 @@
 			// 
 			this.pictureBoxComments.Image = global::UI.Properties.Resources.comments;
 			this.pictureBoxComments.InitialImage = null;
-			this.pictureBoxComments.Location = new System.Drawing.Point(24, 414);
+			this.pictureBoxComments.Location = new System.Drawing.Point(16, 269);
+			this.pictureBoxComments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.pictureBoxComments.Name = "pictureBoxComments";
-			this.pictureBoxComments.Size = new System.Drawing.Size(47, 40);
+			this.pictureBoxComments.Size = new System.Drawing.Size(31, 26);
 			this.pictureBoxComments.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBoxComments.TabIndex = 5;
 			this.pictureBoxComments.TabStop = false;
@@ -95,9 +100,10 @@
 			// 
 			this.labelComments.AutoSize = true;
 			this.labelComments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.labelComments.Location = new System.Drawing.Point(77, 429);
+			this.labelComments.Location = new System.Drawing.Point(51, 279);
+			this.labelComments.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.labelComments.Name = "labelComments";
-			this.labelComments.Size = new System.Drawing.Size(122, 25);
+			this.labelComments.Size = new System.Drawing.Size(87, 17);
 			this.labelComments.TabIndex = 6;
 			this.labelComments.Text = "Comments:";
 			// 
@@ -105,26 +111,28 @@
 			// 
 			this.pictureBoxComments2.Image = global::UI.Properties.Resources.comments;
 			this.pictureBoxComments2.InitialImage = null;
-			this.pictureBoxComments2.Location = new System.Drawing.Point(218, 414);
+			this.pictureBoxComments2.Location = new System.Drawing.Point(145, 269);
+			this.pictureBoxComments2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.pictureBoxComments2.Name = "pictureBoxComments2";
-			this.pictureBoxComments2.Size = new System.Drawing.Size(47, 40);
+			this.pictureBoxComments2.Size = new System.Drawing.Size(31, 26);
 			this.pictureBoxComments2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBoxComments2.TabIndex = 7;
 			this.pictureBoxComments2.TabStop = false;
 			// 
 			// FormPhotoInfo
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(516, 624);
+			this.ClientSize = new System.Drawing.Size(344, 406);
 			this.Controls.Add(this.pictureBoxComments2);
 			this.Controls.Add(this.labelComments);
 			this.Controls.Add(this.pictureBoxComments);
 			this.Controls.Add(this.listBoxComments);
 			this.Controls.Add(this.pictureBoxLikes);
-			this.Controls.Add(this.likesLabel);
+			this.Controls.Add(this.labelLikes);
 			this.Controls.Add(this.pictureBoxPhoto);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Name = "FormPhotoInfo";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "PhotoInfo";
@@ -140,7 +148,7 @@
 		#endregion
 
 		private System.Windows.Forms.PictureBox pictureBoxPhoto;
-		private System.Windows.Forms.Label likesLabel;
+		private System.Windows.Forms.Label labelLikes;
 		private System.Windows.Forms.PictureBox pictureBoxLikes;
 		private System.Windows.Forms.ListBox listBoxComments;
 		private System.Windows.Forms.PictureBox pictureBoxComments;

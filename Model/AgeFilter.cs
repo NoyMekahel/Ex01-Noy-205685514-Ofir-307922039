@@ -22,11 +22,11 @@ namespace Model
 
 		public static int? GetAgeFromUserBirthday(string i_Birthday)
 		{
-			const int k_StartOfBirthYear = 6;
-			const int k_LengthOfBirthYear = 4;
+			const int	k_StartOfBirthYear = 6;
+			const int	k_LengthOfBirthYear = 4;
+			int?		age = null;
+			int			birthYear;
 
-			int? age = null;
-			int birthYear;
 			if (isDateContainsYear(i_Birthday))
 			{
 				birthYear = int.Parse(i_Birthday.Substring(k_StartOfBirthYear, k_LengthOfBirthYear));
@@ -38,8 +38,8 @@ namespace Model
 
 		private static bool isDateContainsYear(string i_Birthday)
 		{
-			const int k_LengthStringWithBirthYear = 10;
-			return i_Birthday.Length == k_LengthStringWithBirthYear;
+			const int	k_LengthStringWithBirthYear = 10;
+			return		i_Birthday.Length == k_LengthStringWithBirthYear;
 		}
 
 		public ICollection<User> filter(ICollection<User> i_Friends)

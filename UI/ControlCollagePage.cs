@@ -13,8 +13,8 @@ namespace UI
 	{
 		private FacebookObjectCollection<Photo> m_FilteredPhotosCollection;
 		private FacebookObjectCollection<Image> m_SelectedImagesCollection = new FacebookObjectCollection<Image>();
-		private eFrameCollage m_FrameUserChoice;
-		private ICollection<CollageBase> m_AllCollagesCollection;
+		private eFrameCollage					m_FrameUserChoice;
+		private ICollection<CollageBase>		m_AllCollagesCollection;
 
 		public ControlCollagePage()
 		{
@@ -230,6 +230,7 @@ namespace UI
 		private bool checkIfUserSelectedTheCorrectImagesQuantity()
 		{
 			const int k_UserChoiceOffset = 3;
+
 			return m_SelectedImagesCollection.Count == (int)(m_FrameUserChoice + k_UserChoiceOffset);
 		}
 

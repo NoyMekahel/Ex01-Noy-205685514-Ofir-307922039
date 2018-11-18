@@ -7,10 +7,10 @@ namespace UI
 {
 	public partial class FormFacebookApp : Form
 	{
-		private ControlHomePage controlHomePage;
-		private ControlRidePage controlRidePage;
-		private ControlCollagePage controlCollagePage;
-		private AppSettings m_AppSettings;
+		private ControlHomePage		controlHomePage;
+		private ControlRidePage		controlRidePage;
+		private ControlCollagePage	controlCollagePage;
+		private AppSettings			m_AppSettings;
 
 		public FormFacebookApp()
 		{
@@ -95,6 +95,7 @@ namespace UI
 		private void buttonCreateCollage_Click(object sender, EventArgs e)
 		{
 			controlCollagePage = new ControlCollagePage();
+
 			controlCollagePage.AddLogoutButton(buttonLogout);
 			controlCollagePage.AddBackButton(buttonBack);
 			panelMain.Controls.Clear();
@@ -114,6 +115,7 @@ namespace UI
 		private void buttonFindARide_Click(object sender, EventArgs e)
 		{
 			controlRidePage = new ControlRidePage();
+
 			controlRidePage.AddLogoutButton(buttonLogout);
 			controlRidePage.AddBackButton(buttonBack);
 			panelMain.Controls.Clear();
@@ -127,12 +129,7 @@ namespace UI
 			panelMain.Controls.Add(controlHomePage);
 		}
 
-		internal static void ShowFacebookError()
-		{
-			ShowFacebookError("An error has occured. Couldn't retrieve the requested information from facebook");
-		}
-
-		internal static void ShowFacebookError(string i_ErrorMessage)
+		internal static void ShowFacebookError(string i_ErrorMessage = "An error has occured. Couldn't retrieve the requested information from facebook")
 		{
 			MessageBox.Show(i_ErrorMessage);
 		}

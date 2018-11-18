@@ -21,6 +21,7 @@ namespace Model
 		public Bitmap GetSkeleton()
 		{
 			createSkeleton();
+
 			return m_CollageData.CollageSkeleton;
 		}
 

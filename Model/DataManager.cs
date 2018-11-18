@@ -9,7 +9,7 @@ namespace Model
 	{
 		private User m_LoggedInUser;
 
-		public Ride Ride { get; } = new Ride();
+		public Ride Ride { get; private set; }
 
 		public string UserAccessToken { get; private set; }
 
@@ -201,11 +201,10 @@ namespace Model
 
 		private int calculateDaysTillBirthday()
 		{
-			const int k_AddOneYear = 1;
-
-			DateTime birthdate = parseStringToDateTime(m_LoggedInUser.Birthday);
-			DateTime todayDate = DateTime.Today;
-			DateTime birthday = new DateTime(todayDate.Year, birthdate.Month, birthdate.Day);
+			const int	k_AddOneYear = 1;
+			DateTime	birthdate = parseStringToDateTime(m_LoggedInUser.Birthday);
+			DateTime	todayDate = DateTime.Today;
+			DateTime	birthday = new DateTime(todayDate.Year, birthdate.Month, birthdate.Day);
 
 			if (birthday < todayDate)
 			{
@@ -217,15 +216,14 @@ namespace Model
 
 		private DateTime parseStringToDateTime(string i_Date)
 		{
-			const string k_DateRegexWithYear = "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$";
-			const string k_DateRegexWithoutYear = "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$";
-			const int k_StartOfMonth = 0;
-			const int k_StartOfDay = 3;
-			const int k_StartOfYear = 6;
-			const int k_LengthOfYear = 4;
-			const int k_LengthOfMonthOrDay = 2;
-
-			int day = 0, month = 0, year = 0;
+			const string	k_DateRegexWithYear = "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\\d\\d$";
+			const string	k_DateRegexWithoutYear = "^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$";
+			const int		k_StartOfMonth = 0;
+			const int		k_StartOfDay = 3;
+			const int		k_StartOfYear = 6;
+			const int		k_LengthOfYear = 4;
+			const int		k_LengthOfMonthOrDay = 2;
+			int				day = 0, month = 0, year = 0;
 
 			if (Regex.IsMatch(i_Date, k_DateRegexWithYear))
 			{
@@ -250,15 +248,16 @@ namespace Model
 		public void InitializeRide(string i_RideFromLocationName)
 		{
 			List<User> friendsFromStartPoint = new List<User>();
-			foreach(User user in m_LoggedInUser.Friends)
+
+			foreach (User user in m_LoggedInUser.Friends)
 			{
-				if(user.Location.Name.Equals(i_RideFromLocationName))
+				if (user.Location.Name.Equals(i_RideFromLocationName))
 				{
 					friendsFromStartPoint.Add(user);
 				}
 			}
 
-			Ride.FriendsFromStartPoint = friendsFromStartPoint;
+			Ride = new Ride() { FriendsFromStartPoint = friendsFromStartPoint };
 		}
 	}
 }

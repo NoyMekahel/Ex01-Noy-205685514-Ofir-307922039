@@ -82,8 +82,10 @@ namespace UI
 
 			foreach (User currentUser in i_AllFriendsFromStartPoint)
 			{
-				DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
-				cell.Value = AgeFilter.GetAgeFromUserBirthday(currentUser.Birthday);
+				DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell()
+				{
+					Value = AgeFilter.GetAgeFromUserBirthday(currentUser.Birthday)
+				};
 				dataGridFriendsResult.Rows[counter].Cells[AgeColumn.Index] = cell;
 				counter++;
 			}

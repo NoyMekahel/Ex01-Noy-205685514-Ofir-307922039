@@ -27,6 +27,7 @@ namespace Model
 			}
 
 			FriendsFromStartPointToEndPoint = friendsFromWork;
+
 			return friendsFromWork;
 		}
 
@@ -46,6 +47,7 @@ namespace Model
 			}
 
 			FriendsFromStartPointToEndPoint = friendsFromAcademicInstitution;
+
 			return friendsFromAcademicInstitution;
 		}
 
@@ -65,6 +67,7 @@ namespace Model
 			}
 
 			FriendsFromStartPointToEndPoint = friendsFromChosenEvent;
+
 			return friendsFromChosenEvent;
 		}
 

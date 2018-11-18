@@ -33,14 +33,17 @@ namespace UI
         {
 			try
 			{
-				FacebookObjectCollection<User> allFriends = DataManagerWrapper.DataManager.GetFriends();
+				FacebookObjectCollection<User>	allFriends = DataManagerWrapper.DataManager.GetFriends();
+				int								counter = 0;
+
 				bindingSourceFriendsGrid.DataSource = allFriends;
-				int counter = 0;
 
 				foreach (User currentUser in allFriends)
 				{
-					DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
-					cell.Value = currentUser.Location.Name;
+					DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell()
+					{
+						Value = currentUser.Location.Name
+					};
 					dataGridViewFriends.Rows[counter].Cells[locationColumn.Index] = cell;
 					counter++;
 				}
@@ -65,14 +68,13 @@ namespace UI
 		{
 			try
 			{
-				FacebookObjectCollection<Page> allLikedPages = DataManagerWrapper.DataManager.GetUserLikedPages();
-				ImageList allPagesImage = getAllPagesImage(allLikedPages);
+				FacebookObjectCollection<Page>	allLikedPages = DataManagerWrapper.DataManager.GetUserLikedPages();
+				ImageList						allPagesImage = getAllPagesImage(allLikedPages);
 				listViewLikedPages.SmallImageList = allPagesImage;
 
 				foreach (Page currentPage in allLikedPages)
 				{
-					ListViewItem item = new ListViewItem();
-					item.ImageIndex = 0;
+					ListViewItem item = new ListViewItem() { ImageIndex = 0 };
 					item.SubItems.Add(currentPage.Name);
 					item.SubItems.Add(currentPage.LikesCount.ToString());
 					listViewLikedPages.Items.Add(item);
@@ -114,8 +116,7 @@ namespace UI
 				{
 					if (currentPost.Message != null)
 					{
-						ListViewItem item = new ListViewItem();
-						item.Text = currentPost.CreatedTime.ToString();
+						ListViewItem item = new ListViewItem() { Text = currentPost.CreatedTime.ToString() };
 						item.SubItems.Add(currentPost.Message);
 						listViewPosts.Items.Add(item);
 					}

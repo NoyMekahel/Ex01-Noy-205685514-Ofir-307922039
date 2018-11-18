@@ -10,7 +10,7 @@ namespace Model
 		public static DataManager Login()
 		{
 			LoginResult result = FacebookService.Login(
-				"264186474290093", 
+				"295427534630566", 
 				"user_birthday",
 				"user_events",
 				"user_posts",
@@ -31,6 +31,7 @@ namespace Model
 		public static DataManager Connect(string i_LastAccessToken)
 		{
 			LoginResult result = FacebookService.Connect(i_LastAccessToken);
+
 			return new DataManager(result.LoggedInUser, result.AccessToken);
 		}
 

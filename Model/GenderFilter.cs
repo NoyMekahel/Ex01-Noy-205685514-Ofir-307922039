@@ -10,6 +10,7 @@ namespace Model
 		public GenderFilter(string i_GenderType)
 		{
 			const string k_MaleString = "male";
+
 			m_GenderType = i_GenderType.ToLower().Equals(k_MaleString) ? User.eGender.male : User.eGender.female;
 		}
 

@@ -10,8 +10,8 @@ namespace Model
 			THREE_IMAGES, FOUR_IMAGES, FIVE_IMAGES, SIX_IMAGES, SEVEN_IMAGES, EIGHT_IMAGES
 		}
 
-		private const int k_Size = 600;
-		private readonly Point r_InitPoint = new Point(0, 0);
+		private const int		k_Size = 600;
+		private readonly Point	r_InitPoint = new Point(0, 0);
 
 		public Bitmap Collage { get; set; }
 
