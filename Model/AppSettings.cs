@@ -6,14 +6,9 @@ namespace Model
 {
 	public sealed class AppSettings
 	{
+		private const string			k_FileName = "AppSettings.xml";
 		private static readonly object	sr_ContextLock = new object();
 		private static AppSettings		m_AppSettings;
-
-		public string LastAccessToken { get; set; }
-
-		public Point Location { get; set; }
-
-		public bool RememberUser { get; set; }
 
 		public static AppSettings Instance
 		{
@@ -22,6 +17,12 @@ namespace Model
 				return LoadFromFile();
 			}
 		}
+
+		public string LastAccessToken { get; set; }
+
+		public Point Location { get; set; }
+
+		public bool RememberUser { get; set; }
 
 		private AppSettings()
 		{
@@ -40,9 +41,9 @@ namespace Model
 				}
 			}
 
-			if (File.Exists("AppSettings.xml"))
+			if (File.Exists(k_FileName))
 			{
-				using (Stream stream = new FileStream("AppSettings.xml", FileMode.Open))
+				using (Stream stream = new FileStream(k_FileName, FileMode.Open))
 				{
 					XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
 					m_AppSettings = serializer.Deserialize(stream) as AppSettings;
@@ -54,7 +55,7 @@ namespace Model
 
 		public void SaveToFile()
 		{
-			using (Stream stream = new FileStream("AppSettings.xml", FileMode.Create))
+			using (Stream stream = new FileStream(k_FileName, FileMode.Create))
 			{
 				XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
 				serializer.Serialize(stream, this);

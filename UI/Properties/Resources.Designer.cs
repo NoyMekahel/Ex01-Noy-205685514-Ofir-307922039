@@ -73,9 +73,9 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap comments {
+        internal static System.Drawing.Bitmap comments_picture {
             get {
-                object obj = ResourceManager.GetObject("comments", resourceCulture);
+                object obj = ResourceManager.GetObject("comments_picture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap like {
+        internal static System.Drawing.Bitmap like_picture {
             get {
-                object obj = ResourceManager.GetObject("like", resourceCulture);
+                object obj = ResourceManager.GetObject("like_picture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -15,7 +15,6 @@ namespace UI
 		{
 			pictureBoxPhoto.Image = i_photo.Image;
 			pictureBoxPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictureBoxLikes.Image = global::UI.Properties.Resources.like;
 			labelLikes.Text = string.Format("Your photo liked by {0} people", i_photo.Photo.LikedBy.Count);
 
 			foreach (Comment comment in i_photo.Photo.Comments)
