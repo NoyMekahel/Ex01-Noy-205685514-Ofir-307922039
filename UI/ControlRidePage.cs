@@ -83,7 +83,7 @@ namespace UI
 		{
 			try
 			{
-				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromChosenEvent((sender as ComboBox).SelectedItem.ToString());
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.GetFriendsFromChosenEvent((sender as ComboBox).SelectedItem.ToString());
 				controlFilter.FillFriendsResultOnDataTable(allFriendsFromStartPoint);
 				controlFilter.Visible = true;
 			}
@@ -123,7 +123,7 @@ namespace UI
 		{
 			try
 			{
-				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromWork((sender as ComboBox).SelectedItem.ToString());
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.GetFriendsFromWork((sender as ComboBox).SelectedItem.ToString());
 				controlFilter.FillFriendsResultOnDataTable(allFriendsFromStartPoint);
 				controlFilter.Visible = true;
 			}
@@ -163,7 +163,7 @@ namespace UI
 		{
 			try
 			{
-				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.getFriendsFromAcademicInstitution((sender as ComboBox).SelectedItem.ToString());
+				ICollection<User> allFriendsFromStartPoint = DataManagerWrapper.DataManager.Ride.GetFriendsFromAcademicInstitution((sender as ComboBox).SelectedItem.ToString());
 				controlFilter.FillFriendsResultOnDataTable(allFriendsFromStartPoint);
 				controlFilter.Visible = true;
 			}

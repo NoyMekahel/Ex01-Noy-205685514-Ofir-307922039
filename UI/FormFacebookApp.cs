@@ -21,7 +21,7 @@ namespace UI
 		{
 			try
 			{
-				m_AppSettings = AppSettings.LoadFromFile();
+				m_AppSettings = AppSettings.Instance;
 				if (m_AppSettings.RememberUser && !string.IsNullOrEmpty(m_AppSettings.LastAccessToken))
 				{
 					DataManagerWrapper.SetDataManager(this, FacebookConnection.Connect(m_AppSettings.LastAccessToken));

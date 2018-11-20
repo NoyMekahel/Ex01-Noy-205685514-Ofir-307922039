@@ -11,7 +11,7 @@ namespace Model
 
 		public ICollection<User> FriendsFromStartPointToEndPoint { get; private set; }
 
-		public ICollection<User> getFriendsFromWork(string i_WorkName)
+		public ICollection<User> GetFriendsFromWork(string i_WorkName)
 		{
 			List<User> friendsFromWork = new List<User>();
 
@@ -27,11 +27,10 @@ namespace Model
 			}
 
 			FriendsFromStartPointToEndPoint = friendsFromWork;
-
 			return friendsFromWork;
 		}
 
-		public ICollection<User> getFriendsFromAcademicInstitution(string i_AcademicInstitutionName)
+		public ICollection<User> GetFriendsFromAcademicInstitution(string i_AcademicInstitutionName)
 		{
 			List<User> friendsFromAcademicInstitution = new List<User>();
 
@@ -51,7 +50,7 @@ namespace Model
 			return friendsFromAcademicInstitution;
 		}
 
-		public ICollection<User> getFriendsFromChosenEvent(string i_EventName)
+		public ICollection<User> GetFriendsFromChosenEvent(string i_EventName)
 		{
 			List<User> friendsFromChosenEvent = new List<User>();
 
@@ -73,7 +72,7 @@ namespace Model
 
 		public void AddFilter(IFilter i_Filter)
 		{
-			if(m_FilterList == null)
+			if (m_FilterList == null)
 			{
 				m_FilterList = new List<IFilter>();
 			}

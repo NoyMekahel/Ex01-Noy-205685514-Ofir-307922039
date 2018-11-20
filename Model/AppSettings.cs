@@ -4,9 +4,10 @@ using System.Xml.Serialization;
 
 namespace Model
 {
-	public class AppSettings
+	public sealed class AppSettings
 	{
-		private static AppSettings m_AppSettings;
+		private static readonly object	sr_ContextLock = new object();
+		private static AppSettings		m_AppSettings;
 
 		public string LastAccessToken { get; set; }
 
@@ -14,20 +15,34 @@ namespace Model
 
 		public bool RememberUser { get; set; }
 
+		public static AppSettings Instance
+		{
+			get
+			{
+				return LoadFromFile();
+			}
+		}
+
 		private AppSettings()
 		{
 		}
 
-		public static AppSettings LoadFromFile()
+		private static AppSettings LoadFromFile()
 		{
-			if(m_AppSettings == null)
+			if (m_AppSettings == null)
 			{
-				m_AppSettings = new AppSettings();
+				lock (sr_ContextLock)
+				{
+					if (m_AppSettings == null)
+					{
+						m_AppSettings = new AppSettings();
+					}
+				}
 			}
 
-			if (File.Exists("appSettings.xml"))
+			if (File.Exists("AppSettings.xml"))
 			{
-				using (Stream stream = new FileStream("appSettings.xml", FileMode.Open))
+				using (Stream stream = new FileStream("AppSettings.xml", FileMode.Open))
 				{
 					XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
 					m_AppSettings = serializer.Deserialize(stream) as AppSettings;
@@ -39,7 +54,7 @@ namespace Model
 
 		public void SaveToFile()
 		{
-			using (Stream stream = new FileStream("appSettings.xml", FileMode.Create))
+			using (Stream stream = new FileStream("AppSettings.xml", FileMode.Create))
 			{
 				XmlSerializer serializer = new XmlSerializer(typeof(AppSettings));
 				serializer.Serialize(stream, this);
