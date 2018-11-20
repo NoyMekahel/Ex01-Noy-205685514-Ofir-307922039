@@ -3,14 +3,12 @@ using FacebookWrapper;
 
 namespace Model
 {
-	/*264186474290093- US*/
-
 	public static class FacebookConnection
 	{
 		public static DataManager Login()
 		{
 			LoginResult result = FacebookService.Login(
-				"295427534630566", 
+				"264186474290093", 
 				"user_birthday",
 				"user_events",
 				"user_posts",
